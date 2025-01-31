@@ -1,0 +1,6 @@
+site_name: My Notes
+theme: material  
+
+nav:
+  - Home: index.md
+  - Reinforcement Learning: RL-Unit 1.md
