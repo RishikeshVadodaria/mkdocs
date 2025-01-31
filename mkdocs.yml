@@ -1,5 +1,14 @@
-site_name: My Docs
+site_name: Notes
 site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 nav:
   - Home: index.md
   - RL Unit 1: RL-Unit-1.md
+
+theme:
+  name: material
+
+
+markdown_extensions:
+  - toc
+  - pymdownx.highlight
+  - pymdownx.superfences
