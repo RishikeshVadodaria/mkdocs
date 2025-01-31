@@ -1,5 +1,5 @@
 site_name: My Docs
-
+site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 nav:
   - Home: index.md
   - RL Unit 1: RL-Unit-1.md
