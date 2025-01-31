@@ -8,22 +8,19 @@ nav:
 theme:
   name: material
   palette:
-    - scheme: default
-      primary: indigo
-      accent: blue
-    - scheme: slate
-      primary: indigo
-      accent: blue
+    - scheme: slate  # Enables dark mode
+      primary: deep purple
       toggle:
-        icon: material/weather-night
+        icon: material/lightbulb
         name: Switch to light mode
-  features:
-    - navigation.tabs
-    - navigation.top
-    - content.code.annotate
+    - scheme: default  # Light mode
+      primary: deep purple
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
 
-extra:
-  generator: false  # Removes "Powered by MkDocs Material" footer
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js
 
 markdown_extensions:
   - toc
@@ -31,28 +28,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.details
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.mark
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
-  - pymdownx.emoji
-  - pymdownx.snippets
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.betterem
-  - pymdownx.smartsymbols
-  - pymdownx.magiclink
-  - pymdownx.inlinehilite
-  - pymdownx.escapeall
-  - pymdownx.progressbar
-  - attr_list
-  - md_in_html
 
-extra_javascript:
-  - https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js
-
-plugins:
-  - search
-  - mermaid
+extra:
+  generator: false
