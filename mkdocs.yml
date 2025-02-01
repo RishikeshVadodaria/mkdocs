@@ -4,6 +4,7 @@ site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 nav:
   - Home: index.md
   - RL Unit 1: RL-Unit-1.md
+  - Text book: RL_Unit1.md
 
 theme:
   name: material
@@ -21,13 +22,28 @@ theme:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
+  - admonition
   - toc
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.details
-
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 extra:
   generator: false
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
