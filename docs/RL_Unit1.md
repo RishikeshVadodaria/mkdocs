@@ -253,30 +253,7 @@ methods, Monte Carlo method and many more. All these algorithms can be classifie
 
 
 ---
-## Main Characteristics of RL
 
-- **No supervisor** while training.
-- **Environment** is generally stochastic for real-world applications.
-- **Model of the environment** can be incomplete.
-- **Feedback** (Negative/Positive Reward) can be delayed or partial.
-- The agent uses experience from the past to improve its performance over time.
-- Actions that have fetched more rewards are preferred.
-- The agent tries various actions and prefers those that are best or have fetched more rewards.
-- RL uses **Markov Decision Process (MDP)** framework to define the interaction between a learning agent and its environment.
-
----
-## Reinforcement Learning (RL) Problem - Challenges in RL
-
-### Trade-off between Exploration and Exploitation:
-- To obtain rewards, an RL agent must prefer actions that it has tried in the past and found effective (**Exploit**).
-- However, to discover such actions, it must try actions it has not selected before (**Explore**).
-  
-
-!!! note
-    Neither exploration nor exploitation can be pursued exclusively without failing at the task.
- 
-
----
 ## Fundamental Components of RL
 
 - **Policy**: Defines the agent’s behavior.
@@ -416,7 +393,9 @@ Each approach has its own strengths and weaknesses, and the choice of algorithm 
 
 - The expected return from starting at state $s$.
 - Also called the **State-Value Function**:  
-$V(s)=E[Gt∣st=s]=E[rt+γrt+1+γ2rt+2+⋯+γT−1rT∣st=s]V(s) = \mathbb{E}[G_t | s_t = s] = \mathbb{E} \left[ r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \dots + \gamma^{T-1} r_T \mid s_t = s \right]$
+!!! formula
+
+    $V(s)=E[Gt∣st=s]=E[rt+γrt+1+γ2rt+2+⋯+γT−1rT∣st=s]V(s) = \mathbb{E}[G_t | s_t = s] = \mathbb{E} \left[ r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \dots + \gamma^{T-1} r_T \mid s_t = s \right]$
 - **Breakdown**:
     - **Immediate reward**: $r_t$.
     - **Discounted value of successor states**.
