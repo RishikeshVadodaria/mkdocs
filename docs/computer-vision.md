@@ -218,9 +218,7 @@ The **gradient of an image** is calculated using finite differences:
 
 ### **Mathematical Representation**  
 The **Gaussian function** for a 2D image is:  
-\[
-G_\sigma(x, y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}
-\]  
+$$ G_\sigma(x, y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}} $$
 where:  
 - \( \sigma \) = Standard deviation (controls blurring strength)  
 - \( x, y \) = Pixel coordinates  
@@ -467,4 +465,85 @@ where:
 
 ✅ **Covariance**:  
 - Features should be **detectable despite geometric & photometric variations** (e.g., rotation, lighting changes).  
+
+### **SIFT Algorithm – Scale-Invariant Feature Transform**  
+
+SIFT is a **feature detection** algorithm that extracts **scale and rotation-invariant keypoints** for object recognition, tracking, and image matching.  
+
+---
+
+## **Step 1: Construct a Scale Space**  
+
+📌 **Why?**  
+- Real-world objects appear different at **various distances (scales)**.  
+- A feature must be **detectable at multiple scales** to be useful in recognition.  
+
+🔹 **How it Works:**  
+1. The **original image** is repeatedly **blurred using a Gaussian filter**.  
+2. **Octaves** are created by **downsampling** the image (reducing its size by half).  
+3. Within each octave, multiple blurred images are generated with increasing **sigma values (σ)**.  
+4. This **scale-space representation** ensures features are **scale-independent**.  
+
+🔹 **Mathematical Formulation (Gaussian Blur):**  
+\[
+G(x, y, \sigma) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}
+\]  
+where:  
+- \( G(x, y, \sigma) \) = Gaussian function.  
+- \( \sigma \) = Standard deviation (controls blurring).  
+- \( x, y \) = Pixel coordinates.  
+
+🔹 **Example:**  
+- **Octave 1**: Original image + multiple blurred versions.  
+- **Octave 2**: Image resized to **half** and blurred again.  
+- **Repeats** for multiple octaves (typically **4-5** octaves).  
+
+📌 **Outcome:**  
+- A collection of images at **different scales and resolutions**.  
+
+---
+
+## **Step 2: Compute Difference of Gaussian (DoG)**  
+
+📌 **Why?**  
+- Identifies keypoints by enhancing **edges and texture features**.  
+- The **Gaussian Blur removes noise**, and the **DoG highlights changes in intensity**.  
+
+🔹 **How it Works:**  
+1. **Compute DoG images** by subtracting two consecutive Gaussian-blurred images:  
+   \[
+   DoG(x, y, \sigma) = G(x, y, k\sigma) - G(x, y, \sigma)
+   \]  
+   where \( k \) is a constant (typically \( k = \sqrt{2} \)).  
+2. This process is repeated across all octaves.  
+3. The resulting **DoG images** enhance edges, blobs, and texture details.  
+
+📌 **Outcome:**  
+- A set of **DoG images** that highlight regions of interest (potential keypoints).  
+
+---
+
+## **Step 3: Keypoint Localization**  
+
+📌 **Why?**  
+- Identify **stable keypoints** while removing weak or false detections.  
+
+🔹 **How it Works:**  
+1. Each pixel in the **DoG images** is compared with **26 neighboring pixels** (8 in the same image, 9 in the scale above, and 9 in the scale below).  
+2. If a pixel is the **local maximum or minimum**, it is marked as a **potential keypoint**.  
+3. **Low-contrast keypoints** are discarded using a **threshold (typically 0.03)**.  
+4. **Edges are removed** using the Hessian matrix determinant to avoid unstable keypoints.  
+
+🔹 **Mathematical Filtering (Hessian Matrix):**  
+\[
+H = \begin{bmatrix} I_{xx} & I_{xy} \\ I_{xy} & I_{yy} \end{bmatrix}
+\]  
+- Compute **corner response**:  
+  \[
+  \frac{(\text{Trace}(H))^2}{\text{Det}(H)} < 12.1
+  \]  
+  If the value is **greater than 12.1**, the keypoint is rejected.  
+
+📌 **Outcome:**  
+- A set of **highly stable, contrast-rich keypoints** that can be used for further processing.  
 
