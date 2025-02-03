@@ -326,3 +326,145 @@ where:
 ✅ **Enhances spatial features**  
 ❌ **Reduces overall image contrast**  
 
+
+### **Laplacian of Gaussian (LoG) – Edge Detection & Feature Enhancement**  
+
+🔹 **Laplacian of Gaussian (LoG)** is a feature detection technique that combines:  
+1️⃣ **Gaussian Smoothing** – Reduces noise in the image.  
+2️⃣ **Laplacian Operator** – Detects **edges and blobs** by identifying intensity changes.  
+
+#### **How LoG Works:**  
+1. **Apply a Gaussian filter** to smooth the image and suppress noise.  
+2. **Compute the second derivative (Laplacian)** to highlight regions with rapid intensity changes (edges).  
+3. **Detect zero-crossings** in the Laplacian response to identify edges.  
+
+#### **Mathematical Representation:**  
+The **LoG function** is given by:  
+$$ LoG(x, y) = \nabla^2 G_{\sigma} (x, y) * I(x, y) $$  
+where:  
+- \( G_{\sigma} (x, y) \) = **Gaussian filter** with standard deviation \( \sigma \)  
+- \( \nabla^2 \) = **Laplacian operator** (second derivative)  
+- \( I(x, y) \) = **Input image**  
+
+#### **Key Features of LoG:**  
+✅ **Combines smoothing & edge detection** in one step.  
+✅ **Detects both fine and coarse details** depending on \( \sigma \).  
+✅ **Useful for blob detection** in feature descriptors like **SIFT**.  
+❌ **Sensitive to noise** – Requires pre-smoothing for better results.  
+
+🚀 **LoG is commonly used in edge detection pipelines like the Marr-Hildreth operator and as a preprocessing step in Computer Vision applications!** 🔍
+
+
+### **Histogram of Oriented Gradients (HoG) – Feature Descriptor for Object Detection**  
+
+🔹 **Histogram of Oriented Gradients (HoG)** is a feature descriptor used for **object detection** and **image classification** by analyzing **gradient orientations** in localized regions of an image.  
+
+
+### **Step-by-Step HoG Computation**  
+
+✅ **Step 1: Resize Image**  
+- Resize the image to an **integer multiple of 8** (nearest to the original size).  
+- Ensures uniform cell division and efficient computation.  
+
+✅ **Step 2: Divide Image into Cells**  
+- Split the image into **small patches of equal size** (e.g., **8×8 pixels per cell**).  
+- Each cell will have its own **gradient histogram**.  
+
+✅ **Step 3: Compute Gradients**  
+- Calculate the **gradient magnitude** and **orientation** using **Sobel filters**:  
+  \[
+  M = \sqrt{G_x^2 + G_y^2}, \quad \theta = \tan^{-1} \left(\frac{G_y}{G_x} \right)
+  \]  
+  where \( G_x, G_y \) are gradients along horizontal and vertical directions.  
+
+✅ **Step 4: Compute Gradient Histograms (Per Cell)**  
+- For **each 8×8 cell**, create a **histogram of gradients** (e.g., 9 bins for 0°-180°).  
+- Assign gradient magnitudes to their corresponding **orientation bins**.  
+
+✅ **Step 5: Construct Feature Vector**  
+- Normalize the histograms **across neighboring blocks** (e.g., **2×2 cells per block**) for better illumination invariance.  
+- Flatten the computed HoG features into a **single feature vector** for classification.  
+
+✅ **Step 6: Visualize HoG**  
+- HoG features are often **visualized as a grid of arrows**, where the **length and direction** represent gradient strength and orientation.  
+
+✅ **Step 7: Classify Images**  
+- Use machine learning models (**SVM, Deep Learning**) to classify objects using the extracted **HoG feature vector**.  
+
+
+#### **Mathematical Representation:**  
+- **Gradient Magnitude ($M$):**  
+$$   M = \sqrt{G_x^2 + G_y^2} $$ 
+
+- **Gradient Orientation ($\theta$):**  
+$$   \theta = \tan^{-1} \left(\frac{G_y}{G_x} \right) $$   
+where:  
+- \( G_x, G_y \) = Gradients in horizontal & vertical directions.  
+- \( M \) = Strength of edge response.  
+- \( \theta \) = Edge direction (0°–180° or 0°–360° bins).  
+
+#### **Key Features of HoG:**  
+✅ **Invariance to Illumination & Shadows** – Normalization removes intensity variations.  
+✅ **Captures Local Shape Information** – Focuses on **edges and textures** rather than pixel intensity.  
+✅ **Robust to Small Translations & Rotations** – Uses **histograms** instead of raw gradients.  
+✅ **Widely Used in Object Detection** – Forms the basis of **Dalal-Triggs pedestrian detection** and is used in **SVM-based image recognition**.  
+❌ **Computationally Expensive** – Requires **dense gradient computations** across the entire image.  
+
+🚀 **HoG is widely used in Human & Object Detection (e.g., Pedestrian Detection in self-driving cars) and Machine Learning-based Image Classification!** 🔍
+
+
+
+### **Feature Descriptors in Computer Vision**  
+
+🔹 **Feature descriptors** help identify **key points, edges, and corners** in an image.  
+🔹 These descriptors are used for **object detection, image matching, and recognition**.  
+
+---
+
+### **Types of Feature Descriptors**  
+
+#### **1. Global Descriptors 🌍**  
+- Represent the **entire image**.  
+- Examples:  
+  ✅ **Histogram of Oriented Gradients (HoG)**  
+  ✅ **Difference of Gaussian (DoG)**  
+  ✅ **Histogram of Optical Flow (HOF)**  
+- **Limitations**: Struggle with **occlusions and profile variations** since they analyze the **whole image**.  
+
+#### **2. Local Descriptors 🔍**  
+- Describe **small patches** within an image.  
+- More **accurate & robust** for **object detection, matching, and occlusion handling**.  
+- Examples:  
+  ✅ **SIFT (Scale-Invariant Feature Transform)**  
+  ✅ **SURF (Speeded-Up Robust Features)**  
+  ✅ **LBP (Local Binary Pattern)**  
+  ✅ **BRISK (Binary Robust Invariant Scalable Keypoints)**  
+  ✅ **MSER (Maximally Stable Extremal Regions)**  
+  ✅ **FREAK (Fast Retina Keypoint)**  
+
+📌 **Local descriptors outperform global ones in real-world applications like facial recognition and object tracking!** 🚀  
+
+---
+
+### **How to Define an Interest Point?**  
+
+🔹 **Interest points** are key locations (e.g., edges, corners) where **features can be extracted**.  
+
+✅ **Repeatability**:  
+- A feature should be detected **consistently across multiple images**, despite **geometric & photometric transformations**.  
+
+✅ **Saliency**:  
+- Features should be **distinct and unique** to avoid mismatches.  
+
+✅ **Compactness**:  
+- Fewer features than the number of image pixels should **effectively represent the image**.  
+
+✅ **Efficiency**:  
+- **Fast computation** is essential for **real-time applications** like tracking & detection.  
+
+✅ **Locality**:  
+- Features should **occupy a small area** and remain **robust to clutter & occlusion**.  
+
+✅ **Covariance**:  
+- Features should be **detectable despite geometric & photometric variations** (e.g., rotation, lighting changes).  
+
