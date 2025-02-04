@@ -6,7 +6,7 @@ nav:
   - RL Unit 1: RL-Unit-1.md
   - Text book: RL_Unit1.md
   - Computer Vision : computer-vision.md
-
+  - Mobile Computing : mobile-computing.md
 theme:
   name: material
   palette:
