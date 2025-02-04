@@ -259,4 +259,390 @@ Mobile computing architecture ensures seamless communication, **data management,
 | **Application Tier** | The **kitchen** where food is prepared based on orders. |
 | **Data Tier** | The **pantry** where ingredients are stored. |
 
+## Unit 2 
 
+#### Concept of Multiplexing
+Multiplexing is a key technique in communication systems that allows multiple users to share a single medium with minimal or no interference.
+
+#### Real-Life Analogy
+Highways as a Shared Medium:
+- Multiple vehicles (users) travel on the same highway (medium) without interference.
+- Space Division Multiplexing (SDM): Cars use separate lanes.
+- Time Division Multiplexing (TDM): Cars use the same lane at different times.
+
+### 🛠 Medium Access Control (MAC) Protocols
+
+- ✅ What is MAC?
+
+A sublayer of the Data Link Layer responsible for coordinating transmissions between multiple nodes.
+
+![alt text](image-1.png)
+
+Data link layer divided into two functionality-oriented sublayers
+
+
+### ⚡ The MAC Problem in Wireless Networks
+
+📌 When multiple nodes transmit simultaneously, their signals collide, causing:
+
+Lost data and wasted bandwidth.
+
+Increased retransmissions, leading to higher delays and lower efficiency.
+
+📌 Solution? Use a protocol to manage access to the shared medium.
+
+✅ What MAC Protocols Must Do:
+
+- Minimize Collisions to optimize bandwidth usage.
+- Decide when a station can transmit to avoid conflicts.
+- Handle busy channels by deciding whether to wait or retransmit.
+- Resolve collisions efficiently to ensure smooth data transmission.
+
+
+Here is the **Mermaid diagram** representation of **Multiple Access Protocols** along with a brief explanation for each type:  
+
+```mermaid
+graph TD;
+    
+    A[Multiple-Access Protocols] --> B[Random Access Protocols]
+    A --> C[Controlled-Access Protocols]
+    A --> D[Channelization Protocols]
+
+    B --> B1[ALOHA]
+    B --> B2[CSMA]
+    B --> B3[CSMA/CD]
+    B --> B4[CSMA/CA]
+
+    C --> C1[Reservation]
+    C --> C2[Polling]
+    C --> C3[Token Passing]
+
+    D --> D1[FDMA]
+    D --> D2[TDMA]
+    D --> D3[CDMA]
+```
+
+---
+
+✅ **Random Access Protocols** (No fixed control, contention-based):  
+- **ALOHA** – Transmits data randomly; high collision rate.  
+- **CSMA (Carrier Sense Multiple Access)** – Senses channel before sending data to reduce collisions.  
+- **CSMA/CD (Collision Detection)** – Detects collisions and retransmits (used in Ethernet).  
+- **CSMA/CA (Collision Avoidance)** – Avoids collisions before transmission (used in Wi-Fi).  
+
+✅ **Controlled-Access Protocols** (Centralized control, avoids collisions):  
+- **Reservation** – Nodes reserve slots before transmission.  
+- **Polling** – Central controller decides which node transmits.  
+- **Token Passing** – A token circulates, granting transmission rights.  
+
+✅ **Channelization Protocols** (Divide channel into separate logical paths):  
+- **FDMA (Frequency Division Multiple Access)** – Assigns different frequencies to users.  
+- **TDMA (Time Division Multiple Access)** – Allocates time slots to users.  
+- **CDMA (Code Division Multiple Access)** – Uses unique codes for simultaneous transmissions.  
+
+
+### **Medium Access in Wireline vs. Wireless Networks**  
+
+### **📡 Medium Access in Wireline Networks (CSMA/CD)**  
+
+✅ **Assumptions:**  
+- **Signal strength remains constant** across the wire.  
+- **Same signal strength** can be assumed throughout if the wire length is within standard limits.  
+- **Collisions can be detected** by any node listening to the wire.  
+
+✅ **CSMA/CD (Carrier Sense Multiple Access with Collision Detection) Operation:**  
+1. **Carrier Sense** – Listen to the wire; if free, send data.  
+2. **Collision Detection** – If a collision is detected while transmitting, stop immediately and send a **jam signal** to notify all nodes.  
+
+🔹 **Why CSMA/CD Works Well in Wired Networks?**  
+- The **signal condition is the same across the medium**.  
+- **Collisions are easily detectable**, ensuring efficient retransmission.  
+
+---
+
+### **📶 Medium Access in Wireless Networks (CSMA/CA)**  
+
+✅ **Challenges in Wireless Medium:**  
+- **Signal strength varies** due to distance and obstacles.  
+- **Attenuation** follows the inverse square law (\( 1/d^2 \)), weakening signals over distance.  
+- **Collisions at the receiver cannot be detected** by simply listening to the medium.  
+
+✅ **CSMA/CD Issues in Wireless:**  
+1. **Carrier Sense** – The sender may detect an **idle medium**, but the receiver may still experience a **collision**.  
+2. **Collision Detection** – The sender cannot always detect a collision at the receiver’s end.  
+
+🔹 **Why CSMA/CD Fails in Wireless?**  
+- Wireless nodes have **different perspectives of the medium**.  
+- The **hidden terminal problem** causes undetected collisions.  
+- Instead, wireless networks use **CSMA/CA (Collision Avoidance)** to **prevent collisions before they happen**.  
+
+
+### **Wireless Medium Access Problems**  
+
+Wireless networks face unique challenges due to signal interference, attenuation, and variable reception.  
+
+---
+
+### **Hidden Terminal Problem**  
+
+**Scenario:**  
+- A and C cannot hear each other but are both within B’s range.  
+- A starts transmitting to B.  
+- C senses the medium as free (since it cannot hear A) and starts transmitting to B at the same time.  
+- A collision occurs at B, but neither A nor C detects it.  
+
+**Cause:**  
+- Other senders are hidden from the current sender, leading to undetected collisions.  
+
+**Solution:**  
+- The RTS/CTS (Request to Send / Clear to Send) mechanism helps avoid hidden terminal issues by coordinating access.  
+
+![alt text](image-2.png)
+
+---
+
+### **Exposed Terminal Problem**  
+
+**Scenario:**  
+- B is transmitting to A.  
+- C senses the medium as busy because B is transmitting.  
+- However, C could have transmitted to D without causing a collision.  
+- C unnecessarily defers its transmission, reducing network efficiency.  
+
+**Cause:**  
+- The sender mistakenly assumes the medium is in use, leading to wasted transmission opportunities.  
+
+**Solution:**  
+- Spatial reuse techniques allow simultaneous non-interfering transmissions.  
+
+```mermaid
+
+sequenceDiagram
+    participant R1 as R₁ (Receiver 1)
+    participant S1 as S₁ (Sender 1)
+    participant S2 as S₂ (Sender 2)
+    participant R2 as R₂ (Receiver 2)
+    
+    Note over S1,R1: 1. Initial Communication Setup
+    S1->>R1: Request to Send (RTS)
+    R1->>S1: Clear to Send (CTS)
+    
+    Note over S1,R1: 2. Data Transfer Begins
+    S1->>R1: DATA Transmission
+    
+    Note over S2,R2: Medium is Busy
+    S2--xR2: Waiting for Clear Medium
+    
+    Note over S1,R1: 3. Successful Data Transfer
+    activate S1
+    activate R1
+    Note over S1,R1: Data Transfer Complete
+    deactivate S1
+    deactivate R1
+    
+    Note over S2,R2: Medium is Now Clear
+```
+
+
+---
+
+### **Near/Far Terminal Problem**  
+
+**Scenario:**  
+- B is closer to C than A.  
+- B’s stronger signal overpowers A’s weaker signal at C.  
+- C cannot receive A’s transmission properly, causing data loss.  
+
+**Cause:**  
+- Signal strength imbalance leads to weaker signals being drowned out by stronger ones.  
+
+**Solution:**  
+- Power control mechanisms ensure all terminals are detectable at the base station.  
+- GSM avoids the problem by using time slots (TDMA), preventing simultaneous transmission.  
+- CDMA uses power control so all signals arrive at the receiver with equal strength.  
+
+![alt text](image-3.png)
+
+
+---
+
+# Multiplexing
+
+Wireless channels can be multiplexed in four key dimensions:
+
+1. **Time (t)**: A channel occupies the entire frequency spectrum for a specific time period.
+2. **Space (s)**: The same frequency can be reused if base stations are sufficiently separated.
+3. **Frequency (f)**: The spectrum is divided into smaller frequency bands.
+4. **Code (c)**: Each channel is assigned a unique code for transmission.
+
+## Space Division Multiplexing (SDM)
+![alt text](image-4.png)
+
+- SDM involves separating channels in three dimensions: **Code**, **Time**, and **Frequency**.
+- The **Space** dimension is represented by circles indicating interference ranges.
+- To prevent overlap, channels are mapped to separate spaces (s1 to s3). This creates "guard space" between channels.
+- **Channels k1 to k3** are clearly separated, while additional spaces are needed for **channels k4 to k6**.
+- This principle is similar to how old analog phone systems provided separate copper wires for each subscriber.
+
+### Example: FM Radio
+- Multiple radio stations can use the same frequency without interference, as long as they are separated geographically.
+
+## Key Takeaways:
+- **Guard space**: Needed in all multiplexing schemes to prevent interference.
+- **SDM**: Effective for localized transmissions like FM radio but not scalable for dense urban areas.
+
+!!! Note
+    If several radio stations want to broadcast in the same city - Solution?
+    
+    SDM not suitable 
+
+    Solution:
+
+    Multiplexing through
+
+    Frequency
+
+    Time
+    
+    Code
+
+
+### Frequency Division Multiplexing (FDM)
+
+Frequency Division Multiplexing (FDM) divides the frequency dimension into several non-overlapping frequency bands. Each channel \(k_i\) is assigned a specific frequency band, which can be used continuously by the sender.
+
+- **Guard Spaces**: Essential to prevent frequency band overlap (also called adjacent channel interference).
+- **Example**: Used by radio stations within the same region, where each station broadcasts on its own frequency.
+
+---
+
+![alt text](image-5.png)
+
+### How FDM Works
+
+- **Simple Scheme**: The receiver only needs to tune into the specific frequency assigned to the sender.
+- **Usage**: Common in systems like radio broadcasting, where multiple stations use different frequencies to avoid interference.
+
+---
+
+### Advantages of FDM
+
+- **Simplicity**: Very simple to implement, as it requires minimal coordination between the sender and receiver.
+- **Continuous Use**: Each sender can use its frequency band continuously, making it suitable for applications like radio broadcasting.
+
+---
+
+### Disadvantages of FDM
+
+- **Frequency Resource Waste**: In mobile communication, where communication is short-term, dedicating an entire frequency band to each scenario would waste valuable frequency resources.
+- **Limited Flexibility**: The fixed assignment of frequencies to senders makes the system inflexible, limiting the number of senders that can be supported.
+
+---
+
+### Time Division Multiplexing (TDM)
+
+In **Time Division Multiplexing (TDM)**, each channel \(k_i\) is allocated the entire bandwidth for a specific time period. Multiple senders use the same frequency but at different points in time.
+
+- **Guard Space**: Time gaps between transmissions are required to prevent overlap.
+- **Co-channel Interference**: Occurs if transmissions overlap in time, similar to cars colliding on a highway.
+
+---
+
+![alt text](image-6.png)
+### How TDM Works
+
+- **Precise Synchronization**: Senders must be precisely synchronized, which requires clocks or a method to distribute synchronization signals.
+- **Receiver Tuning**: The receiver must not only adjust the frequency but also tune to the exact time slot for receiving data.
+- **Flexibility**: TDM is flexible, allowing more time for senders with heavy traffic and less time for those with lighter loads.
+
+---
+
+### Disadvantages of TDM
+
+- **Synchronization Requirement**: All senders need to be synchronized, which adds complexity.
+- **Time Slot Coordination**: A receiver must adjust both the frequency and the correct time slot.
+- **Co-channel Interference**: If multiple senders choose the same frequency at the same time, interference occurs.
+
+---
+
+### Time + Frequency Division Multiplexing (TDMA + FDMA)
+
+![alt text](image-7.png)
+
+A combination of both **TDM** and **FDM** can be used, where each channel is allotted a specific frequency for a set time period.
+
+- **Guard Spaces**: Required in both time and frequency dimensions.
+- **Example**: **GSM** uses TDMA + FDMA for communication between mobile phones and base stations.
+
+---
+
+### Advantages of TDMA + FDMA
+
+- **Robustness**: Provides some protection against frequency selective interference.
+- **Protection Against Tapping**: The sequence of frequencies must be known to intercept data, providing some protection.
+
+---
+
+### Disadvantages of TDMA + FDMA
+
+- **Coordination**: Coordination between senders is required for frequency and time management.
+- **Interference**: If two senders use the same frequency at the same time, interference occurs. Frequency hopping can minimize this, reducing interference time.
+
+---
+
+### Key Takeaways
+
+- **TDM**: Simple but requires precise synchronization, making it suitable for scenarios where each sender needs to transmit in defined time slots.
+- **TDMA + FDMA**: Offers better robustness and protection, but requires complex coordination and management of both time and frequency.
+
+
+### Code Division Multiplexing (CDM)
+![alt text](image-8.png)
+
+**Code Division Multiplexing (CDM)** is a relatively new scheme used in commercial communication systems, having been initially used in military applications due to its built-in security features.
+
+- **Working Principle**: All channels \(k_i\) use the same frequency at the same time. Separation is achieved by assigning each channel its own unique "code."
+- **Guard Space**: This is ensured by using codes with a sufficient "distance" in the code space, such as orthogonal codes.
+
+---
+
+### Example: Party with Global Participants
+
+Imagine a party with many participants from different countries who communicate using the same frequency range (approx. 300–6000 Hz):
+
+- **Same Language (SDM)**: If everyone speaks the same language, space division multiplexing (SDM) is required to separate groups.
+- **Different Languages (CDM)**: As soon as another language is used, a new code (language) can be tuned into, clearly separating communication in different languages. Other languages appear as background noise.
+
+---
+
+### CDM Security
+
+- **Built-in Security**: If the receiver doesn’t know the code (or language), the signals are received but are essentially useless. This creates a secure channel in a potentially "hostile" environment, much like using a secret language at the party.
+  
+- **Guard Space**: Codes must be sufficiently distinct (e.g., Swedish and Finnish are orthogonal enough, but Swedish and Norwegian are too similar for separation).
+
+---
+
+### Advantages of CDM
+
+- **Interference Protection**: CDM provides strong protection against interference and tapping. The huge code space allows for easy assignment of unique codes to different senders without significant issues.
+  
+- **Security**: A secret code can create a secure channel, as only those with the correct code can decode the message.
+
+---
+
+### Disadvantages of CDM
+
+- **Complex Receiver**: The receiver must know the code and be able to decode the signal amidst background noise. This increases the complexity of the receiver.
+  
+- **Synchronization Requirement**: The receiver must be precisely synchronized with the transmitter for accurate decoding.
+
+- **Power Control**: Signals must reach the receiver with equal strength. If signals are uneven, such as someone speaking too loudly near the receiver, the loud signal could drain the others, making it difficult for the receiver to decode other channels.
+
+---
+
+### Key Takeaways
+
+- **CDM**: Provides secure and interference-resistant communication but requires precise synchronization and power control.
+- **Security**: Built-in security by using unique codes (or languages) for each communication channel.
+- **Complexity**: High complexity due to the need for the receiver to decode signals accurately and maintain synchronization.
