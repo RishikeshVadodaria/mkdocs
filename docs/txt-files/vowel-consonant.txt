@@ -1,0 +1,31 @@
+Display.InputDialog Message: $'''Enter a character''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed 
+
+Text.ChangeCase Text: UserInput NewCase: Text.CaseOption.LowerCase Result=> TextWithNewCase 
+
+SWITCH TextWithNewCase 
+
+    CASE = $'''a''' 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a vowel''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+    CASE = $'''e''' 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a vowel''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+    CASE = $'''i''' 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a vowel''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+    CASE = $'''o''' 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a vowel''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+    CASE = $'''u''' 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a vowel''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+    DEFAULT 
+
+        Display.ShowMessageDialog.ShowMessage Message: $'''it is a consonant''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2 
+
+END 
