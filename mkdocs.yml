@@ -7,6 +7,7 @@ nav:
   - Text book: RL_Unit1.md
   - Computer Vision : computer-vision.md
   - Mobile Computing : mobile-computing.md
+  - RPA : rpa.md
 theme:
   name: material
   palette:
