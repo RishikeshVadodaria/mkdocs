@@ -121,3 +121,12 @@
 [hr-subflow.txt](txt-files/hr-subflow.txt)
 
 
+### Multiplication Table
+
+!!! Note 
+    Easy
+
+[multiplication-table.txt](txt-files/multiplication-table.txt)
+
+
+

@@ -3,8 +3,8 @@ site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 
 nav:
   - Home: index.md
-  - RL Unit 1: RL-Unit-1.md
-  - Text book: RL_Unit1.md
+  - Ignore: RL-Unit-1.md
+  - Reinforcement Learning: RL_Unit1.md
   - Computer Vision : computer-vision.md
   - Mobile Computing : mobile-computing.md
   - RPA : rpa.md
