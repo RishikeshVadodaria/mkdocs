@@ -1,4 +1,4 @@
-# Machine Learning Types
+## Unit 1 
 
 ```mermaid
 graph LR
@@ -16,7 +16,7 @@ graph LR
     F -.->|Reward| F
 ```
 
-## Supervised Learning
+### Supervised Learning
 
 **Definition:** Learning from labeled data where the model maps inputs to outputs.
 
@@ -29,7 +29,7 @@ graph LR
 - **Classification**: Spam detection, Image recognition
 - **Regression**: Price prediction, Sales forecasting
 
-## Unsupervised Learning
+### Unsupervised Learning
 
 **Definition:** Learning patterns from unlabeled data.
 
@@ -42,7 +42,7 @@ graph LR
 - **Clustering**: Customer segmentation
 - **Dimensionality Reduction**: Feature extraction
 
-## Reinforcement Learning (RL)
+### Reinforcement Learning (RL)
 
 **Definition:** Learning through trial and error to maximize rewards.
 
@@ -57,7 +57,7 @@ graph LR
 
 ---
 
-## Common Algorithms
+### Common Algorithms
 
 | Learning Type     | Algorithms |
 |------------------|------------|
@@ -67,12 +67,12 @@ graph LR
 
 ---
 
-# Reinforcement Learning (RL)
+### Reinforcement Learning (RL)
 
 Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may a↵ect not only the immediate
 reward but also the next situation and, through that, all subsequent rewards. These two characteristics—trial-and-error search and delayed reward—are the two most important distinguishing features of reinforcement learning.
 
-## Key Characteristics
+### Key Characteristics
 
 - **Reward and Punishment:** Encourages repeating good actions and avoiding bad ones.
 - **Trial and Error:** Learns by trying different methods.
@@ -88,7 +88,7 @@ reward but also the next situation and, through that, all subsequent rewards. Th
 
 ---
 
-## How RL Differs from Supervised Learning
+### How RL Differs from Supervised Learning
 
 | Feature             | Supervised Learning           | Reinforcement Learning                     |
 | ------------------- | ----------------------------- | ------------------------------------------ |
@@ -96,7 +96,7 @@ reward but also the next situation and, through that, all subsequent rewards. Th
 | **Decision Making** | Independent of past decisions | Dependent on past decisions                |
 | **Learning Method** | Trained with a dataset        | Learns through trial and error             |
 
-## Elements of RL
+#### Elements of RL
 
 ```mermaid
 graph LR
@@ -121,14 +121,14 @@ graph LR
 
 ---
 
-## Advantages of Reinforcement Learning
+### Advantages of Reinforcement Learning
 
 - ✅ No need for predefined instructions or human intervention. 
 - ✅ Can adapt to **both static and dynamic environments**. 
 - ✅ Solves a **wide range of problems** (decision-making, prediction, optimization). 
 - ✅ Improves with **experience** and fine-tunes over time.
 
-## Disadvantages of Reinforcement Learning
+### Disadvantages of Reinforcement Learning
 
 - ❌ Performance depends on the **quality of the reward function**. 
 - ❌ **Designing and tuning** RL models can be **complex**.
@@ -154,7 +154,7 @@ graph LR
     - **Active Research Area**: RL is one of the most **active** fields in Artificial Intelligence (AI).
 
 
-## RL Algorithm Steps
+### RL Algorithm Steps
 
 ```mermaid
 graph TD;
@@ -168,7 +168,7 @@ graph TD;
 ```
 
 ---
-## Learning and Planning
+### Learning and Planning
 
 #### Two Fundamental Problems in Sequential Decision Making
 
@@ -183,7 +183,7 @@ graph TD;
 
 ---
 
-## Model of the Environment:
+### Model of the Environment:
 
 - A **model** mimics the behavior of the environment. With the help of the model, one can make inferences about how the environment will behave. For example, if a state and an action are given, the model can predict the next state and reward.
 - The model is used for **planning**, providing a way to take a course of action by considering all future situations before actually experiencing those situations.
@@ -194,7 +194,7 @@ graph TD;
 
 ![alt text](images/image.png)
 
-## Types of Reinforcement Learning Algorithms ( on the basis of model based)
+### Types of Reinforcement Learning Algorithms ( on the basis of model based)
 
 There are various algorithms used in reinforcement learning such as Q-learning, policy gradient
 methods, Monte Carlo method and many more. All these algorithms can be classified into two broad categories - 
@@ -209,7 +209,7 @@ methods, Monte Carlo method and many more. All these algorithms can be classifie
 
 ---
 
-## Key Differences Between Model-free and Model-based Reinforcement Learning
+### Key Differences Between Model-free and Model-based Reinforcement Learning
 
 | Feature                | **Model-Free RL**                       | **Model-Based RL**                      |
 |------------------------|-----------------------------------------|-----------------------------------------|
@@ -223,13 +223,13 @@ methods, Monte Carlo method and many more. All these algorithms can be classifie
 
 ---
 
-## RL Framework - The RL Process: A Loop of State, Action, Reward, and Next State
+### RL Framework - The RL Process: A Loop of State, Action, Reward, and Next State
 
 ![alt text](images/image2.png)
 
 ---
 
-## Main Characteristics of RL
+### Main Characteristics of RL
 
 - **No supervisor** while training.
 - **Environment** is generally stochastic for real-world applications.
@@ -241,7 +241,7 @@ methods, Monte Carlo method and many more. All these algorithms can be classifie
 - RL uses **Markov Decision Process (MDP)** framework to define the interaction between a learning agent and its environment.
 
 ---
-## Reinforcement Learning (RL) Problem - Challenges in RL
+### Reinforcement Learning (RL) Problem - Challenges in RL
 
 ### Trade-off between Exploration and Exploitation:
 - To obtain rewards, an RL agent must prefer actions that it has tried in the past and found effective (**Exploit**).
@@ -254,7 +254,7 @@ methods, Monte Carlo method and many more. All these algorithms can be classifie
 
 ---
 
-## Fundamental Components of RL
+### Fundamental Components of RL
 
 - **Policy**: Defines the agent’s behavior.
 - **Reward Function**: Provides feedback on actions.
@@ -314,7 +314,7 @@ The **model of the environment** simulates how the environment behaves, helping 
     The **model of the environment** is like a **mental map** that a person forms, which helps them predict the likely outcomes of their actions, such as deciding to avoid a route with heavy traffic.
 
 ---
-# Types of Reinforcement Learning
+### Types of Reinforcement Learning
 
 There are three main types of Reinforcement Learning (RL):
 - **Value-Based**
@@ -325,7 +325,7 @@ Each approach has its own strengths and weaknesses, and the choice of algorithm 
 
 ---
 
-## Value-Based Reinforcement Learning
+### Value-Based Reinforcement Learning
 
 - In this approach, the agent learns to estimate the value of each state or action based on the rewards it receives.
 - This value is known as **Q-values**.
@@ -334,7 +334,7 @@ Each approach has its own strengths and weaknesses, and the choice of algorithm 
 
 ---
 
-## Policy-Based Reinforcement Learning
+### Policy-Based Reinforcement Learning
 
 - In this approach, the agent learns an optimal policy, which is a mapping from states to actions, without calculating the value function.
 - The policy is updated based on the rewards received by the agent, with the goal of maximizing the expected reward over time.
@@ -342,7 +342,7 @@ Each approach has its own strengths and weaknesses, and the choice of algorithm 
 
 ---
 
-## Model-Based Reinforcement Learning
+### Model-Based Reinforcement Learning
 
 - In this approach, the agent learns a model of the environment, which it can use to simulate different scenarios and plan its actions accordingly.
 - The model can learn through supervised or unsupervised learning, and the agent can use it to predict the outcome of its actions before taking them.
@@ -350,7 +350,7 @@ Each approach has its own strengths and weaknesses, and the choice of algorithm 
 
 ---
 
-## **Formal Presentation of RL Fundamentals**
+### **Formal Presentation of RL Fundamentals**
 
 ### 1. State ($s$) and Action ($a$)
 
@@ -482,7 +482,7 @@ Each method has its own **strengths and weaknesses**.
 
 ---
 
-## Examples of Reinforcement Learning in Real Life
+### Examples of Reinforcement Learning in Real Life
 
 ### Immediate RL Examples
 
@@ -510,7 +510,7 @@ Each method has its own **strengths and weaknesses**.
 
 ---
 
-## General Reinforcement Learning (RL
+### General Reinforcement Learning (RL
 
 - **Policy Update Frequency**
     
@@ -523,7 +523,7 @@ Each method has its own **strengths and weaknesses**.
 
 ---
 
-## State-Action Value Function ($Q(s, a)$)
+### State-Action Value Function ($Q(s, a)$)
 
 - The **state-action value function** (or **Q-function**) specifies how good it is for an agent to take a particular action $a$ in a given state $s$ under a policy $\pi$.
 - Denoted as:  
@@ -561,7 +561,7 @@ Each method has its own **strengths and weaknesses**.
 
 ---
 
-## **On-Policy vs. Off-Policy Reinforcement Learning**  
+### **On-Policy vs. Off-Policy Reinforcement Learning**  
 ![alt text](image-22.png)
 
 In **Reinforcement Learning (RL)**, learning strategies can be classified into **on-policy** and **off-policy** methods. These approaches define how an agent interacts with the environment and learns optimal behavior.  
@@ -588,23 +588,271 @@ In **Reinforcement Learning (RL)**, learning strategies can be classified into *
 
 ---
 
+## Unit 2
 
 
+### **The One-Armed and Multi-Armed Bandit Problems**  
 
+The **One-Armed Bandit Problem** and its extension, the **k-Armed (Multi-Armed) Bandit Problem**, are fundamental concepts in **reinforcement learning** and **decision-making under uncertainty**.  
 
+---
 
+### **🎰 One-Armed Bandit Problem**  
+✅ **Definition:**  
+- Refers to a **slot machine** with a **single lever (arm)**.  
+- Each spin has a **certain probability of winning**, but this probability is **unknown**.  
+- The **outcome is uncertain**, and a player must decide whether to keep playing or stop.  
 
+✅ **Key Challenge:**  
+- The **probability distribution of rewards is unknown** and cannot be determined with a limited number of trials.  
 
+✅ **Real-World Analogy:**  
+- A gambler playing **one slot machine** without knowing its payout rate.  
 
+---
 
+### **🎰 Multi-Armed (k-Armed) Bandit Problem**  
 
+✅ **Definition:**  
+- A **gambler faces multiple slot machines** (each with different and unknown payout probabilities).  
+- The goal is to **maximize total winnings** by choosing which machine (arm) to play.  
 
+✅ **Core Concept in Reinforcement Learning:**  
+- Balances **exploration (trying different machines)** vs. **exploitation (sticking to the best-known machine)**.  
+- **Each arm has a unique probability distribution**, which is **stationary** (remains constant over time).  
 
+✅ **Mathematical Model:**  
+- An **agent selects between N different actions (arms)**.  
+- Each **arm provides a reward** drawn from an **unknown probability distribution**.  
+- The goal is to **maximize cumulative reward** over multiple trials.  
 
+---
 
+### **🔍 Why is it Called a "Bandit"?**  
+- The term **"bandit"** refers to a **thief**.  
+- **Slot machines** are called "one-armed bandits" because **casinos configure them to ensure players eventually lose money**.  
 
+---
 
+### **📌 Applications of the Multi-Armed Bandit Problem**  
+- **Online Advertising** – Deciding which ads to display to maximize clicks.  
+- **Clinical Trials** – Testing multiple treatments to determine the most effective one.  
+- **A/B Testing** – Comparing website designs or marketing strategies.  
+- **Stock Trading** – Choosing the best stocks to invest in over time.  
 
+The **k-Armed Bandit Problem** serves as a **foundation for reinforcement learning algorithms**, influencing **decision-making strategies in uncertain environments**.
+
+---
+
+## **k-Armed Bandit Problem in Reinforcement Learning**  
+
+The **k-Armed Bandit Problem** is a fundamental challenge in **reinforcement learning and decision theory**, where an agent must choose between multiple actions (arms) to maximize total reward.  
+
+---
+
+### **📌 Key Concepts in k-Armed Bandit Problem**  
+
+- **Action Value (\( q^*(a) \))**  
+  - The **true expected reward** for selecting action \( a \).  
+  - Defined as:  
+    $$    q^*(a) = \mathbb{E}[R_t | A_t = a]    $$
+  - If the **true values of all actions were known**, the best approach would be to always select the action with the **highest \( q^*(a) \)**.  
+
+- **Estimated Action Value (\( Q_t(a) \))**  
+  - The **empirical mean** of observed rewards from action \( a \).  
+  - Defined as:  
+    $$  Q_t(a) = \frac{1}{n_a} \sum_{i=1}^{n_a} r_i   $$
+  - As more rewards are observed, **\( Q_t(a) \) converges to \( q^*(a) \)**.  
+
+---
+
+### **Expected vs. Estimated Value**  
+
+| Concept | Definition | Formula |
+|---------|------------|---------|
+| **Expected Value** \( q^*(a) \) | The longrun average reward for an action | \( q^*(a) = \sum r \cdot P(r,a) \) |
+| **Estimated Value** \( Q_t(a) \) | The empirical mean reward based on observed outcomes | \( Q_t(a) = \frac{1}{n_a} \sum_{i=1}^{n_a} r_i \) |
+
+- **Expected Value** is **theoretical** and based on an **unknown probability distribution**.  
+- **Estimated Value** is **calculated from real observations** and improves over time.  
+
+---
+
+### **Exploitation vs. Exploration Trade-Off**  
+
+- **Greedy Actions:**  
+  - Actions with the **highest estimated value** \( Q_t(a) \).  
+  - **Exploitation**: Selecting the **best-known action** to maximize **immediate reward**.  
+
+- **Non-Greedy Actions:**  
+  - Actions that **do not have the highest estimated value**.  
+  - **Exploration**: Trying different actions to **improve estimates** and potentially discover better rewards.  
+
+🔹 **Key Dilemma:**  
+- **Exploiting** greedy actions maximizes **short-term rewards**.  
+- **Exploring** new actions may **lead to better long-term gains**.  
+
+---
+
+## **Optimistic Initial Values in Reinforcement Learning**  
+
+**Optimistic initial values** are a simple yet effective technique used to encourage **exploration** in reinforcement learning, particularly in **multi-armed bandit problems** and **value-based learning methods**.  
+
+---
+
+### **📌 How Does It Work?**  
+Instead of initializing action values to **zero or a neutral estimate**, we set them to a **highly optimistic value**.  
+
+For example, in a **10-armed bandit problem** where the **true action values (\( q^*(a) \))** are drawn from a **normal distribution (mean = 0, variance = 1)**:  
+- Instead of initializing all \( Q_1(a) = 0 \), we set them to **+5** (a high optimistic value).  
+
+---
+
+### **🔍 Why Does Optimistic Initialization Encourage Exploration?**  
+1. **Initial Overestimation**:  
+   - Since the true rewards are **lower than +5**, the agent will **be disappointed** by its first few actions.  
+   
+2. **Forces the Agent to Try Other Actions**:  
+   - As the agent realizes that **the initial choices don’t meet expectations**, it **explores alternative actions**.  
+
+3. **More Thorough Exploration in Early Steps**:  
+   - The agent **tries multiple actions** before settling on the best one.  
+
+4. **Converges to Optimal Action Over Time**:  
+   - Eventually, the **estimates stabilize** as the agent gathers more data.  
+
+---
+
+### **📈 Comparison: Optimistic vs. ε-Greedy Exploration**  
+
+| **Exploration Method** | **How It Works** | **Pros** | **Cons** |
+|------------------------|-----------------|----------|----------|
+| **Optimistic Initial Values** | Set initial action values **high** | Encourages **early** exploration, works well in **stationary environments** | May **not adapt well** in **non-stationary environments** |
+| **ε-Greedy** | Selects a **random action** with probability **ε** | Works well in **both stationary and non-stationary** settings | Requires **tuning of ε**, exploration is **uniform** |
+
+---
+
+## **Upper Confidence Bound (UCB) in Reinforcement Learning**  
+
+### **Why is Exploration Needed?**  
+- Action-value estimates always contain **uncertainty**.  
+- **Greedy actions** (highest estimated value) may not be truly optimal.  
+- **ε-Greedy exploration** forces random selection but **does not prioritize actions with high uncertainty**.  
+
+### **Upper Confidence Bound (UCB) Approach**  
+Instead of exploring randomly, UCB selects actions by **balancing**:  
+1. **Current estimate of reward** (exploitation).  
+2. **Uncertainty of the estimate** (exploration).  
+
+---
+
+### **📌 UCB Formula**  
+For an action \( a \), UCB selects the action that maximizes:  
+\[
+Q_t(a) + c \sqrt{\frac{\log t}{N_t(a)}}
+\]  
+where:  
+- \( Q_t(a) \) = Estimated value of action \( a \).  
+- \( t \) = Total number of time steps.  
+- \( N_t(a) \) = Number of times action \( a \) has been selected.  
+- \( c \) = Exploration parameter (higher \( c \) encourages more exploration).  
+
+---
+
+### **How UCB Works?**  
+- The **square-root term** measures the **uncertainty** in the estimate of \( Q_t(a) \).  
+- Actions that have been **chosen fewer times (\( N_t(a) \) is low)** will have **higher uncertainty**, making them **more likely to be selected**.  
+- As an action is **selected more often**, \( N_t(a) \) increases, reducing the **exploration term**.  
+
+---
+
+### **Key Properties of UCB**  
+✅ **Encourages exploration of uncertain actions** – Prefers actions that **haven't been tried enough**.  
+✅ **Gradually reduces exploration** – As **all actions are explored**, the agent shifts towards **exploitation**.  
+✅ **Logarithmic growth** – Ensures that exploration is **bounded** over time but never stops completely.  
+
+---
+
+### **Comparison: UCB vs. ε-Greedy**  
+
+| Method | Exploration Type | Strengths | Weaknesses |
+|--------|----------------|-----------|------------|
+| **ε-Greedy** | Random exploration | Simple, works well in practice | Does not focus on uncertain actions |
+| **UCB** | Uncertainty-based exploration | Smart exploration, prioritizes less tried actions | More complex, requires tuning \( c \) |
+
+---
+
+## **Markov Decision Process (MDP) in Reinforcement Learning**  
+
+### **📌 What is a Markov Decision Process (MDP)?**  
+A **Markov Decision Process (MDP)** is a **mathematical framework** used to model **decision-making problems** where outcomes are **partially random** and **partially controlled by an agent**.  
+
+It extends a **Markov Chain** by incorporating **actions and rewards**, allowing an agent to interact with an environment **sequentially** to maximize long-term rewards.  
+
+---
+
+### **📌 What is a Markov Chain?**  
+A **Markov Chain** is a **stochastic process** that follows the **Markov Property**:  
+
+> The probability of transitioning to the next state **only depends on the current state** and **not on past states**.  
+
+Mathematically,  
+\[
+P(S_{t+1} | S_t, S_{t-1}, ..., S_0) = P(S_{t+1} | S_t)
+\]  
+
+✅ **Key Feature:** **Memoryless property** (Future states depend only on the present state, not history).  
+
+---
+
+### **📌 What is a Transition in MDP?**  
+A **transition** defines the **probability of moving** from one state to another when taking a specific action.  
+
+Denoted as **\( P(s' | s, a) \)**:  
+- \( s \) = Current state  
+- \( a \) = Action taken  
+- \( s' \) = Next state  
+- \( P(s' | s, a) \) = Probability of transitioning to \( s' \) after taking action \( a \) in state \( s \).  
+
+✅ **Example:**  
+- If a robot is in a room and moves **right**, there is an **80% chance** it reaches the next room, but a **20% chance** it remains in the same room (if the door is stuck).  
+
+---
+
+### **📌 How is MDP Used in Reinforcement Learning (RL)?**  
+In **Reinforcement Learning**, MDP helps **formulate the environment** as a **mathematical model**, guiding the agent to learn optimal policies.  
+
+- **Agent** interacts with an **environment** following MDP dynamics.  
+- **State transitions** occur based on **agent actions**.  
+- The **goal** is to learn a **policy** that **maximizes cumulative rewards over time**.  
+
+---
+
+### **📌 Components of an MDP**  
+An **MDP is defined by the tuple** **\( (S, A, P, R, \gamma) \)**:  
+
+| **Component** | **Definition** |
+|--------------|--------------|
+| **\( S \) (State Space)** | Set of all possible states the agent can be in. |
+| **\( A \) (Action Space)** | Set of actions the agent can take. |
+| **\( P(s' | s, a) \) (Transition Probability)** | Probability of moving to state \( s' \) from state \( s \) after taking action \( a \). |
+| **\( R(s, a) \) (Reward Function)** | Reward received after taking action \( a \) in state \( s \). |
+| **\( \gamma \) (Discount Factor)** | Determines the importance of future rewards (**\( 0 \leq \gamma \leq 1 \)**). |
+
+✅ **Example in RL:**  
+- **Self-driving car:**  
+  - **\( S \):** Location of the car, speed, traffic signals.  
+  - **\( A \):** Accelerate, brake, turn left, turn right.  
+  - **\( P(s' | s, a) \):** Probability of reaching the next position based on current speed and action.  
+  - **\( R(s, a) \):** Reward for avoiding obstacles and staying on track.  
+  - **\( \gamma \):** Balances short-term (safety) vs. long-term (reaching destination quickly).  
+
+---
+
+### **📌 Summary**  
+- **Markov Chain** models state transitions **without actions or rewards**.  
+- **MDP extends Markov Chains** by adding **actions and rewards**, allowing **decision-making**.  
+- **MDP is the foundation of RL**, providing a structured way for agents to learn **optimal policies**.  
 
 
 
