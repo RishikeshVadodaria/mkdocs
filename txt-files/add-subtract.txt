@@ -1,0 +1,9 @@
+Display.InputDialog Message: $'''Enter number 1''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+Text.ToNumber Text: UserInput Number=> TextAsNumber1
+Display.InputDialog Message: $'''Enter number 2''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput2 ButtonPressed=> ButtonPressed
+Text.ToNumber Text: UserInput2 Number=> TextAsNumber2
+SET AddNumber TO TextAsNumber1 + TextAsNumber2
+SET SubtractNumber TO TextAsNumber1 - TextAsNumber2
+Display.ShowMessageDialog.ShowMessage Title: $'''Addition''' Message: AddNumber Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+Display.ShowMessageDialog.ShowMessage Title: $'''Subtraction''' Message: SubtractNumber Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+

@@ -1,0 +1,21 @@
+/* Animated Bright Purple Line Divider */
+@keyframes slideIn {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.bright-line {
+    border-top: 4px solid #800080; /* Bright Purple */
+    margin: 30px 0;
+    width: 100%;
+    opacity: 1;
+    animation: slideIn 1s ease-in-out forwards;
+    /* Make sure it's visible immediately */
+    transition: none;  /* Disable transition on width */
+}
