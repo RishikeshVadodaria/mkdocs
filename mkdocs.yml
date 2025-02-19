@@ -3,21 +3,28 @@ site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 
 nav:
   - Home: index.md
-  - Ignore: RL-Unit-1.md
-  - Reinforcement Learning: RL_Unit1.md
-  - Computer Vision : computer-vision.md
-  - Mobile Computing : mobile-computing.md
-  - RPA : rpa.md
+  - Notes:
+      - Reinforcement Learning: RL_Unit1.md
+      - Computer Vision: computer-vision.md
+      - Mobile Computing: mobile-computing.md
+      - RPA: rpa.md
 theme:
   name: material
+  features:
+    - navigation.tabs  # Keeps tabs but removes side TOC
+    - navigation.sections 
+    - navigation.expand  # Ensures dropdowns are clickable
+    - navigation.tracking  # Highlights current page in nav
   palette:
     - scheme: slate  # Enables dark mode
-      primary: deep purple
+      primary: "#1F2544"  # Deep Blue for the top bar
+      accent: "#FFD0EC"   # Light Pink for highlights
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
     - scheme: default  # Light mode
-      primary: deep purple
+      primary: "#474F7A"  # Muted Purple for top bar in light mode
+      accent: "#FFD0EC"   # Light Pink for buttons/links
       toggle:
         icon: material/lightbulb-outline
         name: Switch to dark mode
@@ -29,6 +36,7 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - js/extras.js q
 
 markdown_extensions:
   - admonition
@@ -49,4 +57,9 @@ extra:
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
-  - css/extra.css
+  - css/navbar.css
+  - css/divider.css
+  - css/radar.css
+  - css/font.css
+  - css/solar.css 
+  - css/waves.css

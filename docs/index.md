@@ -1,3 +1,23 @@
+<div class="wrapper">
+  <div class="items">
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/15_voqq0c.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/21_wbsty7.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/1_zlqnwl.jpg)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/16_epnmqm.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/Screenshot_23_8_nbzwdm.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/29_jbd4di.jpg)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/14_zkwtff.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/8_ucihr5.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/18_bguamv.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/Screenshot_18_4_mscxmr.jpg)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/2_zja2bq.png)"></div>
+    <div class="item" tabindex="0" style="background-image: url(https://highflyer.sirv.com/cloud/11_p1oi8m.png)"></div>
+      
+</div>
+      
+</div>
+
+
 ## **Final Year Engineering Notes 📚**  
 🚀 **Comprehensive Study Materials for Engineering Students**  
 
@@ -9,6 +29,7 @@ Welcome to my **Final Year Engineering Notes Repository**, a well-organized coll
 ✅ **Linked References** – Includes hyperlinks for additional context and further reading.  
 ✅ **Visual Learning** – Diagrams and Mermaid.js flowcharts enhance understanding.  
 ✅ **Open to All** – Publicly accessible for students worldwide.  
+
 
 ### **Best Practices in Documentation** 🛠️  
 To ensure high-quality notes, the following principles are followed:  
