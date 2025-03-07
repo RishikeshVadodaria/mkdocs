@@ -1,0 +1,14 @@
+Display.InputDialog Title: $'''Input Variable''' Message: $'''Enter the number''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+Text.ToNumber Text: UserInput Number=> originalnumber
+SET reversednumber TO 0
+SET tempnumber TO OriginalNumber
+LOOP WHILE (originalnumber) <> (0)
+    SET reversednumber TO (reversednumber * 10) + (originalnumber mod 10)
+    SET originalnumber TO originalnumber / 10
+    Variables.TruncateNumber.GetIntegerPart Number: originalnumber Result=> originalnumber
+END
+IF reversednumber = tempnumber THEN
+    Display.ShowMessageDialog.ShowMessage Title: $'''Palindrome Number''' Message: $'''Yes , the number is Palindrome''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+ELSE
+    Display.ShowMessageDialog.ShowMessage Title: $'''Not Palindrome ''' Message: $'''No, It is not a Palindrome Number''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed3
+END

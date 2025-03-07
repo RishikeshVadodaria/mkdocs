@@ -1,0 +1,85 @@
+
+/* Container */
+.radar {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+/* Expanding concentric pulse */
+.pulse {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #00e0ff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseAnimation 2s infinite ease-in-out;
+}
+
+@keyframes pulseAnimation {
+    0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    }
+    100% {
+    transform: translate(-50%, -50%) scale(9);
+    opacity: 0;
+    }
+}
+
+/* Central pulsing circle */
+.center-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #00e0ff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: centerPulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes centerPulse {
+    0% {
+    transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+    transform: translate(-50%, -50%) scale(1.4);
+    }
+}
+
+/* Rotating arc */
+.arc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 100% 50%, 85% 85%);
+    background-color: rgba(0, 224, 255, 0.15);
+    animation: rotateArc 4s linear infinite, arcOpacity 2s infinite alternate;
+}
+
+@keyframes rotateArc {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+}
+
+@keyframes arcOpacity {
+    0% {
+    opacity: 0.15;
+    }
+    50% {
+    opacity: 0.05;
+    }
+    100% {
+    opacity: 0.15;
+    }
+}
