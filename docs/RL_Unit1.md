@@ -562,7 +562,7 @@ Each method has its own **strengths and weaknesses**.
 ---
 
 ### **On-Policy vs. Off-Policy Reinforcement Learning**  
-![alt text](image-22.png)
+![alt text](images/image-22.png)
 
 In **Reinforcement Learning (RL)**, learning strategies can be classified into **on-policy** and **off-policy** methods. These approaches define how an agent interacts with the environment and learns optimal behavior.  
 

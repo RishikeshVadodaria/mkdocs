@@ -8,6 +8,7 @@ nav:
       - Computer Vision: computer-vision.md
       - Mobile Computing: mobile-computing.md
       - RPA: rpa.md
+      - mc viva: mc-viva.md
 theme:
   name: material
   features:

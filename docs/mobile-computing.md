@@ -214,8 +214,8 @@ Mobile computing architecture ensures seamless communication, **data management,
 ---
 
 ## **Three-Tier Mobile Computing Architecture**  
-
-![alt text](image.png)
+![alt text](images/image4.png)
+![alt text](images/image.png)
 
 ---
 
@@ -276,7 +276,7 @@ Highways as a Shared Medium:
 
 A sublayer of the Data Link Layer responsible for coordinating transmissions between multiple nodes.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 Data link layer divided into two functionality-oriented sublayers
 
@@ -397,7 +397,7 @@ Wireless networks face unique challenges due to signal interference, attenuation
 **Solution:**  
 - The RTS/CTS (Request to Send / Clear to Send) mechanism helps avoid hidden terminal issues by coordinating access.  
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ---
 
@@ -461,7 +461,7 @@ sequenceDiagram
 - GSM avoids the problem by using time slots (TDMA), preventing simultaneous transmission.  
 - CDMA uses power control so all signals arrive at the receiver with equal strength.  
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 
 ---
@@ -476,7 +476,7 @@ Wireless channels can be multiplexed in four key dimensions:
 4. **Code (c)**: Each channel is assigned a unique code for transmission.
 
 ## Space Division Multiplexing (SDM)
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 - SDM involves separating channels in three dimensions: **Code**, **Time**, and **Frequency**.
 - The **Space** dimension is represented by circles indicating interference ranges.
@@ -516,7 +516,7 @@ Frequency Division Multiplexing (FDM) divides the frequency dimension into sever
 
 ---
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ### How FDM Works
 
@@ -548,7 +548,7 @@ In **Time Division Multiplexing (TDM)**, each channel \(k_i\) is allocated the e
 
 ---
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 ### How TDM Works
 
 - **Precise Synchronization**: Senders must be precisely synchronized, which requires clocks or a method to distribute synchronization signals.
@@ -567,7 +567,7 @@ In **Time Division Multiplexing (TDM)**, each channel \(k_i\) is allocated the e
 
 ### Time + Frequency Division Multiplexing (TDMA + FDMA)
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 A combination of both **TDM** and **FDM** can be used, where each channel is allotted a specific frequency for a set time period.
 
@@ -597,7 +597,7 @@ A combination of both **TDM** and **FDM** can be used, where each channel is all
 
 
 ### Code Division Multiplexing (CDM)
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 **Code Division Multiplexing (CDM)** is a relatively new scheme used in commercial communication systems, having been initially used in military applications due to its built-in security features.
 
@@ -681,7 +681,7 @@ Imagine a party with many participants from different countries who communicate 
 
 ### Process Migration
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 **Process Migration** is the transfer of an executing process from one computing system to another while maintaining its state.
 
@@ -708,7 +708,7 @@ Imagine a party with many participants from different countries who communicate 
 - After negotiation, the migration is accepted.
 
 #### **Diagram:**
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 ---
 
@@ -718,7 +718,7 @@ Imagine a party with many participants from different countries who communicate 
 - Communication is temporarily redirected.
 
 #### **Diagram:**
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 ---
 
 ### **Step 3: Temporary Communication Redirection**
@@ -727,7 +727,7 @@ Imagine a party with many participants from different countries who communicate 
 
 #### **Diagram:**
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 ---
 
@@ -736,14 +736,14 @@ Imagine a party with many participants from different countries who communicate 
 
 #### **Diagram:**
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 ---
 
 ### **Step 5: Destination Process Instance Created**
 - A new process instance is initialized on the remote node.
 
 #### **Diagram:**
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 ---
 
@@ -752,7 +752,7 @@ Imagine a party with many participants from different countries who communicate 
 
 #### **Diagram:**
 
-![alt text](image-15.png)
+![alt text](images/image-15.png)
 
 ---
 
@@ -761,7 +761,7 @@ Imagine a party with many participants from different countries who communicate 
 
 #### **Diagram:**
 
-![alt text](image-16.png)
+![alt text](images/image-16.png)
 
 ---
 
@@ -770,7 +770,7 @@ Imagine a party with many participants from different countries who communicate 
 
 #### **Diagram:**
 
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 
 
 --- 
@@ -864,7 +864,7 @@ A **Mobile Agent** is a software object that exists within an execution environm
 ---
 
 ### 🔄 Life Cycle of Mobile Agents
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 ✔️ **Adapts** to both home and foreign environments.  
 ✔️ **Switches** between nodes as needed.  
@@ -914,7 +914,7 @@ A **Mobile Agent** consists of **two key components**:
 Agent Architecture
 
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 ### 🤖 Mobile Agents vs. Process Migration
 
@@ -978,7 +978,7 @@ sequenceDiagram
 - 🌍 Multiple **Aglets** can run on a single node within different contexts.
 
 ---
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 ### 🏢 **Aglet Context**
 An **Aglet Context** is the **workspace** where Aglets operate.
@@ -995,7 +995,7 @@ A **proxy** is a **representative of an Aglet** that:
 
 ### 🔄 **Aglet Life Cycle**
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 | 🏗️ **Stage**        | 🔍 **Description** |
 |---------------------|------------------|
