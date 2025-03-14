@@ -1,0 +1,4 @@
+/* Set Helvetica as the default font */
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+}

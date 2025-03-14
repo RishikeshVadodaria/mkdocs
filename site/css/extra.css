@@ -1,0 +1,31 @@
+/* Apply custom colors for both dark and light modes */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #000000;   /* Full Black */
+    --md-accent-fg-color:  #FFD52E;   /* Yellow Accent */
+    --md-default-bg-color: #000000;   /* Full Black Background */
+    --md-text-color:       #F9F9F9;   /* Light Text */
+  }
+  
+  [data-md-color-scheme="default"] {
+    --md-primary-fg-color: #000000;
+    --md-accent-fg-color:  #FFD52E;
+    --md-default-bg-color: #000000;
+    --md-text-color:       #F9F9F9;
+  }
+  
+  /* Ensure everything is black */
+  body,
+  .md-header,
+  .md-footer,
+  .md-nav,
+  .md-sidebar,
+  .md-main {
+    background-color: #000000 !important;
+    color: #F9F9F9 !important;
+  }
+  
+  /* Style links */
+  .md-typeset a {
+    color: #FFD52E !important;
+  }
+  

@@ -1,0 +1,2469 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/RL_Unit1/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>RL Unit1 - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RL Unit1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mc-m2/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mc-m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsupervised Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning (RL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning (RL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-rl-differs-from-supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      How RL Differs from Supervised Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How RL Differs from Supervised Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elements-of-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements of RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages-of-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages of Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-algorithm-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL Algorithm Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning and Planning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning and Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-fundamental-problems-in-sequential-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Fundamental Problems in Sequential Decision Making
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Fundamental Problems in Sequential Decision Making">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning (RL):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-of-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model of the Environment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-reinforcement-learning-algorithms-on-the-basis-of-model-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Reinforcement Learning Algorithms ( on the basis of model based)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Reinforcement Learning Algorithms ( on the basis of model based)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-free-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-free Reinforcement Learning :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-based Reinforcement Learning:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences-between-model-free-and-model-based-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences Between Model-free and Model-based Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-framework-the-rl-process-a-loop-of-state-action-reward-and-next-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL Framework - The RL Process: A Loop of State, Action, Reward, and Next State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-characteristics-of-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Characteristics of RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl-problem-challenges-in-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning (RL) Problem - Challenges in RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade-off-between-exploration-and-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trade-off between Exploration and Exploitation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-components-of-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamental Components of RL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamental Components of RL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value function:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value function:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reward Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-of-the-environment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model of the Environment:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-based-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value-Based Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-based-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy-Based Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-reinforcement-learning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Based Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-presentation-of-rl-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formal Presentation of RL Fundamentals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-state-s-and-action-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. State (\(s\)) and Action (\(a\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reward-r-or-rs-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Reward (\(r\) or \(R(s, a)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Episode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transition-probability-ps-s-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Transition Probability (\(P(s' | s, a)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-policy-pis-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Policy (\(\pi(s, a)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-return-g_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Return (\(G_t\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-value-function-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Value Function (\(V(s)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-optimal-policy-pis" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Optimal Policy (\(\pi^*(s)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-optimal-value-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Optimal Value Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-fundamental-tasks-of-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Fundamental Tasks of Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Fundamental Tasks of Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prediction-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Prediction Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Control Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabular-solution-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabular Solution Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabular Solution Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-classes-of-methods-for-solving-finite-mdps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamental Classes of Methods for Solving Finite MDPs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-reinforcement-learning-vs-full-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate Reinforcement Learning vs. Full Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-reinforcement-learning-immediate-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate Reinforcement Learning (Immediate RL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-rl-vs-full-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate RL vs. Full RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-exploit-dilemma-in-immediate-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore-Exploit Dilemma in Immediate RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-reinforcement-learning-in-real-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Reinforcement Learning in Real Life
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-rl-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate RL Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-reinforcement-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delayed Reinforcement Examples`
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suitability-of-immediate-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suitability of Immediate RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-reinforcement-learning-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Reinforcement Learning (RL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-action-value-function-qs-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      State-Action Value Function (\(Q(s, a)\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning (RL) Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reinforcement Learning (RL) Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-difference-td-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Difference (TD) Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-programming-dp-in-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming (DP) in RL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Programming (DP) in RL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-primary-dp-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Primary DP Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-policy-vs-off-policy-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-Policy vs. Off-Policy Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-policy-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-Policy Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#off-policy-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-Policy Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-one-armed-and-multi-armed-bandit-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      The One-Armed and Multi-Armed Bandit Problems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-armed-bandit-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎰 One-Armed Bandit Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-armed-k-armed-bandit-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎰 Multi-Armed (k-Armed) Bandit Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-it-called-a-bandit" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Why is it Called a "Bandit"?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-the-multi-armed-bandit-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Applications of the Multi-Armed Bandit Problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-armed-bandit-problem-in-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-Armed Bandit Problem in Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="k-Armed Bandit Problem in Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts-in-k-armed-bandit-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Key Concepts in k-Armed Bandit Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-vs-estimated-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected vs. Estimated Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation-vs-exploration-trade-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation vs. Exploration Trade-Off
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimistic-initial-values-in-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimistic Initial Values in Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimistic Initial Values in Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 How Does It Work?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-optimistic-initialization-encourage-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Why Does Optimistic Initialization Encourage Exploration?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-optimistic-vs-greedy-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Comparison: Optimistic vs. ε-Greedy Exploration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper-confidence-bound-ucb-in-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upper Confidence Bound (UCB) in Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upper Confidence Bound (UCB) in Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-is-exploration-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is Exploration Needed?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upper-confidence-bound-ucb-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upper Confidence Bound (UCB) Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ucb-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 UCB Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-ucb-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How UCB Works?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-of-ucb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties of UCB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-ucb-vs-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison: UCB vs. ε-Greedy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markov-decision-process-mdp-in-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Decision Process (MDP) in Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Markov Decision Process (MDP) in Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-markov-decision-process-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 What is a Markov Decision Process (MDP)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-markov-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 What is a Markov Chain?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-transition-in-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 What is a Transition in MDP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-mdp-used-in-reinforcement-learning-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 How is MDP Used in Reinforcement Learning (RL)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-an-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Components of an MDP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>RL Unit1</h1>
+
+<h2 id="unit-1">Unit 1</h2>
+<pre class="mermaid"><code>graph LR
+    subgraph Input
+    A[Data with Labels] --&gt; B[Supervised Learning]
+    C[Data without Labels] --&gt; D[Unsupervised Learning]
+    E[States + Actions] --&gt; F[Reinforcement Learning]
+    end
+
+    B --&gt; G[Mapping]
+    D --&gt; H[Classes]
+    F --&gt; I[Action]
+
+    B -.-&gt;|Error| B
+    F -.-&gt;|Reward| F</code></pre>
+<h3 id="supervised-learning">Supervised Learning</h3>
+<p><strong>Definition:</strong> Learning from labeled data where the model maps inputs to outputs.</p>
+<ul>
+<li><strong>Input:</strong> Labeled data (features + target labels)</li>
+<li><strong>Process:</strong> Learning from labeled examples</li>
+<li><strong>Output:</strong> Prediction model</li>
+<li><strong>Feedback:</strong> Error measurement against known labels</li>
+</ul>
+<h3 id="applications">Applications</h3>
+<ul>
+<li><strong>Classification</strong>: Spam detection, Image recognition</li>
+<li><strong>Regression</strong>: Price prediction, Sales forecasting</li>
+</ul>
+<h3 id="unsupervised-learning">Unsupervised Learning</h3>
+<p><strong>Definition:</strong> Learning patterns from unlabeled data.</p>
+<ul>
+<li><strong>Input:</strong> Unlabeled data</li>
+<li><strong>Process:</strong> Pattern/structure discovery</li>
+<li><strong>Output:</strong> Data grouping/structure</li>
+<li><strong>Feedback:</strong> Internal validation metrics</li>
+</ul>
+<h3 id="applications_1">Applications</h3>
+<ul>
+<li><strong>Clustering</strong>: Customer segmentation</li>
+<li><strong>Dimensionality Reduction</strong>: Feature extraction</li>
+</ul>
+<h3 id="reinforcement-learning-rl">Reinforcement Learning (RL)</h3>
+<p><strong>Definition:</strong> Learning through trial and error to maximize rewards.</p>
+<ul>
+<li><strong>Input:</strong> States + possible actions</li>
+<li><strong>Process:</strong> Trial and error learning</li>
+<li><strong>Output:</strong> Action policy</li>
+<li><strong>Feedback:</strong> Rewards/penalties</li>
+</ul>
+<h3 id="applications_2">Applications</h3>
+<ul>
+<li><strong>Game AI</strong>: Chess, Go</li>
+<li><strong>Robotics</strong>: Navigation, Control</li>
+</ul>
+<hr />
+<h3 id="common-algorithms">Common Algorithms</h3>
+<table>
+<thead>
+<tr>
+<th>Learning Type</th>
+<th>Algorithms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supervised</strong></td>
+<td>Linear Regression, Random Forest, Neural Networks</td>
+</tr>
+<tr>
+<td><strong>Unsupervised</strong></td>
+<td>K-means, PCA, Autoencoders</td>
+</tr>
+<tr>
+<td><strong>Reinforcement</strong></td>
+<td>Q-Learning, Policy Gradient, DQN</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="reinforcement-learning-rl_1">Reinforcement Learning (RL)</h3>
+<p>Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may a↵ect not only the immediate
+reward but also the next situation and, through that, all subsequent rewards. These two characteristics—trial-and-error search and delayed reward—are the two most important distinguishing features of reinforcement learning.</p>
+<h3 id="key-characteristics">Key Characteristics</h3>
+<ul>
+<li><strong>Reward and Punishment:</strong> Encourages repeating good actions and avoiding bad ones.</li>
+<li><strong>Trial and Error:</strong> Learns by trying different methods.</li>
+<li><strong>Learning Over Time:</strong> Improves through continuous experience.</li>
+<li><strong>Long-Term Rewards:</strong> Actions influence future rewards.</li>
+</ul>
+<h3 id="example-applications">Example Applications</h3>
+<ul>
+<li>Chess</li>
+<li>Maze Solving</li>
+<li>Industrial Robot Arms</li>
+<li>Path Planning</li>
+<li>Sweeper Robots</li>
+</ul>
+<hr />
+<h3 id="how-rl-differs-from-supervised-learning">How RL Differs from Supervised Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Supervised Learning</th>
+<th>Reinforcement Learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training Data</strong></td>
+<td>Has labeled answers</td>
+<td>No labeled answers; learns from experience</td>
+</tr>
+<tr>
+<td><strong>Decision Making</strong></td>
+<td>Independent of past decisions</td>
+<td>Dependent on past decisions</td>
+</tr>
+<tr>
+<td><strong>Learning Method</strong></td>
+<td>Trained with a dataset</td>
+<td>Learns through trial and error</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elements-of-rl">Elements of RL</h4>
+<pre class="mermaid"><code>graph LR
+    A[Agent] --&gt;|Action| B[Environment]
+    B --&gt;|State| A
+    B --&gt;|Reward| A</code></pre>
+<h4 id="agent">Agent</h4>
+<ul>
+<li><strong>Definition</strong>: An entity that interacts with the environment.</li>
+<li><strong>Examples</strong>: Robot, human, software program.</li>
+</ul>
+<h4 id="environment">Environment</h4>
+<ul>
+<li><strong>Definition</strong>: The external system in which the agent operates.</li>
+<li><strong>Examples</strong>: Physical world, game simulation.</li>
+</ul>
+<h4 id="learning-process">Learning Process</h4>
+<ol>
+<li>The agent moves from the <strong>initial state</strong> to the <strong>goal state</strong>.</li>
+<li>The agent continually asks, <em>"What is the best action in each state?"</em></li>
+</ol>
+<hr />
+<h3 id="advantages-of-reinforcement-learning">Advantages of Reinforcement Learning</h3>
+<ul>
+<li>✅ No need for predefined instructions or human intervention. </li>
+<li>✅ Can adapt to <strong>both static and dynamic environments</strong>. </li>
+<li>✅ Solves a <strong>wide range of problems</strong> (decision-making, prediction, optimization). </li>
+<li>✅ Improves with <strong>experience</strong> and fine-tunes over time.</li>
+</ul>
+<h3 id="disadvantages-of-reinforcement-learning">Disadvantages of Reinforcement Learning</h3>
+<ul>
+<li>❌ Performance depends on the <strong>quality of the reward function</strong>. </li>
+<li>❌ <strong>Designing and tuning</strong> RL models can be <strong>complex</strong>.</li>
+</ul>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reinforcement Learning is most suitable when:
+- The problem environment is <strong>complex and uncertain</strong>, making traditional programming methods ineffective.
+- Feedback is <strong>sparse, delayed, and dependent</strong> on multiple decisions.
+- Decision-making (actions) follows a <strong>feedback loop</strong>.</p>
+<p>Why Is Reinforcement Learning Difficult?</p>
+<p>The toughest parts of Reinforcement Learning are:
+- <strong>Mapping the Environment</strong>.
+- <strong>Including All Possible Actions</strong>.</p>
+<p>Core Concepts</p>
+<ul>
+<li><strong>Goal-Oriented Learning</strong>: The agent learns by trying to achieve a goal.</li>
+<li><strong>Learning from Consequences</strong>: The agent learns from the consequences of its actions.</li>
+<li><strong>Active Research Area</strong>: RL is one of the most <strong>active</strong> fields in Artificial Intelligence (AI).</li>
+</ul>
+</div>
+<h3 id="rl-algorithm-steps">RL Algorithm Steps</h3>
+<pre class="mermaid"><code>graph TD;
+    A[Agent Observes Environment] --&gt; B[Agent Performs Action];
+    B --&gt; C[Agent Moves to New State];
+    C --&gt; D[Agent Receives Reward];
+    D --&gt; E[Agent Evaluates Action - Good or Bad];
+    E --&gt; F[Agent Adjusts Strategy to Maximize Reward];
+
+</code></pre>
+<hr />
+<h3 id="learning-and-planning">Learning and Planning</h3>
+<h4 id="two-fundamental-problems-in-sequential-decision-making">Two Fundamental Problems in Sequential Decision Making</h4>
+<h5 id="reinforcement-learning-rl_2">Reinforcement Learning (RL):</h5>
+<ul>
+<li>The environment is initially unknown.</li>
+<li>The agent interacts with the environment.<ul>
+<li>The agent improves its policy.</li>
+</ul>
+</li>
+</ul>
+<h5 id="planning">Planning:</h5>
+<ul>
+<li>A model of the environment is known.</li>
+<li>The agent performs computations with its model (without any external interaction).</li>
+<li>The agent improves its policy, also known as <strong>deliberation, reasoning, introspection, pondering, thought, search</strong>.</li>
+</ul>
+<hr />
+<h3 id="model-of-the-environment">Model of the Environment:</h3>
+<ul>
+<li>A <strong>model</strong> mimics the behavior of the environment. With the help of the model, one can make inferences about how the environment will behave. For example, if a state and an action are given, the model can predict the next state and reward.</li>
+<li>The model is used for <strong>planning</strong>, providing a way to take a course of action by considering all future situations before actually experiencing those situations.</li>
+<li>Approaches for solving RL problems with the help of the model are termed <strong>model-based approach</strong>.</li>
+<li>An approach without using a model is called a <strong>model-free approach</strong>.</li>
+</ul>
+<hr />
+<p><img alt="alt text" src="../images/image.png" /></p>
+<h3 id="types-of-reinforcement-learning-algorithms-on-the-basis-of-model-based">Types of Reinforcement Learning Algorithms ( on the basis of model based)</h3>
+<p>There are various algorithms used in reinforcement learning such as Q-learning, policy gradient
+methods, Monte Carlo method and many more. All these algorithms can be classified into two broad categories - </p>
+<h4 id="model-free-reinforcement-learning">Model-free Reinforcement Learning :</h4>
+<ul>
+<li>It is a category of reinforcement learning algorithms that learns to make decisions by interacting with the environment directly, without creating a model of the environment's dynamics.</li>
+<li>The agent performs different actions multiple times to learn the outcomes and creates a strategy (policy) that optimizes its reward points. This is ideal for changing, large or complex environments.</li>
+<li>Not applicable for some scenario like self driving car.</li>
+</ul>
+<h4 id="model-based-reinforcement-learning">Model-based Reinforcement Learning:</h4>
+<ul>
+<li>This category of reinforcement learning algorithms involves creating a <strong>model of the environment's dynamics</strong> to make decisions and improve performance.</li>
+<li>Ideal for environments that are <strong>static and well-defined</strong>, where real-world environment testing is difficult.</li>
+</ul>
+<hr />
+<h3 id="key-differences-between-model-free-and-model-based-reinforcement-learning">Key Differences Between Model-free and Model-based Reinforcement Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><strong>Model-Free RL</strong></th>
+<th><strong>Model-Based RL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Learning Approach</strong></td>
+<td>Direct learning from environment</td>
+<td>Indirect learning through model building</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Requires more real-world interactions</td>
+<td>More sample-efficient</td>
+</tr>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Simpler implementation</td>
+<td>More complex due to model learning</td>
+</tr>
+<tr>
+<td><strong>Environment Utilization</strong></td>
+<td>No internal model</td>
+<td>Builds and uses a model</td>
+</tr>
+<tr>
+<td><strong>Adaptability</strong></td>
+<td>Slower to adapt to changes</td>
+<td>Faster adaptation with accurate model</td>
+</tr>
+<tr>
+<td><strong>Computational Requirements</strong></td>
+<td>Less intensive</td>
+<td>More computational resources needed</td>
+</tr>
+<tr>
+<td><strong>Examples</strong></td>
+<td>Q-Learning, SARSA, DQN, PPO</td>
+<td>Dyna-Q, Model-Based Value Iteration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rl-framework-the-rl-process-a-loop-of-state-action-reward-and-next-state">RL Framework - The RL Process: A Loop of State, Action, Reward, and Next State</h3>
+<p><img alt="alt text" src="../images/image2.png" /></p>
+<hr />
+<h3 id="main-characteristics-of-rl">Main Characteristics of RL</h3>
+<ul>
+<li><strong>No supervisor</strong> while training.</li>
+<li><strong>Environment</strong> is generally stochastic for real-world applications.</li>
+<li><strong>Model of the environment</strong> can be incomplete.</li>
+<li><strong>Feedback</strong> (Negative/Positive Reward) can be delayed or partial.</li>
+<li>The agent uses experience from the past to improve its performance over time.</li>
+<li>Actions that have fetched more rewards are preferred.</li>
+<li>The agent tries various actions and prefers those that are best or have fetched more rewards.</li>
+<li>RL uses <strong>Markov Decision Process (MDP)</strong> framework to define the interaction between a learning agent and its environment.</li>
+</ul>
+<hr />
+<h3 id="reinforcement-learning-rl-problem-challenges-in-rl">Reinforcement Learning (RL) Problem - Challenges in RL</h3>
+<h3 id="trade-off-between-exploration-and-exploitation">Trade-off between Exploration and Exploitation:</h3>
+<ul>
+<li>To obtain rewards, an RL agent must prefer actions that it has tried in the past and found effective (<strong>Exploit</strong>).</li>
+<li>However, to discover such actions, it must try actions it has not selected before (<strong>Explore</strong>).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Neither exploration nor exploitation can be pursued exclusively without failing at the task.</p>
+</div>
+<hr />
+<h3 id="fundamental-components-of-rl">Fundamental Components of RL</h3>
+<ul>
+<li><strong>Policy</strong>: Defines the agent’s behavior.</li>
+<li><strong>Reward Function</strong>: Provides feedback on actions.</li>
+<li><strong>Value Function</strong>: Evaluates future rewards.</li>
+<li><strong>Model of the Environment</strong>: Simulates how the environment works.</li>
+</ul>
+<h5 id="policy">Policy:</h5>
+<p>A <strong>policy</strong> is a strategy or set of rules that defines the actions the agent should take in a given state.</p>
+<ul>
+<li>The policy can be deterministic (one action for a state) or stochastic (probabilistic actions for a state).</li>
+<li>The <strong>goal</strong> is to find an optimal policy that maximizes the total expected reward.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>A robot navigating a maze may follow a policy that says, "Always turn left unless there's an obstacle, then turn right."</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <strong>policy</strong> is like a person's <strong>habit or plan of action</strong>, such as the decision to exercise every morning or take an umbrella when it's cloudy.</p>
+</div>
+<h4 id="value-function">Value function:</h4>
+<p>Roughly speaking, the value of a state is the total amount of reward an agent can expect to accumulate over the future, starting from that state. 
+- Rewards determine the <strong>immediate, intrinsic desirability</strong> of environmental states. 
+- Values indicate the <strong>long-term desirability</strong> of states after considering the states likely to follow and the rewards available in those states. 
+- <strong>Example</strong>: - A state might always yield a low immediate reward but still have a <strong>high value</strong> because it is followed by states that yield high rewards. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rewards are somewhat like <strong>pleasure</strong> (if high) and <strong>pain</strong> (if low). - Values correspond to a more <strong>refined and farsighted judgment</strong> of how pleased or displeased we are by the environment.</p>
+</div>
+<h5 id="reward-function">Reward Function:</h5>
+<p>The <strong>reward function</strong> provides feedback on the actions the agent takes, indicating whether an action was good or bad.</p>
+<ul>
+<li>It assigns a <strong>numeric value</strong> to the agent's actions, which the agent uses to evaluate the desirability of its actions in a given state.</li>
+<li>The goal of the agent is to maximize the cumulative reward over time.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>In a game, winning a round might give a reward of +10, while losing gives a reward of -1.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>reward function</strong> is like the <strong>feedback</strong> a person gets from their actions, such as feeling <strong>happy</strong> after a good deed or <strong>guilty</strong> after a mistake.</p>
+</div>
+<h5 id="model-of-the-environment_1">Model of the Environment:</h5>
+<p>The <strong>model of the environment</strong> simulates how the environment behaves, helping the agent predict the outcomes of actions.</p>
+<ul>
+<li>This model can be used for <strong>planning</strong> future actions by simulating potential outcomes.</li>
+<li>A model-free approach directly learns from experience, while a model-based approach uses a model to predict actions' results before performing them.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>A self-driving car may use a model to simulate various driving scenarios and plan its route accordingly.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>model of the environment</strong> is like a <strong>mental map</strong> that a person forms, which helps them predict the likely outcomes of their actions, such as deciding to avoid a route with heavy traffic.</p>
+</div>
+<hr />
+<h3 id="types-of-reinforcement-learning">Types of Reinforcement Learning</h3>
+<p>There are three main types of Reinforcement Learning (RL):
+- <strong>Value-Based</strong>
+- <strong>Policy-Based</strong>
+- <strong>Model-Based</strong></p>
+<p>Each approach has its own strengths and weaknesses, and the choice of algorithm will depend on the specific problem you are trying to solve.</p>
+<hr />
+<h3 id="value-based-reinforcement-learning">Value-Based Reinforcement Learning</h3>
+<ul>
+<li>In this approach, the agent learns to estimate the value of each state or action based on the rewards it receives.</li>
+<li>This value is known as <strong>Q-values</strong>.</li>
+<li>The agent then selects the actions with the highest Q-value in each state to maximize its long-term reward.</li>
+<li>The most commonly used algorithm for value-based reinforcement learning is <strong>Q-learning</strong>.</li>
+</ul>
+<hr />
+<h3 id="policy-based-reinforcement-learning">Policy-Based Reinforcement Learning</h3>
+<ul>
+<li>In this approach, the agent learns an optimal policy, which is a mapping from states to actions, without calculating the value function.</li>
+<li>The policy is updated based on the rewards received by the agent, with the goal of maximizing the expected reward over time.</li>
+<li>The most common algorithm used for policy-based reinforcement learning is the <strong>REINFORCE</strong> algorithm.</li>
+</ul>
+<hr />
+<h3 id="model-based-reinforcement-learning_1">Model-Based Reinforcement Learning</h3>
+<ul>
+<li>In this approach, the agent learns a model of the environment, which it can use to simulate different scenarios and plan its actions accordingly.</li>
+<li>The model can learn through supervised or unsupervised learning, and the agent can use it to predict the outcome of its actions before taking them.</li>
+<li>The most common model-based reinforcement learning algorithm is the <strong>Dyna</strong> algorithm.</li>
+</ul>
+<hr />
+<h3 id="formal-presentation-of-rl-fundamentals"><strong>Formal Presentation of RL Fundamentals</strong></h3>
+<h3 id="1-state-s-and-action-a">1. State (<span class="arithmatex">\(s\)</span>) and Action (<span class="arithmatex">\(a\)</span>)</h3>
+<ul>
+<li><strong>Current state</strong>: <span class="arithmatex">\(s_t\)</span></li>
+<li><strong>Next state</strong>: <span class="arithmatex">\(s_{t+1}\)</span></li>
+<li><strong>Action</strong>: <span class="arithmatex">\(a\)</span>, an action performed by the agent to move from state <span class="arithmatex">\(s_t\)</span> to <span class="arithmatex">\(s_{t+1}\)</span>.</li>
+<li><strong>State space</strong>: The set of all possible states the agent can be in.</li>
+</ul>
+<h3 id="2-reward-r-or-rs-a">2. Reward (<span class="arithmatex">\(r\)</span> or <span class="arithmatex">\(R(s, a)\)</span>)</h3>
+<ul>
+<li>The result of taking action <span class="arithmatex">\(a\)</span> at state <span class="arithmatex">\(s\)</span>.</li>
+<li>Actions affect not only the <strong>immediate reward</strong> but also the <strong>next states</strong> and all <strong>subsequent rewards</strong>.</li>
+</ul>
+<h3 id="3-episode">3. Episode</h3>
+<ul>
+<li>A sequence of states and actions until reaching a terminal state.</li>
+</ul>
+<h3 id="4-transition-probability-ps-s-a">4. Transition Probability (<span class="arithmatex">\(P(s' | s, a)\)</span>)</h3>
+<ul>
+<li>The probability of reaching state <span class="arithmatex">\(s'\)</span> when taking action <span class="arithmatex">\(a\)</span> at state <span class="arithmatex">\(s_t\)</span>.</li>
+</ul>
+<h3 id="5-policy-pis-a">5. Policy (<span class="arithmatex">\(\pi(s, a)\)</span>)</h3>
+<ul>
+<li>A mapping of each state to an action, determining how the agent acts at each state.</li>
+<li><strong>Types of Policies</strong>:<ul>
+<li><strong>Deterministic</strong>: Always selects the same action for a given state.</li>
+<li><strong>Stochastic</strong>: Selects actions based on probability distribution.</li>
+<li><span class="arithmatex">\(\pi(a | s) = P(A_t = a | S_t = s)\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-return-g_t">6. Return (<span class="arithmatex">\(G_t\)</span>)</h3>
+<ul>
+<li>The total future reward from state <span class="arithmatex">\(s_t\)</span>.</li>
+<li><span class="arithmatex">\(Gt=rt+γrt+1+γ2rt+2+⋯+γT−1rTG_t = r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \dots + \gamma^{T-1} r_T\)</span></li>
+<li><strong>Discount factor (<span class="arithmatex">\(\gamma\)</span>)</strong>:<ul>
+<li>Determines the importance of future rewards.</li>
+<li><strong>Higher <span class="arithmatex">\(\gamma\)</span></strong> → more focus on long-term rewards.</li>
+<li><strong>Lower <span class="arithmatex">\(\gamma\)</span></strong> → more focus on immediate rewards.</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-value-function-vs">7. Value Function (<span class="arithmatex">\(V(s)\)</span>)</h3>
+<ul>
+<li>The expected return from starting at state <span class="arithmatex">\(s\)</span>.</li>
+<li>Also called the <strong>State-Value Function</strong>:  </li>
+</ul>
+<div class="admonition formula">
+<p class="admonition-title">Formula</p>
+<p><span class="arithmatex">\(V(s)=E[Gt∣st=s]=E[rt+γrt+1+γ2rt+2+⋯+γT−1rT∣st=s]V(s) = \mathbb{E}[G_t | s_t = s] = \mathbb{E} \left[ r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \dots + \gamma^{T-1} r_T \mid s_t = s \right]\)</span></p>
+</div>
+<ul>
+<li><strong>Breakdown</strong>:<ul>
+<li><strong>Immediate reward</strong>: <span class="arithmatex">\(r_t\)</span>.</li>
+<li><strong>Discounted value of successor states</strong>.</li>
+<li>Represents the <strong>long-term desirability</strong> of state <span class="arithmatex">\(s\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-optimal-policy-pis">8. Optimal Policy (<span class="arithmatex">\(\pi^*(s)\)</span>)</h3>
+<ul>
+<li>The best possible policy for a given state, maximizing expected future rewards.</li>
+</ul>
+<h3 id="9-optimal-value-functions">9. Optimal Value Functions</h3>
+<ul>
+<li><strong>Optimal State-Value Function</strong>:<ul>
+<li>Maximum value function over all policies:<br />
+<span class="arithmatex">\(V∗(s)=max⁡πVπ(s)V^*(s) = \max_{\pi} V_{\pi}(s)\)</span></li>
+</ul>
+</li>
+<li><strong>Optimal Action-Value Function (<span class="arithmatex">\(Q^*(s, a)\)</span>)</strong>:<ul>
+<li>Maximum action-value function over all policies:<br />
+<span class="arithmatex">\(Q∗(s,a)=max⁡πQπ(s,a)Q^*(s, a) = \max_{\pi} Q_{\pi}(s, a)\)</span></li>
+<li>Represents the <strong>best possible expected return</strong> for taking action <span class="arithmatex">\(a\)</span> in state <span class="arithmatex">\(s\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="two-fundamental-tasks-of-reinforcement-learning"><strong>Two Fundamental Tasks of Reinforcement Learning</strong></h3>
+<h4 id="1-prediction-task">1. Prediction Task</h4>
+<ul>
+<li>We have a policy:<ul>
+<li>The goal is to evaluate the policy by estimating the <strong>state-value</strong> or <strong>Q-value</strong> of running actions within a given policy.</li>
+<li><strong>Evaluate the future</strong>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-control-task">2. Control Task</h4>
+<ul>
+<li>We don't know the policy, and the goal is:<ul>
+<li>To find the <strong>optimal policy</strong> aiming to collect maximum rewards.</li>
+<li><strong>Optimize the future</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="tabular-solution-methods">Tabular Solution Methods</h3>
+<h4 id="core-idea">Core Idea</h4>
+<ul>
+<li>In their simplest form, <strong>RL algorithms</strong> assume that the <strong>state and action spaces</strong> are small enough for approximate <strong>value functions</strong> to be represented as <strong>arrays or tables</strong>.</li>
+<li>These methods can often find <strong>exact solutions</strong> (i.e., optimal value function and optimal policy).</li>
+</ul>
+<h4 id="fundamental-classes-of-methods-for-solving-finite-mdps">Fundamental Classes of Methods for Solving Finite MDPs</h4>
+<ol>
+<li>
+<p><strong>Dynamic Programming (DP)</strong></p>
+<ul>
+<li>Requires a <strong>complete and accurate model</strong> of the environment.</li>
+<li>Mathematically well-developed.</li>
+<li>
+<p><strong>Monte Carlo Methods</strong></p>
+</li>
+<li>
+<p>No model required and conceptually simple.</p>
+</li>
+<li>Not well suited for step-by-step incremental computation.</li>
+<li>
+<p><strong>Temporal Difference (TD) Learning</strong></p>
+</li>
+<li>
+<p>Requires no model and is fully incremental.</p>
+</li>
+<li>More complex to analyze but efficient.</li>
+<li>Differences exist in <strong>efficiency</strong> and <strong>speed of convergence</strong>.</li>
+</ul>
+</li>
+</ol>
+<p>Each method has its own <strong>strengths and weaknesses</strong>.</p>
+<h4 id="immediate-reinforcement-learning-vs-full-reinforcement-learning">Immediate Reinforcement Learning vs. Full Reinforcement Learning</h4>
+<h3 id="immediate-reinforcement-learning-immediate-rl">Immediate Reinforcement Learning (Immediate RL)</h3>
+<ul>
+<li><strong>Policy Update Frequency</strong><ul>
+<li>Updates the <strong>policy or value function</strong> after every action.</li>
+<li>The agent <strong>learns and adapts in real time</strong> as it interacts with the environment.</li>
+</ul>
+</li>
+<li><strong>Learning Approach</strong><ul>
+<li><strong>Online Learning</strong>: Updates are made continuously and incrementally after each interaction.</li>
+</ul>
+</li>
+</ul>
+<h3 id="immediate-rl-vs-full-rl">Immediate RL vs. Full RL</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Immediate RL</th>
+<th>Full RL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reward Timing</strong></td>
+<td>Immediate rewards after each action.</td>
+<td>Delayed rewards, requiring long-term strategy.</td>
+</tr>
+<tr>
+<td><strong>Decision Making</strong></td>
+<td>Faster, as actions are evaluated instantly.</td>
+<td>Requires profound understanding of the environment.</td>
+</tr>
+<tr>
+<td><strong>Example</strong></td>
+<td>Bandit Problem</td>
+<td>Chess, Go, or strategic planning tasks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="explore-exploit-dilemma-in-immediate-rl">Explore-Exploit Dilemma in Immediate RL</h3>
+<ul>
+<li>The agent must <strong>explore</strong> different actions to identify near-optimal actions.</li>
+<li>Once enough exploration is done, it <strong>exploits</strong> the best-known action.</li>
+<li>The challenge: <strong>How much to explore before exploiting?</strong></li>
+</ul>
+<hr />
+<h3 id="examples-of-reinforcement-learning-in-real-life">Examples of Reinforcement Learning in Real Life</h3>
+<h3 id="immediate-rl-examples">Immediate RL Examples</h3>
+<ul>
+<li>Giving treats for homework completion.</li>
+<li>Earning points in a game.</li>
+<li>Receiving applause after a performance.</li>
+<li>Receiving praise for completing a task.</li>
+<li>Getting paid directly after work.</li>
+<li>Eating immediately after feeling hungry.</li>
+<li>Social media notifications.</li>
+</ul>
+<h3 id="delayed-reinforcement-examples">Delayed Reinforcement Examples`</h3>
+<ul>
+<li>Saving money for future goals.</li>
+<li>Completing a degree for career advancement.</li>
+<li>Physical fitness and exercise.</li>
+<li>Learning a musical instrument.</li>
+<li>Learning a new language.</li>
+</ul>
+<h3 id="suitability-of-immediate-rl">Suitability of Immediate RL</h3>
+<ul>
+<li><strong>Real-time applications</strong>: Suitable where quick decision-making is needed, such as:<ul>
+<li><strong>Tic-Tac-Toe</strong>: The agent updates its strategy after each move.</li>
+<li><strong>Self-driving cars</strong>: The control system updates the driving policy in real time.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="general-reinforcement-learning-rl">General Reinforcement Learning (RL</h3>
+<ul>
+<li>
+<p><strong>Policy Update Frequency</strong></p>
+<ul>
+<li>Updates can be made <strong>after accumulating a batch of experiences</strong> or <strong>at the end of an episode</strong>.</li>
+<li>
+<p><strong>Learning Approach</strong></p>
+</li>
+<li>
+<p><strong>Online and Offline Learning</strong></p>
+<ul>
+<li><strong>Online RL</strong>: Updates occur during interaction with the environment.</li>
+<li><strong>Offline RL</strong>: The agent gathers experience first and updates the policy afterward.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="state-action-value-function-qs-a">State-Action Value Function (<span class="arithmatex">\(Q(s, a)\)</span>)</h3>
+<ul>
+<li>The <strong>state-action value function</strong> (or <strong>Q-function</strong>) specifies how good it is for an agent to take a particular action <span class="arithmatex">\(a\)</span> in a given state <span class="arithmatex">\(s\)</span> under a policy <span class="arithmatex">\(\pi\)</span>.</li>
+<li>Denoted as:<br />
+<span class="arithmatex">\(Q(s,a)=E[Gt∣St=s,At=a]Q(s, a) = \mathbb{E}[G_t | S_t = s, A_t = a]\)</span></li>
+<li>Represents the <strong>expected cumulative reward</strong> of taking action <span class="arithmatex">\(a\)</span> in state <span class="arithmatex">\(s\)</span>.</li>
+</ul>
+<h3 id="reinforcement-learning-rl-fundamentals"><strong>Reinforcement Learning (RL) Fundamentals</strong></h3>
+<h4 id="temporal-difference-td-learning"><strong>Temporal Difference (TD) Learning</strong></h4>
+<ul>
+<li>A simple rule to explain complex behaviors.</li>
+<li><strong>Intuition</strong>: Prediction of the outcome at time t+1t+1t+1 is better than at time ttt. The later prediction is used to adjust the earlier prediction.</li>
+<li>Has had a profound impact on <strong>behavioral psychology</strong> and <strong>neuroscience</strong>.</li>
+</ul>
+<hr />
+<h4 id="optimal-control"><strong>Optimal Control</strong></h4>
+<ul>
+<li>A branch of <strong>mathematical optimization</strong>.</li>
+<li><strong>Goal</strong>: Design a controller that maximizes or minimizes an objective function.</li>
+<li><strong>Key Concept</strong>: Finding a control policy that <strong>optimizes</strong> the cumulative reward or <strong>minimizes</strong> the cost over time.</li>
+<li>Deals with <strong>dynamical systems</strong>, determining the best sequence of actions to achieve an optimal outcome.</li>
+</ul>
+<h4 id="dynamic-programming-dp-in-rl"><strong>Dynamic Programming (DP) in RL</strong></h4>
+<ul>
+<li>A mathematical approach to solving optimization problems by <strong>breaking them down into simpler subproblems</strong>.</li>
+<li>In <strong>Markov Decision Processes (MDPs)</strong>, DP methods help find <strong>optimal policies</strong> by solving <strong>Bellman equations</strong>.</li>
+</ul>
+<h6 id="two-primary-dp-methods"><strong>Two Primary DP Methods</strong></h6>
+<ol>
+<li><strong>Policy Iteration</strong>:<ul>
+<li>Alternates between <strong>evaluating</strong> a policy and <strong>improving</strong> it.</li>
+</ul>
+</li>
+<li><strong>Value Iteration</strong>:<ul>
+<li>Iteratively updates the <strong>value function</strong> directly to find the <strong>optimal policy</strong>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="on-policy-vs-off-policy-reinforcement-learning"><strong>On-Policy vs. Off-Policy Reinforcement Learning</strong></h3>
+<p><img alt="alt text" src="../images/image-22.png" /></p>
+<p>In <strong>Reinforcement Learning (RL)</strong>, learning strategies can be classified into <strong>on-policy</strong> and <strong>off-policy</strong> methods. These approaches define how an agent interacts with the environment and learns optimal behavior.  </p>
+<hr />
+<h3 id="on-policy-learning"><strong>On-Policy Learning</strong></h3>
+<ul>
+<li>The agent <strong>learns while following its own policy</strong>.  </li>
+<li><strong>Explores and exploits simultaneously</strong>.  </li>
+<li>Typically used in <strong>algorithms like SARSA (State-Action-Reward-State-Action)</strong>.  </li>
+</ul>
+<p>✅ <strong>Example:</strong><br />
+- Learning to ride a bike <strong>by trial and error</strong>—adjusting balance while practicing.  </p>
+<hr />
+<h3 id="off-policy-learning"><strong>Off-Policy Learning</strong></h3>
+<ul>
+<li>The agent <strong>learns from data generated by other policies</strong> (not just its own).  </li>
+<li><strong>More flexible</strong> as it allows learning from past experiences.  </li>
+<li>Used in <strong>algorithms like Q-learning</strong>, where the agent updates its policy using the best-known actions.  </li>
+</ul>
+<p>✅ <strong>Example:</strong><br />
+- Learning to ride a bike <strong>by watching others</strong> rather than directly practicing.  </p>
+<hr />
+<h2 id="unit-2">Unit 2</h2>
+<h3 id="the-one-armed-and-multi-armed-bandit-problems"><strong>The One-Armed and Multi-Armed Bandit Problems</strong></h3>
+<p>The <strong>One-Armed Bandit Problem</strong> and its extension, the <strong>k-Armed (Multi-Armed) Bandit Problem</strong>, are fundamental concepts in <strong>reinforcement learning</strong> and <strong>decision-making under uncertainty</strong>.  </p>
+<hr />
+<h3 id="one-armed-bandit-problem"><strong>🎰 One-Armed Bandit Problem</strong></h3>
+<p>✅ <strong>Definition:</strong><br />
+- Refers to a <strong>slot machine</strong> with a <strong>single lever (arm)</strong>.<br />
+- Each spin has a <strong>certain probability of winning</strong>, but this probability is <strong>unknown</strong>.<br />
+- The <strong>outcome is uncertain</strong>, and a player must decide whether to keep playing or stop.  </p>
+<p>✅ <strong>Key Challenge:</strong><br />
+- The <strong>probability distribution of rewards is unknown</strong> and cannot be determined with a limited number of trials.  </p>
+<p>✅ <strong>Real-World Analogy:</strong><br />
+- A gambler playing <strong>one slot machine</strong> without knowing its payout rate.  </p>
+<hr />
+<h3 id="multi-armed-k-armed-bandit-problem"><strong>🎰 Multi-Armed (k-Armed) Bandit Problem</strong></h3>
+<p>✅ <strong>Definition:</strong><br />
+- A <strong>gambler faces multiple slot machines</strong> (each with different and unknown payout probabilities).<br />
+- The goal is to <strong>maximize total winnings</strong> by choosing which machine (arm) to play.  </p>
+<p>✅ <strong>Core Concept in Reinforcement Learning:</strong><br />
+- Balances <strong>exploration (trying different machines)</strong> vs. <strong>exploitation (sticking to the best-known machine)</strong>.<br />
+- <strong>Each arm has a unique probability distribution</strong>, which is <strong>stationary</strong> (remains constant over time).  </p>
+<p>✅ <strong>Mathematical Model:</strong><br />
+- An <strong>agent selects between N different actions (arms)</strong>.<br />
+- Each <strong>arm provides a reward</strong> drawn from an <strong>unknown probability distribution</strong>.<br />
+- The goal is to <strong>maximize cumulative reward</strong> over multiple trials.  </p>
+<hr />
+<h3 id="why-is-it-called-a-bandit"><strong>🔍 Why is it Called a "Bandit"?</strong></h3>
+<ul>
+<li>The term <strong>"bandit"</strong> refers to a <strong>thief</strong>.  </li>
+<li><strong>Slot machines</strong> are called "one-armed bandits" because <strong>casinos configure them to ensure players eventually lose money</strong>.  </li>
+</ul>
+<hr />
+<h3 id="applications-of-the-multi-armed-bandit-problem"><strong>📌 Applications of the Multi-Armed Bandit Problem</strong></h3>
+<ul>
+<li><strong>Online Advertising</strong> – Deciding which ads to display to maximize clicks.  </li>
+<li><strong>Clinical Trials</strong> – Testing multiple treatments to determine the most effective one.  </li>
+<li><strong>A/B Testing</strong> – Comparing website designs or marketing strategies.  </li>
+<li><strong>Stock Trading</strong> – Choosing the best stocks to invest in over time.  </li>
+</ul>
+<p>The <strong>k-Armed Bandit Problem</strong> serves as a <strong>foundation for reinforcement learning algorithms</strong>, influencing <strong>decision-making strategies in uncertain environments</strong>.</p>
+<hr />
+<h2 id="k-armed-bandit-problem-in-reinforcement-learning"><strong>k-Armed Bandit Problem in Reinforcement Learning</strong></h2>
+<p>The <strong>k-Armed Bandit Problem</strong> is a fundamental challenge in <strong>reinforcement learning and decision theory</strong>, where an agent must choose between multiple actions (arms) to maximize total reward.  </p>
+<hr />
+<h3 id="key-concepts-in-k-armed-bandit-problem"><strong>📌 Key Concepts in k-Armed Bandit Problem</strong></h3>
+<ul>
+<li><strong>Action Value (<span class="arithmatex">\( q^*(a) \)</span>)</strong>  </li>
+<li>The <strong>true expected reward</strong> for selecting action <span class="arithmatex">\( a \)</span>.  </li>
+<li>Defined as:<br />
+    $$    q^*(a) = \mathbb{E}[R_t | A_t = a]    $$</li>
+<li>
+<p>If the <strong>true values of all actions were known</strong>, the best approach would be to always select the action with the <strong>highest <span class="arithmatex">\( q^*(a) \)</span></strong>.  </p>
+</li>
+<li>
+<p><strong>Estimated Action Value (<span class="arithmatex">\( Q_t(a) \)</span>)</strong>  </p>
+</li>
+<li>The <strong>empirical mean</strong> of observed rewards from action <span class="arithmatex">\( a \)</span>.  </li>
+<li>Defined as:<br />
+    $$  Q_t(a) = \frac{1}{n_a} \sum_{i=1}^{n_a} r_i   $$</li>
+<li>As more rewards are observed, <strong><span class="arithmatex">\( Q_t(a) \)</span> converges to <span class="arithmatex">\( q^*(a) \)</span></strong>.  </li>
+</ul>
+<hr />
+<h3 id="expected-vs-estimated-value"><strong>Expected vs. Estimated Value</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Expected Value</strong> <span class="arithmatex">\( q^*(a) \)</span></td>
+<td>The longrun average reward for an action</td>
+<td><span class="arithmatex">\( q^*(a) = \sum r \cdot P(r,a) \)</span></td>
+</tr>
+<tr>
+<td><strong>Estimated Value</strong> <span class="arithmatex">\( Q_t(a) \)</span></td>
+<td>The empirical mean reward based on observed outcomes</td>
+<td><span class="arithmatex">\( Q_t(a) = \frac{1}{n_a} \sum_{i=1}^{n_a} r_i \)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Expected Value</strong> is <strong>theoretical</strong> and based on an <strong>unknown probability distribution</strong>.  </li>
+<li><strong>Estimated Value</strong> is <strong>calculated from real observations</strong> and improves over time.  </li>
+</ul>
+<hr />
+<h3 id="exploitation-vs-exploration-trade-off"><strong>Exploitation vs. Exploration Trade-Off</strong></h3>
+<ul>
+<li><strong>Greedy Actions:</strong>  </li>
+<li>Actions with the <strong>highest estimated value</strong> <span class="arithmatex">\( Q_t(a) \)</span>.  </li>
+<li>
+<p><strong>Exploitation</strong>: Selecting the <strong>best-known action</strong> to maximize <strong>immediate reward</strong>.  </p>
+</li>
+<li>
+<p><strong>Non-Greedy Actions:</strong>  </p>
+</li>
+<li>Actions that <strong>do not have the highest estimated value</strong>.  </li>
+<li><strong>Exploration</strong>: Trying different actions to <strong>improve estimates</strong> and potentially discover better rewards.  </li>
+</ul>
+<p>🔹 <strong>Key Dilemma:</strong><br />
+- <strong>Exploiting</strong> greedy actions maximizes <strong>short-term rewards</strong>.<br />
+- <strong>Exploring</strong> new actions may <strong>lead to better long-term gains</strong>.  </p>
+<hr />
+<h2 id="optimistic-initial-values-in-reinforcement-learning"><strong>Optimistic Initial Values in Reinforcement Learning</strong></h2>
+<p><strong>Optimistic initial values</strong> are a simple yet effective technique used to encourage <strong>exploration</strong> in reinforcement learning, particularly in <strong>multi-armed bandit problems</strong> and <strong>value-based learning methods</strong>.  </p>
+<hr />
+<h3 id="how-does-it-work"><strong>📌 How Does It Work?</strong></h3>
+<p>Instead of initializing action values to <strong>zero or a neutral estimate</strong>, we set them to a <strong>highly optimistic value</strong>.  </p>
+<p>For example, in a <strong>10-armed bandit problem</strong> where the <strong>true action values (<span class="arithmatex">\( q^*(a) \)</span>)</strong> are drawn from a <strong>normal distribution (mean = 0, variance = 1)</strong>:<br />
+- Instead of initializing all <span class="arithmatex">\( Q_1(a) = 0 \)</span>, we set them to <strong>+5</strong> (a high optimistic value).  </p>
+<hr />
+<h3 id="why-does-optimistic-initialization-encourage-exploration"><strong>🔍 Why Does Optimistic Initialization Encourage Exploration?</strong></h3>
+<ol>
+<li><strong>Initial Overestimation</strong>:  </li>
+<li>
+<p>Since the true rewards are <strong>lower than +5</strong>, the agent will <strong>be disappointed</strong> by its first few actions.  </p>
+</li>
+<li>
+<p><strong>Forces the Agent to Try Other Actions</strong>:  </p>
+</li>
+<li>
+<p>As the agent realizes that <strong>the initial choices don’t meet expectations</strong>, it <strong>explores alternative actions</strong>.  </p>
+</li>
+<li>
+<p><strong>More Thorough Exploration in Early Steps</strong>:  </p>
+</li>
+<li>
+<p>The agent <strong>tries multiple actions</strong> before settling on the best one.  </p>
+</li>
+<li>
+<p><strong>Converges to Optimal Action Over Time</strong>:  </p>
+</li>
+<li>Eventually, the <strong>estimates stabilize</strong> as the agent gathers more data.  </li>
+</ol>
+<hr />
+<h3 id="comparison-optimistic-vs-greedy-exploration"><strong>📈 Comparison: Optimistic vs. ε-Greedy Exploration</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Exploration Method</strong></th>
+<th><strong>How It Works</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Optimistic Initial Values</strong></td>
+<td>Set initial action values <strong>high</strong></td>
+<td>Encourages <strong>early</strong> exploration, works well in <strong>stationary environments</strong></td>
+<td>May <strong>not adapt well</strong> in <strong>non-stationary environments</strong></td>
+</tr>
+<tr>
+<td><strong>ε-Greedy</strong></td>
+<td>Selects a <strong>random action</strong> with probability <strong>ε</strong></td>
+<td>Works well in <strong>both stationary and non-stationary</strong> settings</td>
+<td>Requires <strong>tuning of ε</strong>, exploration is <strong>uniform</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="upper-confidence-bound-ucb-in-reinforcement-learning"><strong>Upper Confidence Bound (UCB) in Reinforcement Learning</strong></h2>
+<h3 id="why-is-exploration-needed"><strong>Why is Exploration Needed?</strong></h3>
+<ul>
+<li>Action-value estimates always contain <strong>uncertainty</strong>.  </li>
+<li><strong>Greedy actions</strong> (highest estimated value) may not be truly optimal.  </li>
+<li><strong>ε-Greedy exploration</strong> forces random selection but <strong>does not prioritize actions with high uncertainty</strong>.  </li>
+</ul>
+<h3 id="upper-confidence-bound-ucb-approach"><strong>Upper Confidence Bound (UCB) Approach</strong></h3>
+<p>Instead of exploring randomly, UCB selects actions by <strong>balancing</strong>:<br />
+1. <strong>Current estimate of reward</strong> (exploitation).<br />
+2. <strong>Uncertainty of the estimate</strong> (exploration).  </p>
+<hr />
+<h3 id="ucb-formula"><strong>📌 UCB Formula</strong></h3>
+<p>For an action <span class="arithmatex">\( a \)</span>, UCB selects the action that maximizes:<br />
+[
+Q_t(a) + c \sqrt{\frac{\log t}{N_t(a)}}
+]<br />
+where:<br />
+- <span class="arithmatex">\( Q_t(a) \)</span> = Estimated value of action <span class="arithmatex">\( a \)</span>.<br />
+- <span class="arithmatex">\( t \)</span> = Total number of time steps.<br />
+- <span class="arithmatex">\( N_t(a) \)</span> = Number of times action <span class="arithmatex">\( a \)</span> has been selected.<br />
+- <span class="arithmatex">\( c \)</span> = Exploration parameter (higher <span class="arithmatex">\( c \)</span> encourages more exploration).  </p>
+<hr />
+<h3 id="how-ucb-works"><strong>How UCB Works?</strong></h3>
+<ul>
+<li>The <strong>square-root term</strong> measures the <strong>uncertainty</strong> in the estimate of <span class="arithmatex">\( Q_t(a) \)</span>.  </li>
+<li>Actions that have been <strong>chosen fewer times (<span class="arithmatex">\( N_t(a) \)</span> is low)</strong> will have <strong>higher uncertainty</strong>, making them <strong>more likely to be selected</strong>.  </li>
+<li>As an action is <strong>selected more often</strong>, <span class="arithmatex">\( N_t(a) \)</span> increases, reducing the <strong>exploration term</strong>.  </li>
+</ul>
+<hr />
+<h3 id="key-properties-of-ucb"><strong>Key Properties of UCB</strong></h3>
+<p>✅ <strong>Encourages exploration of uncertain actions</strong> – Prefers actions that <strong>haven't been tried enough</strong>.<br />
+✅ <strong>Gradually reduces exploration</strong> – As <strong>all actions are explored</strong>, the agent shifts towards <strong>exploitation</strong>.<br />
+✅ <strong>Logarithmic growth</strong> – Ensures that exploration is <strong>bounded</strong> over time but never stops completely.  </p>
+<hr />
+<h3 id="comparison-ucb-vs-greedy"><strong>Comparison: UCB vs. ε-Greedy</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Exploration Type</th>
+<th>Strengths</th>
+<th>Weaknesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ε-Greedy</strong></td>
+<td>Random exploration</td>
+<td>Simple, works well in practice</td>
+<td>Does not focus on uncertain actions</td>
+</tr>
+<tr>
+<td><strong>UCB</strong></td>
+<td>Uncertainty-based exploration</td>
+<td>Smart exploration, prioritizes less tried actions</td>
+<td>More complex, requires tuning <span class="arithmatex">\( c \)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="markov-decision-process-mdp-in-reinforcement-learning"><strong>Markov Decision Process (MDP) in Reinforcement Learning</strong></h2>
+<h3 id="what-is-a-markov-decision-process-mdp"><strong>📌 What is a Markov Decision Process (MDP)?</strong></h3>
+<p>A <strong>Markov Decision Process (MDP)</strong> is a <strong>mathematical framework</strong> used to model <strong>decision-making problems</strong> where outcomes are <strong>partially random</strong> and <strong>partially controlled by an agent</strong>.  </p>
+<p>It extends a <strong>Markov Chain</strong> by incorporating <strong>actions and rewards</strong>, allowing an agent to interact with an environment <strong>sequentially</strong> to maximize long-term rewards.  </p>
+<hr />
+<h3 id="what-is-a-markov-chain"><strong>📌 What is a Markov Chain?</strong></h3>
+<p>A <strong>Markov Chain</strong> is a <strong>stochastic process</strong> that follows the <strong>Markov Property</strong>:  </p>
+<blockquote>
+<p>The probability of transitioning to the next state <strong>only depends on the current state</strong> and <strong>not on past states</strong>.  </p>
+</blockquote>
+<p>Mathematically,<br />
+[
+P(S_{t+1} | S_t, S_{t-1}, ..., S_0) = P(S_{t+1} | S_t)
+]  </p>
+<p>✅ <strong>Key Feature:</strong> <strong>Memoryless property</strong> (Future states depend only on the present state, not history).  </p>
+<hr />
+<h3 id="what-is-a-transition-in-mdp"><strong>📌 What is a Transition in MDP?</strong></h3>
+<p>A <strong>transition</strong> defines the <strong>probability of moving</strong> from one state to another when taking a specific action.  </p>
+<p>Denoted as <strong><span class="arithmatex">\( P(s' | s, a) \)</span></strong>:<br />
+- <span class="arithmatex">\( s \)</span> = Current state<br />
+- <span class="arithmatex">\( a \)</span> = Action taken<br />
+- <span class="arithmatex">\( s' \)</span> = Next state<br />
+- <span class="arithmatex">\( P(s' | s, a) \)</span> = Probability of transitioning to <span class="arithmatex">\( s' \)</span> after taking action <span class="arithmatex">\( a \)</span> in state <span class="arithmatex">\( s \)</span>.  </p>
+<p>✅ <strong>Example:</strong><br />
+- If a robot is in a room and moves <strong>right</strong>, there is an <strong>80% chance</strong> it reaches the next room, but a <strong>20% chance</strong> it remains in the same room (if the door is stuck).  </p>
+<hr />
+<h3 id="how-is-mdp-used-in-reinforcement-learning-rl"><strong>📌 How is MDP Used in Reinforcement Learning (RL)?</strong></h3>
+<p>In <strong>Reinforcement Learning</strong>, MDP helps <strong>formulate the environment</strong> as a <strong>mathematical model</strong>, guiding the agent to learn optimal policies.  </p>
+<ul>
+<li><strong>Agent</strong> interacts with an <strong>environment</strong> following MDP dynamics.  </li>
+<li><strong>State transitions</strong> occur based on <strong>agent actions</strong>.  </li>
+<li>The <strong>goal</strong> is to learn a <strong>policy</strong> that <strong>maximizes cumulative rewards over time</strong>.  </li>
+</ul>
+<hr />
+<h3 id="components-of-an-mdp"><strong>📌 Components of an MDP</strong></h3>
+<p>An <strong>MDP is defined by the tuple</strong> <strong><span class="arithmatex">\( (S, A, P, R, \gamma) \)</span></strong>:  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="arithmatex">\( S \)</span> (State Space)</strong></td>
+<td>Set of all possible states the agent can be in.</td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\( A \)</span> (Action Space)</strong></td>
+<td>Set of actions the agent can take.</td>
+</tr>
+<tr>
+<td>**( P(s'</td>
+<td>s, a) ) (Transition Probability)**</td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\( R(s, a) \)</span> (Reward Function)</strong></td>
+<td>Reward received after taking action <span class="arithmatex">\( a \)</span> in state <span class="arithmatex">\( s \)</span>.</td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\( \gamma \)</span> (Discount Factor)</strong></td>
+<td>Determines the importance of future rewards (<strong><span class="arithmatex">\( 0 \leq \gamma \leq 1 \)</span></strong>).</td>
+</tr>
+</tbody>
+</table>
+<p>✅ <strong>Example in RL:</strong><br />
+- <strong>Self-driving car:</strong><br />
+  - <strong><span class="arithmatex">\( S \)</span>:</strong> Location of the car, speed, traffic signals.<br />
+  - <strong><span class="arithmatex">\( A \)</span>:</strong> Accelerate, brake, turn left, turn right.<br />
+  - <strong><span class="arithmatex">\( P(s' | s, a) \)</span>:</strong> Probability of reaching the next position based on current speed and action.<br />
+  - <strong><span class="arithmatex">\( R(s, a) \)</span>:</strong> Reward for avoiding obstacles and staying on track.<br />
+  - <strong><span class="arithmatex">\( \gamma \)</span>:</strong> Balances short-term (safety) vs. long-term (reaching destination quickly).  </p>
+<hr />
+<h3 id="summary"><strong>📌 Summary</strong></h3>
+<ul>
+<li><strong>Markov Chain</strong> models state transitions <strong>without actions or rewards</strong>.  </li>
+<li><strong>MDP extends Markov Chains</strong> by adding <strong>actions and rewards</strong>, allowing <strong>decision-making</strong>.  </li>
+<li><strong>MDP is the foundation of RL</strong>, providing a structured way for agents to learn <strong>optimal policies</strong>.  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js q"></script>
+      
+    
+  </body>
+</html>

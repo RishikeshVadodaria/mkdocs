@@ -1,0 +1,1529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Computer vision - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Computer vision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mc-m2/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mc-m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-vs-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human vs. Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-of-human-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features of Human Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-human-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations of Human Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision-vs-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Vision vs. Image Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levels-of-processing-for-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 Levels of processing for computer Vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision-processing-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Vision Processing Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computer Vision Processing Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#low-level-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Low-Level Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mid-level-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mid-Level Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-computer-vision_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning-for-image-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning for Image Segmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-between-low-level-and-high-level-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference Between Low-Level and High-Level Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpening-spatial-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharpening Spatial Filters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Gradients
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-detection-using-image-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Detection Using Image Gradients
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Detection Using Image Gradients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computing-image-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing Image Gradients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-gradient-gradient-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Gradient &amp; Gradient Vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobel-filter-for-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobel Filter for Edge Detection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sobel Filter for Edge Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-computation-with-sobel-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Computation with Sobel Operator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-filter-for-image-smoothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Filter for Image Smoothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-filter-kernels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Filter Kernels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laplacian-filter-for-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laplacian Filter for Edge Detection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laplacian Filter for Edge Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laplacian-filter-kernels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laplacian Filter Kernels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-features-in-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Features in Computer Vision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Features in Computer Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-image-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Image Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-based-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient-Based Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-of-gaussian-dog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference of Gaussian (DoG)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Difference of Gaussian (DoG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-dog-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How DoG Works:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laplacian-of-gaussian-log-edge-detection-feature-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laplacian of Gaussian (LoG) – Edge Detection &amp; Feature Enhancement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laplacian of Gaussian (LoG) – Edge Detection & Feature Enhancement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-log-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How LoG Works:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features of LoG:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#histogram-of-oriented-gradients-hog-feature-descriptor-for-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histogram of Oriented Gradients (HoG) – Feature Descriptor for Object Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-hog-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step HoG Computation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step HoG Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-hog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features of HoG:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-descriptors-in-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Descriptors in Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-feature-descriptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Feature Descriptors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Feature Descriptors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-global-descriptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Global Descriptors 🌍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-local-descriptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Local Descriptors 🔍
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-define-an-interest-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Define an Interest Point?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sift-algorithm-scale-invariant-feature-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      SIFT Algorithm – Scale-Invariant Feature Transform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-construct-a-scale-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Construct a Scale Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-compute-difference-of-gaussian-dog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Compute Difference of Gaussian (DoG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-keypoint-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Keypoint Localization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Computer vision</h1>
+
+<h2 id="unit-1">Unit 1</h2>
+<h3 id="introduction">Introduction</h3>
+<ul>
+<li><strong>Image Processing</strong>: Image in → Image out.  </li>
+<li><strong>Computer Vision</strong>: Image/Video in → Interpretation out.  </li>
+<li><strong>Objective</strong>: Enable computers to see and interpret objects like humans.  </li>
+</ul>
+<h3 id="human-vs-computer-vision">Human vs. Computer Vision</h3>
+<ul>
+<li><strong>Humans</strong>: Quick recognition, intelligent decision-making.  </li>
+<li><strong>Computers</strong>: Require complex processing, pattern recognition, and AI.  </li>
+</ul>
+<h3 id="features-of-human-vision">Features of Human Vision</h3>
+<ul>
+<li><strong>Stereo Vision</strong>: Two eyes perceive depth using different distances.  </li>
+<li><strong>Texture &amp; Color</strong>: Identifies objects based on patterns and colors.  </li>
+<li><strong>Object Recognition</strong>: Recognizes objects despite illumination, viewpoint, or expression changes.  </li>
+<li><strong>Context Awareness</strong>: Infers key information from a scene.  </li>
+</ul>
+<h3 id="limitations-of-human-vision">Limitations of Human Vision</h3>
+<ul>
+<li><strong>Memory Constraints</strong>: Limited ability to recall vast image data.  </li>
+<li><strong>Restricted Spectrum</strong>: Limited to visible light.  </li>
+<li><strong>Optical Illusions</strong>: Misinterpretations of size, shape, and perspective.  </li>
+</ul>
+<h3 id="computer-vision-vs-image-processing">Computer Vision vs. Image Processing</h3>
+<ul>
+<li><strong>Image Processing</strong>: Low-level operations (compression, restoration, enhancement).  </li>
+<li><strong>Computer Vision</strong>: High-level understanding (object recognition, scene interpretation).  </li>
+</ul>
+<h3 id="applications-of-computer-vision">Applications of Computer Vision</h3>
+<ul>
+<li><strong>Self-driving Cars</strong>: Navigation and obstacle detection.  </li>
+<li><strong>Facial Recognition</strong>: Identity verification.  </li>
+<li><strong>Augmented Reality</strong>: Merging virtual objects with reality.  </li>
+<li><strong>Medical Imaging</strong>: Detecting anomalies in X-rays and MRIs.  </li>
+<li><strong>Manufacturing</strong>: Detecting defective products.  </li>
+<li><strong>Retail &amp; Banking</strong>: OCR, fraud detection, and identity verification.</li>
+</ul>
+<h2 id="levels-of-processing-for-computer-vision"><strong>📜 Levels of processing for computer Vision</strong></h2>
+<h2 id="computer-vision-processing-levels"><strong>Computer Vision Processing Levels</strong></h2>
+<h3 id="low-level-processing"><strong>Low-Level Processing</strong></h3>
+<ul>
+<li><strong>Enhances image quality</strong> and extracts <strong>basic features</strong> like <strong>edges, corners, textures</strong>.  </li>
+<li>Works on <strong>raw pixel data</strong> without understanding objects.  </li>
+<li><strong>Steps for low level processing</strong>:  </li>
+<li><strong>Image Preprocessing</strong>: Contrast enhancement, noise reduction.  </li>
+<li><strong>Feature Extraction</strong>: <strong>Edge detection</strong> (Canny, Sobel filters).  </li>
+<li><strong>Segmentation</strong>: Divides an image into meaningful parts.  </li>
+<li><strong>Super-Resolution</strong>: Converts <strong>low-resolution</strong> to <strong>high-resolution</strong> images.  </li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Low-level processing extracts fundamental features such as edges, lines, corners, and salient points from an image. These features serve as the building blocks for higher-level processing, enabling pattern recognition, object detection, and scene understanding.</p>
+</div>
+<p>How Low-Level Processing Helps:</p>
+<ul>
+<li>✅ Feature Extraction: Identifies edges, textures, and key points in an image.</li>
+<li>✅ Segmentation: Divides images into meaningful regions and shapes.</li>
+<li>✅ Noise Reduction: Enhances image clarity by removing unwanted distortions.</li>
+<li>✅ Super-Resolution: Generates higher-resolution images from fewer pixels.</li>
+<li>✅ Depth Perception: Uses stereo vision (left &amp; right cameras) to create disparity maps for estimating depth.</li>
+</ul>
+<hr />
+<h3 id="mid-level-processing"><strong>Mid-Level Processing</strong></h3>
+<ul>
+<li>Uses <strong>patterns and object features</strong> for recognition.  </li>
+<li>Works on <strong>segmented objects</strong> to <strong>classify, track, and detect motion</strong>.  </li>
+<li><strong>Examples</strong>:  </li>
+<li><strong>Object Detection</strong>: Recognizes and labels objects.  </li>
+<li><strong>Image Classification</strong>: Assigns categories to images.  </li>
+<li><strong>Image Matching &amp; Stitching</strong>: Used in <strong>panoramas</strong>.  </li>
+<li><strong>Object Tracking</strong>: <strong>Predicts movement</strong> using <strong>optical flow</strong>.  </li>
+<li><strong>Clustering (K-Means)</strong>: Segments objects into groups.  </li>
+</ul>
+<hr />
+<h3 id="high-level-processing"><strong>High-Level Processing</strong></h3>
+<ul>
+<li>Involves <strong>complex scene understanding</strong> and <strong>AI-based interpretations</strong>.  </li>
+<li>Integrates <strong>low-level features</strong> for <strong>semantic meaning</strong>.  </li>
+<li><strong>Examples</strong>:  </li>
+<li><strong>Semantic Segmentation</strong>: Classifies pixels into categories (e.g., road, car, tree).  </li>
+<li><strong>Instance Segmentation</strong>: Differentiates between multiple <strong>objects of the same type</strong>.  </li>
+<li><strong>Panoptic Segmentation</strong>: Combines <strong>semantic + instance segmentation</strong>.  </li>
+<li><strong>Deep Learning for Segmentation</strong>: Uses <strong>CNNs &amp; RNNs</strong> for precise object recognition.  </li>
+<li><strong>Theme Understanding</strong>: Identifies scene context (e.g., <strong>marketplace vs. garden</strong>).  </li>
+<li><strong>Visual Question Answering (VQA)</strong>: AI interprets <strong>images + text-based queries</strong>.  </li>
+</ul>
+<hr />
+<h3 id="applications-of-computer-vision_1"><strong>Applications of Computer Vision</strong></h3>
+<ul>
+<li><strong>Self-Driving Cars</strong>: Detects lanes, pedestrians, and traffic signs.  </li>
+<li><strong>Facial Recognition</strong>: Matches faces for identity verification.  </li>
+<li><strong>Medical Imaging</strong>: Detects diseases in X-rays &amp; MRIs.  </li>
+<li><strong>Manufacturing</strong>: Identifies <strong>defective products</strong>.  </li>
+<li><strong>Retail &amp; Banking</strong>: Uses <strong>OCR, fraud detection, and customer authentication</strong>.</li>
+</ul>
+<h3 id="deep-learning-for-image-segmentation">Deep Learning for Image Segmentation</h3>
+<p>🔹 Convolutional Neural Networks (CNNs) play a crucial role in image segmentation, enabling computers to understand objects at a pixel level.</p>
+<p>How Deep Learning Works for Image Segmentation:</p>
+<ul>
+<li>1️⃣ Feature Extraction with CNNs: CNNs process images and detect key features for segmentation.</li>
+<li>2️⃣ Object Localization with Region Proposal Network (RPN): Identifies potential object locations and generates bounding boxes.</li>
+<li>3️⃣ Refining Features from the Region of Interest (ROI): CNN extracts features within the bounding box.</li>
+<li>4️⃣ Instance Segmentation using Fully Convolutional Networks (FCN): The extracted features are passed into an FCN, which learns to segment the object from its surroundings.</li>
+<li>5️⃣ Binary Mask Output: The FCN produces a binary mask, highlighting which pixels belong to the object and which do not.</li>
+</ul>
+<p>🚀 From raw images to object masks, deep learning models enhance precision in image segmentation by combining feature extraction, region detection, and pixel-level classification! 🚀</p>
+<h3 id="difference-between-low-level-and-high-level-features"><strong>Difference Between Low-Level and High-Level Features</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature Type</strong></th>
+<th><strong>Low-Level Features</strong> 🖼️</th>
+<th><strong>High-Level Features</strong> 🧠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>Deals with <strong>raw pixel data</strong>, detecting <strong>edges, textures, and simple patterns</strong>.</td>
+<td>Focuses on <strong>object understanding, classification, and relationships</strong>.</td>
+</tr>
+<tr>
+<td><strong>Sensitivity</strong></td>
+<td>More <strong>sensitive to noise</strong>, lighting, and orientation changes.</td>
+<td>More <strong>robust</strong>, can interpret <strong>complex scenes</strong> despite variations.</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Extracted from <strong>local regions</strong> (e.g., edges in a small part of the image).</td>
+<td><strong>Global features</strong>—considers the entire image for <strong>context</strong>.</td>
+</tr>
+<tr>
+<td><strong>Resources</strong></td>
+<td>Requires <strong>fewer system resources</strong>, as it focuses on simple features.</td>
+<td>Uses <strong>advanced AI models</strong>, requiring <strong>higher computation power</strong>.</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Applied in <strong>image segmentation, feature matching, and object detection</strong>.</td>
+<td>Used in <strong>image classification, object recognition, and scene understanding</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>🔍 <strong>Low-level features</strong> lay the foundation by detecting <strong>shapes and patterns</strong>, while <strong>high-level features</strong> bring <strong>context and meaning</strong> to an image. Together, they power modern <strong>computer vision applications</strong>! 🚀</p>
+<h3 id="edge-detection">Edge Detection</h3>
+<h3 id="sharpening-spatial-filters"><strong>Sharpening Spatial Filters</strong></h3>
+<p>🖼️ <strong>Purpose</strong>:<br />
+- Removes <strong>blurring</strong> and <strong>enhances edges</strong> in images.<br />
+- Highlights <strong>intensity transitions</strong> using <strong>spatial differentiation</strong>.<br />
+- <strong>Image gradients</strong> measure the <strong>rate of change in pixel intensity</strong>, crucial for detecting edges.  </p>
+<hr />
+<h3 id="image-gradients"><strong>Image Gradients</strong></h3>
+<p>📌 <strong>Fundamental for computer vision &amp; image processing</strong><br />
+🔹 Used for:<br />
+✅ <strong>Edge detection</strong><br />
+✅ <strong>Finding object contours</strong><br />
+✅ <strong>Outlining shapes</strong>  </p>
+<p>🔹 Computes:<br />
+- <strong>Gradient Magnitude</strong> (Strength of the edge)<br />
+- <strong>Gradient Orientation</strong> (Direction of the edge)  </p>
+<p>✨ <strong>Popular techniques built on image gradients</strong>:<br />
+- <strong>Histogram of Oriented Gradients (HOG)</strong><br />
+- <strong>Scale-Invariant Feature Transform (SIFT)</strong>  </p>
+<hr />
+<h3 id="edge-detection-using-image-gradients"><strong>Edge Detection Using Image Gradients</strong></h3>
+<p>💡 <strong>Gradient computation is a key pre-processing step</strong> for edge detection.  </p>
+<h4 id="computing-image-gradients"><strong>Computing Image Gradients</strong></h4>
+<p>The <strong>gradient of an image</strong> is calculated using finite differences:<br />
+- <strong>Gradient along the vertical direction (<span class="arithmatex">\(G_y\)</span>):</strong><br />
+  $$ G_y = f(r+1, c) - f(r-1, c) $$<br />
+- <strong>Gradient along the horizontal direction (<span class="arithmatex">\(G_x\)</span>):</strong><br />
+  $$ G_x = f(r, c+1) - f(r, c-1) $$  </p>
+<p>📌 <strong>Gradient masks (filters) for edge detection:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Filter</strong></th>
+<th><strong>Mask</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vertical (<span class="arithmatex">\(G_y\)</span>) Sobel Filter</strong></td>
+<td><span class="arithmatex">\(\begin{bmatrix} -1 &amp; 0 &amp; 1 \end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td><strong>Horizontal (<span class="arithmatex">\(G_x\)</span>) Sobel Filter</strong></td>
+<td><span class="arithmatex">\(\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="image-gradient-gradient-vector"><strong>Image Gradient &amp; Gradient Vector</strong></h3>
+<p>🖼️ <strong>Purpose</strong>:<br />
+- Computes <strong>rate of change</strong> in pixel intensity.<br />
+- <strong>Gradient Magnitude (<span class="arithmatex">\(M\)</span>)</strong> measures the <strong>strength</strong> of intensity change.<br />
+- <strong>Gradient Orientation (<span class="arithmatex">\(\alpha\)</span>)</strong> determines <strong>direction</strong> of the edge.<br />
+- The <strong>matrix size</strong> for magnitude and angle is the <strong>same</strong> as the original image.  </p>
+<p>🔹 <strong>Mathematical Representation:</strong><br />
+- <strong>Gradient Angle (<span class="arithmatex">\(\alpha\)</span>):</strong><br />
+  $$ \alpha = \tan^{-1} \left(\frac{g_y}{g_x} \right) $$<br />
+- <strong>Gradient Magnitude (<span class="arithmatex">\(M\)</span>):</strong><br />
+  $$ M = \sqrt{g_x^2 + g_y^2} $$  </p>
+<p>📌 <strong>Where:</strong><br />
+- <span class="arithmatex">\(g_x\)</span> = Gradient in the <strong>horizontal direction</strong>.<br />
+- <span class="arithmatex">\(g_y\)</span> = Gradient in the <strong>vertical direction</strong>.<br />
+- <span class="arithmatex">\(\alpha\)</span> = Angle between the <strong>vertical axis</strong> and the <strong>edge direction</strong>.  </p>
+<hr />
+<h3 id="sobel-filter-for-edge-detection"><strong>Sobel Filter for Edge Detection</strong></h3>
+<p>💡 <strong>Sobel filters</strong> compute <strong>image gradients</strong> using convolution masks.  </p>
+<h4 id="gradient-computation-with-sobel-operator"><strong>Gradient Computation with Sobel Operator</strong></h4>
+<p>🔹 <strong>Sobel Operator for Horizontal (<span class="arithmatex">\(G_x\)</span>) and Vertical (<span class="arithmatex">\(G_y\)</span>) Gradients:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Gradient Direction</strong></th>
+<th><strong>Filter Mask (Kernel)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="arithmatex">\(G_x\)</span> (Horizontal Gradient)</strong></td>
+<td><span class="arithmatex">\(\begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -2 &amp; 0 &amp; 2 \\ -1 &amp; 0 &amp; 1 \end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\(G_y\)</span> (Vertical Gradient)</strong></td>
+<td><span class="arithmatex">\(\begin{bmatrix} -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>🔹 <strong>Steps to Compute Edge Strength:</strong><br />
+1️⃣ Convolve the <strong>image</strong> with <strong><span class="arithmatex">\(G_x\)</span></strong> to compute <strong>horizontal changes</strong>.<br />
+2️⃣ Convolve the <strong>image</strong> with <strong><span class="arithmatex">\(G_y\)</span></strong> to compute <strong>vertical changes</strong>.<br />
+3️⃣ Compute <strong>gradient magnitude</strong> and <strong>angle</strong> using:<br />
+   $$ M = \sqrt{G_x^2 + G_y^2} $$<br />
+   $$ \alpha = \tan^{-1} \left(\frac{G_y}{G_x} \right) $$  </p>
+<p>📌 <strong>Why Sobel Filters?</strong><br />
+✅ Enhances <strong>edges</strong> by detecting <strong>gradients</strong> in both directions.<br />
+✅ <strong>Smooths noise</strong> while emphasizing high-frequency intensity changes.<br />
+✅ Used in <strong>edge detection algorithms</strong> like <strong>Canny Edge Detector</strong>.  </p>
+<h3 id="gaussian-filter-for-image-smoothing"><strong>Gaussian Filter for Image Smoothing</strong></h3>
+<p>🔹 The <strong>Gaussian filter</strong> is a <strong>smoothing filter</strong> that reduces <strong>noise and detail</strong> in an image.<br />
+🔹 It applies a <strong>Gaussian function</strong> to weight pixels, giving higher importance to the center pixel and gradually reducing weights outward.  </p>
+<hr />
+<h3 id="mathematical-representation"><strong>Mathematical Representation</strong></h3>
+<p>The <strong>Gaussian function</strong> for a 2D image is:<br />
+$$ G_\sigma(x, y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}} $$
+where:<br />
+- <span class="arithmatex">\( \sigma \)</span> = Standard deviation (controls blurring strength)<br />
+- <span class="arithmatex">\( x, y \)</span> = Pixel coordinates  </p>
+<p>📌 <strong>Higher <span class="arithmatex">\( \sigma \)</span> → More blur</strong><br />
+📌 <strong>Lower <span class="arithmatex">\( \sigma \)</span> → Less blur, preserves more details</strong>  </p>
+<hr />
+<h3 id="gaussian-filter-kernels"><strong>Gaussian Filter Kernels</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Filter Size</strong></th>
+<th><strong>Kernel Matrix (Normalized)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3×3 (σ = 1)</strong></td>
+<td><span class="arithmatex">\( \frac{1}{16} \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 2 \\ 1 &amp; 2 &amp; 1 \end{bmatrix} \)</span></td>
+</tr>
+<tr>
+<td><strong>5×5 (σ = 1)</strong></td>
+<td><span class="arithmatex">\( \frac{1}{330} \begin{bmatrix} 1 &amp; 4 &amp; 7 &amp; 4 &amp; 1 \\ 4 &amp; 20 &amp; 33 &amp; 20 &amp; 4 \\ 7 &amp; 33 &amp; 54 &amp; 33 &amp; 7 \\ 4 &amp; 20 &amp; 33 &amp; 20 &amp; 4 \\ 1 &amp; 4 &amp; 7 &amp; 4 &amp; 1 \end{bmatrix} \)</span></td>
+</tr>
+<tr>
+<td><strong>5×5 (σ = 2)</strong></td>
+<td><span class="arithmatex">\( \frac{1}{34} \begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix} \)</span></td>
+</tr>
+</tbody>
+</table>
+<p>📌 <strong>Larger filter size → More blur &amp; smoothing</strong><br />
+📌 <strong>Smaller filter size → Preserves more details</strong>  </p>
+<hr />
+<h3 id="laplacian-filter-for-edge-detection"><strong>Laplacian Filter for Edge Detection</strong></h3>
+<p>🔹 The <strong>Laplacian filter</strong> is a <strong>second-order derivative filter</strong> used for <strong>edge detection</strong>.<br />
+🔹 It highlights regions of <strong>rapid intensity change</strong> by computing the <strong>second derivative</strong> of an image.  </p>
+<h4 id="mathematical-representation_1"><strong>Mathematical Representation</strong></h4>
+<p>The Laplacian operator is given by:  </p>
+<div class="arithmatex">\[ \nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}\]</div>
+<p>where <span class="arithmatex">\( f(x, y) \)</span> is the image intensity at a given point.</p>
+<hr />
+<h3 id="laplacian-filter-kernels"><strong>Laplacian Filter Kernels</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Filter Type</strong></th>
+<th><strong>Kernel Matrix</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4-Neighbor Laplacian</strong></td>
+<td><span class="arithmatex">\( \begin{bmatrix} 0 &amp; -1 &amp; 0 \\ -1 &amp; 4 &amp; -1 \\ 0 &amp; -1 &amp; 0 \end{bmatrix} \)</span></td>
+</tr>
+<tr>
+<td><strong>8-Neighbor Laplacian</strong></td>
+<td><span class="arithmatex">\( \begin{bmatrix} -1 &amp; -1 &amp; -1 \\ -1 &amp; 8 &amp; -1 \\ -1 &amp; -1 &amp; -1 \end{bmatrix} \)</span></td>
+</tr>
+</tbody>
+</table>
+<p>🔹 The <strong>4-neighbor Laplacian</strong> considers only direct neighbors, while the <strong>8-neighbor Laplacian</strong> accounts for diagonal edges as well.</p>
+<hr />
+<h2 id="unit-2">Unit 2</h2>
+<h3 id="image-features-in-computer-vision"><strong>Image Features in Computer Vision</strong></h3>
+<p>🔹 <strong>Image features</strong> are key elements that help in <strong>object recognition, segmentation, and analysis</strong>.  </p>
+<h4 id="types-of-image-features"><strong>Types of Image Features</strong></h4>
+<p>✅ <strong>Edges</strong> – Identifies boundaries between objects.<br />
+✅ <strong>Color</strong> – Extracts information based on pixel intensity.<br />
+✅ <strong>Texture</strong> – Analyzes surface patterns and structures.<br />
+✅ <strong>Object Boundaries</strong> – Detects outlines and contours of objects.<br />
+✅ <strong>Object Shape</strong> – Defines geometric properties of an object.  </p>
+<p>🔹 <strong>Good Features Should Be:</strong><br />
+- ✅ <strong>Unique &amp; Distinctive</strong> – Helps differentiate between objects.<br />
+- ✅ <strong>Non-redundant</strong> – Avoids duplicate or unnecessary information.<br />
+- ✅ <strong>Robust</strong> – Works well under noise and illumination changes.<br />
+- ✅ <strong>Global Representation</strong> – Captures scene-wide characteristics, not just local details.  </p>
+<hr />
+<h3 id="gradient-based-features"><strong>Gradient-Based Features</strong></h3>
+<p>Gradient-based techniques detect <strong>changes in pixel intensity</strong>, which highlight object edges and textures.  </p>
+<p>🔹 <strong>Popular Techniques:</strong><br />
+- <strong>DoG (Difference of Gaussian)</strong><br />
+- <strong>LoG (Laplacian of Gaussian)</strong><br />
+- <strong>HoG (Histogram of Oriented Gradients)</strong><br />
+- <strong>SIFT (Scale-Invariant Feature Transform)</strong><br />
+- <strong>SURF (Speeded-Up Robust Features)</strong>  </p>
+<p>📌 <strong>Advantages:</strong><br />
+✅ <strong>Invariant to small shifts &amp; rotations</strong> – Ensures stability under transformations.<br />
+✅ <strong>Localized histograms</strong> – Offers better spatial information compared to global histograms.<br />
+✅ <strong>Contrast normalization</strong> – Reduces the impact of variable illumination.  </p>
+<hr />
+<h3 id="difference-of-gaussian-dog"><strong>Difference of Gaussian (DoG)</strong></h3>
+<p>📌 <strong>A feature enhancement technique used for blob detection &amp; SIFT descriptors</strong>.  </p>
+<h4 id="how-dog-works"><strong>How DoG Works:</strong></h4>
+<p>1️⃣ <strong>Apply Gaussian Blur</strong> – Smoothens the image using <strong>two Gaussian filters</strong> with different sigma values (<strong>σ₁ &amp; σ₂</strong>).<br />
+2️⃣ <strong>Subtract the Two Blurred Images</strong> – Enhances regions with specific frequency details.<br />
+3️⃣ <strong>Suppress High-Frequency Details</strong> – Reduces random noise but preserves important structures.  </p>
+<p>🔹 <strong>Mathematical Representation:</strong><br />
+$$ DoG = G_{\sigma_1} * I - G_{\sigma_2} * I $$</p>
+<p>where:<br />
+- <span class="arithmatex">\( I \)</span> = Original grayscale image<br />
+- <span class="arithmatex">\( G_{\sigma_1}, G_{\sigma_2} \)</span> = Gaussian filters with different standard deviations  </p>
+<p>📌 <strong>Pros &amp; Cons:</strong><br />
+✅ <strong>Reduces noise while preserving edges</strong><br />
+✅ <strong>Enhances spatial features</strong><br />
+❌ <strong>Reduces overall image contrast</strong>  </p>
+<h3 id="laplacian-of-gaussian-log-edge-detection-feature-enhancement"><strong>Laplacian of Gaussian (LoG) – Edge Detection &amp; Feature Enhancement</strong></h3>
+<p>🔹 <strong>Laplacian of Gaussian (LoG)</strong> is a feature detection technique that combines:<br />
+1️⃣ <strong>Gaussian Smoothing</strong> – Reduces noise in the image.<br />
+2️⃣ <strong>Laplacian Operator</strong> – Detects <strong>edges and blobs</strong> by identifying intensity changes.  </p>
+<h4 id="how-log-works"><strong>How LoG Works:</strong></h4>
+<ol>
+<li><strong>Apply a Gaussian filter</strong> to smooth the image and suppress noise.  </li>
+<li><strong>Compute the second derivative (Laplacian)</strong> to highlight regions with rapid intensity changes (edges).  </li>
+<li><strong>Detect zero-crossings</strong> in the Laplacian response to identify edges.  </li>
+</ol>
+<h4 id="mathematical-representation_2"><strong>Mathematical Representation:</strong></h4>
+<p>The <strong>LoG function</strong> is given by:<br />
+$$ LoG(x, y) = \nabla^2 G_{\sigma} (x, y) * I(x, y) $$<br />
+where:<br />
+- <span class="arithmatex">\( G_{\sigma} (x, y) \)</span> = <strong>Gaussian filter</strong> with standard deviation <span class="arithmatex">\( \sigma \)</span><br />
+- <span class="arithmatex">\( \nabla^2 \)</span> = <strong>Laplacian operator</strong> (second derivative)<br />
+- <span class="arithmatex">\( I(x, y) \)</span> = <strong>Input image</strong>  </p>
+<h4 id="key-features-of-log"><strong>Key Features of LoG:</strong></h4>
+<p>✅ <strong>Combines smoothing &amp; edge detection</strong> in one step.<br />
+✅ <strong>Detects both fine and coarse details</strong> depending on <span class="arithmatex">\( \sigma \)</span>.<br />
+✅ <strong>Useful for blob detection</strong> in feature descriptors like <strong>SIFT</strong>.<br />
+❌ <strong>Sensitive to noise</strong> – Requires pre-smoothing for better results.  </p>
+<p>🚀 <strong>LoG is commonly used in edge detection pipelines like the Marr-Hildreth operator and as a preprocessing step in Computer Vision applications!</strong> 🔍</p>
+<h3 id="histogram-of-oriented-gradients-hog-feature-descriptor-for-object-detection"><strong>Histogram of Oriented Gradients (HoG) – Feature Descriptor for Object Detection</strong></h3>
+<p>🔹 <strong>Histogram of Oriented Gradients (HoG)</strong> is a feature descriptor used for <strong>object detection</strong> and <strong>image classification</strong> by analyzing <strong>gradient orientations</strong> in localized regions of an image.  </p>
+<h3 id="step-by-step-hog-computation"><strong>Step-by-Step HoG Computation</strong></h3>
+<p>✅ <strong>Step 1: Resize Image</strong><br />
+- Resize the image to an <strong>integer multiple of 8</strong> (nearest to the original size).<br />
+- Ensures uniform cell division and efficient computation.  </p>
+<p>✅ <strong>Step 2: Divide Image into Cells</strong><br />
+- Split the image into <strong>small patches of equal size</strong> (e.g., <strong>8×8 pixels per cell</strong>).<br />
+- Each cell will have its own <strong>gradient histogram</strong>.  </p>
+<p>✅ <strong>Step 3: Compute Gradients</strong><br />
+- Calculate the <strong>gradient magnitude</strong> and <strong>orientation</strong> using <strong>Sobel filters</strong>:<br />
+  [
+  M = \sqrt{G_x^2 + G_y^2}, \quad \theta = \tan^{-1} \left(\frac{G_y}{G_x} \right)
+  ]<br />
+  where <span class="arithmatex">\( G_x, G_y \)</span> are gradients along horizontal and vertical directions.  </p>
+<p>✅ <strong>Step 4: Compute Gradient Histograms (Per Cell)</strong><br />
+- For <strong>each 8×8 cell</strong>, create a <strong>histogram of gradients</strong> (e.g., 9 bins for 0°-180°).<br />
+- Assign gradient magnitudes to their corresponding <strong>orientation bins</strong>.  </p>
+<p>✅ <strong>Step 5: Construct Feature Vector</strong><br />
+- Normalize the histograms <strong>across neighboring blocks</strong> (e.g., <strong>2×2 cells per block</strong>) for better illumination invariance.<br />
+- Flatten the computed HoG features into a <strong>single feature vector</strong> for classification.  </p>
+<p>✅ <strong>Step 6: Visualize HoG</strong><br />
+- HoG features are often <strong>visualized as a grid of arrows</strong>, where the <strong>length and direction</strong> represent gradient strength and orientation.  </p>
+<p>✅ <strong>Step 7: Classify Images</strong><br />
+- Use machine learning models (<strong>SVM, Deep Learning</strong>) to classify objects using the extracted <strong>HoG feature vector</strong>.  </p>
+<h4 id="mathematical-representation_3"><strong>Mathematical Representation:</strong></h4>
+<ul>
+<li>
+<p><strong>Gradient Magnitude (<span class="arithmatex">\(M\)</span>):</strong><br />
+$$   M = \sqrt{G_x^2 + G_y^2} $$ </p>
+</li>
+<li>
+<p><strong>Gradient Orientation (<span class="arithmatex">\(\theta\)</span>):</strong><br />
+$$   \theta = \tan^{-1} \left(\frac{G_y}{G_x} \right) $$ <br />
+where:  </p>
+</li>
+<li><span class="arithmatex">\( G_x, G_y \)</span> = Gradients in horizontal &amp; vertical directions.  </li>
+<li><span class="arithmatex">\( M \)</span> = Strength of edge response.  </li>
+<li><span class="arithmatex">\( \theta \)</span> = Edge direction (0°–180° or 0°–360° bins).  </li>
+</ul>
+<h4 id="key-features-of-hog"><strong>Key Features of HoG:</strong></h4>
+<p>✅ <strong>Invariance to Illumination &amp; Shadows</strong> – Normalization removes intensity variations.<br />
+✅ <strong>Captures Local Shape Information</strong> – Focuses on <strong>edges and textures</strong> rather than pixel intensity.<br />
+✅ <strong>Robust to Small Translations &amp; Rotations</strong> – Uses <strong>histograms</strong> instead of raw gradients.<br />
+✅ <strong>Widely Used in Object Detection</strong> – Forms the basis of <strong>Dalal-Triggs pedestrian detection</strong> and is used in <strong>SVM-based image recognition</strong>.<br />
+❌ <strong>Computationally Expensive</strong> – Requires <strong>dense gradient computations</strong> across the entire image.  </p>
+<p>🚀 <strong>HoG is widely used in Human &amp; Object Detection (e.g., Pedestrian Detection in self-driving cars) and Machine Learning-based Image Classification!</strong> 🔍</p>
+<h3 id="feature-descriptors-in-computer-vision"><strong>Feature Descriptors in Computer Vision</strong></h3>
+<p>🔹 <strong>Feature descriptors</strong> help identify <strong>key points, edges, and corners</strong> in an image.<br />
+🔹 These descriptors are used for <strong>object detection, image matching, and recognition</strong>.  </p>
+<hr />
+<h3 id="types-of-feature-descriptors"><strong>Types of Feature Descriptors</strong></h3>
+<h4 id="1-global-descriptors"><strong>1. Global Descriptors 🌍</strong></h4>
+<ul>
+<li>Represent the <strong>entire image</strong>.  </li>
+<li>Examples:<br />
+  ✅ <strong>Histogram of Oriented Gradients (HoG)</strong><br />
+  ✅ <strong>Difference of Gaussian (DoG)</strong><br />
+  ✅ <strong>Histogram of Optical Flow (HOF)</strong>  </li>
+<li><strong>Limitations</strong>: Struggle with <strong>occlusions and profile variations</strong> since they analyze the <strong>whole image</strong>.  </li>
+</ul>
+<h4 id="2-local-descriptors"><strong>2. Local Descriptors 🔍</strong></h4>
+<ul>
+<li>Describe <strong>small patches</strong> within an image.  </li>
+<li>More <strong>accurate &amp; robust</strong> for <strong>object detection, matching, and occlusion handling</strong>.  </li>
+<li>Examples:<br />
+  ✅ <strong>SIFT (Scale-Invariant Feature Transform)</strong><br />
+  ✅ <strong>SURF (Speeded-Up Robust Features)</strong><br />
+  ✅ <strong>LBP (Local Binary Pattern)</strong><br />
+  ✅ <strong>BRISK (Binary Robust Invariant Scalable Keypoints)</strong><br />
+  ✅ <strong>MSER (Maximally Stable Extremal Regions)</strong><br />
+  ✅ <strong>FREAK (Fast Retina Keypoint)</strong>  </li>
+</ul>
+<p>📌 <strong>Local descriptors outperform global ones in real-world applications like facial recognition and object tracking!</strong> 🚀  </p>
+<hr />
+<h3 id="how-to-define-an-interest-point"><strong>How to Define an Interest Point?</strong></h3>
+<p>🔹 <strong>Interest points</strong> are key locations (e.g., edges, corners) where <strong>features can be extracted</strong>.  </p>
+<p>✅ <strong>Repeatability</strong>:<br />
+- A feature should be detected <strong>consistently across multiple images</strong>, despite <strong>geometric &amp; photometric transformations</strong>.  </p>
+<p>✅ <strong>Saliency</strong>:<br />
+- Features should be <strong>distinct and unique</strong> to avoid mismatches.  </p>
+<p>✅ <strong>Compactness</strong>:<br />
+- Fewer features than the number of image pixels should <strong>effectively represent the image</strong>.  </p>
+<p>✅ <strong>Efficiency</strong>:<br />
+- <strong>Fast computation</strong> is essential for <strong>real-time applications</strong> like tracking &amp; detection.  </p>
+<p>✅ <strong>Locality</strong>:<br />
+- Features should <strong>occupy a small area</strong> and remain <strong>robust to clutter &amp; occlusion</strong>.  </p>
+<p>✅ <strong>Covariance</strong>:<br />
+- Features should be <strong>detectable despite geometric &amp; photometric variations</strong> (e.g., rotation, lighting changes).  </p>
+<h3 id="sift-algorithm-scale-invariant-feature-transform"><strong>SIFT Algorithm – Scale-Invariant Feature Transform</strong></h3>
+<p>SIFT is a <strong>feature detection</strong> algorithm that extracts <strong>scale and rotation-invariant keypoints</strong> for object recognition, tracking, and image matching.  </p>
+<hr />
+<h2 id="step-1-construct-a-scale-space"><strong>Step 1: Construct a Scale Space</strong></h2>
+<p>📌 <strong>Why?</strong><br />
+- Real-world objects appear different at <strong>various distances (scales)</strong>.<br />
+- A feature must be <strong>detectable at multiple scales</strong> to be useful in recognition.  </p>
+<p>🔹 <strong>How it Works:</strong><br />
+1. The <strong>original image</strong> is repeatedly <strong>blurred using a Gaussian filter</strong>.<br />
+2. <strong>Octaves</strong> are created by <strong>downsampling</strong> the image (reducing its size by half).<br />
+3. Within each octave, multiple blurred images are generated with increasing <strong>sigma values (σ)</strong>.<br />
+4. This <strong>scale-space representation</strong> ensures features are <strong>scale-independent</strong>.  </p>
+<p>🔹 <strong>Mathematical Formulation (Gaussian Blur):</strong><br />
+[
+G(x, y, \sigma) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}
+]<br />
+where:<br />
+- <span class="arithmatex">\( G(x, y, \sigma) \)</span> = Gaussian function.<br />
+- <span class="arithmatex">\( \sigma \)</span> = Standard deviation (controls blurring).<br />
+- <span class="arithmatex">\( x, y \)</span> = Pixel coordinates.  </p>
+<p>🔹 <strong>Example:</strong><br />
+- <strong>Octave 1</strong>: Original image + multiple blurred versions.<br />
+- <strong>Octave 2</strong>: Image resized to <strong>half</strong> and blurred again.<br />
+- <strong>Repeats</strong> for multiple octaves (typically <strong>4-5</strong> octaves).  </p>
+<p>📌 <strong>Outcome:</strong><br />
+- A collection of images at <strong>different scales and resolutions</strong>.  </p>
+<hr />
+<h2 id="step-2-compute-difference-of-gaussian-dog"><strong>Step 2: Compute Difference of Gaussian (DoG)</strong></h2>
+<p>📌 <strong>Why?</strong><br />
+- Identifies keypoints by enhancing <strong>edges and texture features</strong>.<br />
+- The <strong>Gaussian Blur removes noise</strong>, and the <strong>DoG highlights changes in intensity</strong>.  </p>
+<p>🔹 <strong>How it Works:</strong><br />
+1. <strong>Compute DoG images</strong> by subtracting two consecutive Gaussian-blurred images:<br />
+   [
+   DoG(x, y, \sigma) = G(x, y, k\sigma) - G(x, y, \sigma)
+   ]<br />
+   where <span class="arithmatex">\( k \)</span> is a constant (typically <span class="arithmatex">\( k = \sqrt{2} \)</span>).<br />
+2. This process is repeated across all octaves.<br />
+3. The resulting <strong>DoG images</strong> enhance edges, blobs, and texture details.  </p>
+<p>📌 <strong>Outcome:</strong><br />
+- A set of <strong>DoG images</strong> that highlight regions of interest (potential keypoints).  </p>
+<hr />
+<h2 id="step-3-keypoint-localization"><strong>Step 3: Keypoint Localization</strong></h2>
+<p>📌 <strong>Why?</strong><br />
+- Identify <strong>stable keypoints</strong> while removing weak or false detections.  </p>
+<p>🔹 <strong>How it Works:</strong><br />
+1. Each pixel in the <strong>DoG images</strong> is compared with <strong>26 neighboring pixels</strong> (8 in the same image, 9 in the scale above, and 9 in the scale below).<br />
+2. If a pixel is the <strong>local maximum or minimum</strong>, it is marked as a <strong>potential keypoint</strong>.<br />
+3. <strong>Low-contrast keypoints</strong> are discarded using a <strong>threshold (typically 0.03)</strong>.<br />
+4. <strong>Edges are removed</strong> using the Hessian matrix determinant to avoid unstable keypoints.  </p>
+<p>🔹 <strong>Mathematical Filtering (Hessian Matrix):</strong><br />
+[
+H = \begin{bmatrix} I_{xx} &amp; I_{xy} \ I_{xy} &amp; I_{yy} \end{bmatrix}
+]<br />
+- Compute <strong>corner response</strong>:<br />
+  [
+  \frac{(\text{Trace}(H))^2}{\text{Det}(H)} &lt; 12.1
+  ]<br />
+  If the value is <strong>greater than 12.1</strong>, the keypoint is rejected.  </p>
+<p>📌 <strong>Outcome:</strong><br />
+- A set of <strong>highly stable, contrast-rich keypoints</strong> that can be used for further processing.  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js q"></script>
+      
+    
+  </body>
+</html>

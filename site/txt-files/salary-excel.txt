@@ -1,0 +1,12 @@
+Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''D:\\Semester 12\\rpa test\\EmployeeSalary.xlsx''' Visible: True ReadOnly: False Instance=> ExcelInstance
+Excel.GetFirstFreeColumnRow Instance: ExcelInstance FirstFreeColumn=> FirstFreeColumn FirstFreeRow=> FirstFreeRow
+Excel.ReadFromExcel.ReadCells Instance: ExcelInstance StartColumn: $'''A''' StartRow: 1 EndColumn: FirstFreeColumn - 1 EndRow: FirstFreeRow - 1 ReadAsText: False FirstLineIsHeader: True RangeValue=> ExcelData
+SET NewVar TO 2
+LOOP FOREACH CurrentItem IN ExcelData
+    IF CurrentItem['Salary'] >= 50000 THEN
+        Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: $'''Group1''' Column: FirstFreeColumn - 1 Row: NewVar
+    ELSE IF CurrentItem['Salary'] <= 50000 THEN
+        Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: $'''Group2''' Column: FirstFreeColumn - 1 Row: NewVar
+    END
+    Variables.IncreaseVariable Value: NewVar IncrementValue: 1
+END

@@ -1,0 +1,12 @@
+Display.InputDialog Title: $'''Enter Mobile Number''' Message: $'''Enter the mobile number''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+Text.ToNumber Text: UserInput Number=> MobileNumber
+Text.SplitText.SplitAtNumberOfCharacters Text: MobileNumber SplitInterval: 1 Result=> TextList
+SET Count TO 0
+LOOP FOREACH CurrentItem IN TextList
+    Variables.IncreaseVariable Value: Count IncrementValue: 1
+END
+IF Count < 10 THEN
+    Display.ShowMessageDialog.ShowMessage Title: $'''Wrong Input''' Message: $'''The mobile number is not valid''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+ELSE
+    Display.ShowMessageDialog.ShowMessage Title: $'''Mobile Number''' Message: $'''The mobile number is :- %MobileNumber%''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed3
+END

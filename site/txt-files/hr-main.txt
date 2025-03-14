@@ -1,0 +1,11 @@
+Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''D:\\Semester 12\\rpa test\\EmployeeID Generation_test.xlsx''' Visible: True ReadOnly: False Instance=> ExcelInstance
+Excel.GetFirstFreeColumnRow Instance: ExcelInstance FirstFreeColumn=> FirstFreeColumn FirstFreeRow=> FirstFreeRow
+Excel.ReadFromExcel.ReadCells Instance: ExcelInstance StartColumn: 1 StartRow: 1 EndColumn: FirstFreeColumn - 1 EndRow: FirstFreeRow - 1 ReadAsText: False FirstLineIsHeader: True RangeValue=> ExcelData
+SET i TO 2
+LOOP FOREACH entry IN ExcelData
+    CALL Browser_Automate
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: id Column: FirstFreeColumn - 2 Row: i
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: emailId Column: FirstFreeColumn - 1 Row: i
+    Variables.IncreaseVariable Value: i IncrementValue: 1
+END
+Excel.CloseExcel.CloseAndSave Instance: ExcelInstance

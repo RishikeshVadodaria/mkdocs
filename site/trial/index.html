@@ -8,10 +8,8 @@
       
       
       
-        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/RL-Unit-1/">
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/trial/">
       
-      
-        <link rel="prev" href="..">
       
       
       
@@ -20,11 +18,14 @@
     
     
       
-        <title>RL Unit 1 - Notes</title>
+        <title>Trial - Notes</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -43,6 +44,18 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -53,7 +66,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +94,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
       
@@ -98,12 +116,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RL Unit 1
+              Trial
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -157,6 +201,50 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mc-m2/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -170,8 +258,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
       
@@ -208,536 +298,67 @@
       
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+    
+    
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    RL Unit 1
+    Notes
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mc-m2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    RL Unit 1
+    Mobile Computing
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#machine-learning-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Machine Learning Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Machine Learning Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#supervised-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supervised Learning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unsupervised-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unsupervised Learning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reinforcement Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reinforcement Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#common-algorithms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Algorithms
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reinforcement-learning_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reinforcement Learning:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Characteristics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-rl-differs-from-supervised-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      How RL Differs from Supervised Learning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elements-of-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elements of RL
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Elements of RL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Agent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Environment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Process
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advantages of Reinforcement Learning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disadvantages-of-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disadvantages of Reinforcement Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Disadvantages of Reinforcement Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#when-to-apply-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Apply Reinforcement Learning?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-is-reinforcement-learning-difficult" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Is Reinforcement Learning Difficult?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Concepts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rl-algorithm-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      RL Algorithm Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-and-planning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning and Planning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Learning and Planning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#two-fundamental-problems-in-sequential-decision-making" class="md-nav__link">
-    <span class="md-ellipsis">
-      Two Fundamental Problems in Sequential Decision Making
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Two Fundamental Problems in Sequential Decision Making">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reinforcement-learning-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reinforcement Learning (RL):
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#planning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Planning:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-of-the-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model of the Environment:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-of-reinforcement-learning-algorithms-on-the-basis-of-model-based" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types of Reinforcement Learning Algorithms ( on the basis of model based)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types of Reinforcement Learning Algorithms ( on the basis of model based)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#model-free-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model-free Reinforcement Learning :
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-based-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model-based Reinforcement Learning:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences-between-model-free-and-model-based-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Differences Between Model-free and Model-based Reinforcement Learning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rl-framework-the-rl-process-a-loop-of-state-action-reward-and-next-state" class="md-nav__link">
-    <span class="md-ellipsis">
-      RL Framework - The RL Process: A Loop of State, Action, Reward, and Next State
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#main-characteristics-of-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Main Characteristics of RL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reinforcement-learning-rl-problem-challenges-in-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reinforcement Learning (RL) Problem - Challenges in RL
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reinforcement Learning (RL) Problem - Challenges in RL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trade-off-between-exploration-and-exploitation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trade-off between Exploration and Exploitation:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fundamental-components-of-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fundamental Components of RL
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fundamental Components of RL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Policy:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Policy:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#human-analogy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Human Analogy:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#value-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value function:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#human-analog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Human Analog
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Human Analog">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reward-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reward Function:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reward Function:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#human-analogy_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Human Analogy:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-of-the-environment_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model of the Environment:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#human-analogy_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Human Analogy:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-element-of-rl-systems-model-of-the-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Element of RL Systems: Model of the Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-of-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types of Reinforcement Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types of Reinforcement Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#value-based-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value-Based Reinforcement Learning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#policy-based-reinforcement-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Policy-Based Reinforcement Learning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-based-reinforcement-learning_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model-Based Reinforcement Learning
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1266,7 +887,7 @@
 
 
 <h2 id="machine-learning-types">Machine Learning Types</h2>
-<div class="highlight"><pre><span></span><code>graph LR
+<pre class="mermaid"><code>graph LR
     subgraph Input
     A[Data with Labels] --&gt; B[Supervised Learning]
     C[Data without Labels] --&gt; D[Unsupervised Learning]
@@ -1279,7 +900,8 @@
 
     B -.-&gt;|Error| B
     F -.-&gt;|Reward| F
-</code></pre></div>
+
+</code></pre>
 <h4 id="supervised-learning">Supervised Learning</h4>
 <ul>
 <li><strong>Input</strong>: Labeled data (features + target labels)</li>
@@ -1425,13 +1047,14 @@ The goal is to <strong>maximize rewards</strong> over time.</p>
 </ul>
 </blockquote>
 <h2 id="rl-algorithm-steps">RL Algorithm Steps</h2>
-<div class="highlight"><pre><span></span><code>graph TD;
+<pre class="mermaid"><code>graph TD;
     A[Agent Observes Environment] --&gt; B[Agent Performs Action];
     B --&gt; C[Agent Moves to New State];
     C --&gt; D[Agent Receives Reward];
     D --&gt; E[Agent Evaluates Action - Good or Bad];
     E --&gt; F[Agent Adjusts Strategy to Maximize Reward];
-</code></pre></div>
+
+</code></pre>
 <hr />
 <h2 id="learning-and-planning">Learning and Planning</h2>
 <h4 id="two-fundamental-problems-in-sequential-decision-making">Two Fundamental Problems in Sequential Decision Making</h4>
@@ -1682,11 +1305,6 @@ Neither exploration nor exploitation can be pursued exclusively without failing 
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
     </div>
@@ -1699,10 +1317,24 @@ Neither exploration nor exploitation can be pursued exclusively without failing 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js q"></script>
       
     
   </body>
