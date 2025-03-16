@@ -884,3 +884,185 @@ CODA was designed with **specific goals in mind** to support mobile and distribu
 ✅ **Strong Consistency** → Synchronizes data accurately across all replicas.  
 
 ---
+
+# Unit 6: Wireless Communication
+
+## Introduction
+
+Wireless communication refers to the transfer of information between two or more devices without physical cables or wires. It uses electromagnetic waves to transmit data over the airwaves.  
+
+Some common wireless communication technologies include:
+
+- **Wi-Fi**: Uses radio waves to provide high-speed internet and network connections.  
+- **Bluetooth**: Short-range wireless technology for connecting devices like smartphones, laptops, and headphones.  
+- **Cellular Networks**: Enables voice and data communication using mobile devices.  
+- **Satellite Communication**: Uses satellites to transmit data over long distances.  
+- **RFID (Radio Frequency Identification)**: Employs radio waves to identify and track objects.  
+
+Wireless communication has revolutionized connectivity and has enabled technologies like the **Internet of Things (IoT)**, which relies on wireless networks to link devices and sensors.
+
+---
+
+## Components of Wireless Communication Systems
+
+### 1. Transmitters  
+A **transmitter** encodes information into a modulated radio frequency signal and transmits it via an antenna. It generates an alternating current that is applied to the antenna, which then radiates radio waves.
+
+### 2. Receivers  
+A **receiver** detects transmitted signals using an antenna and demodulates them to extract the original information.
+
+### 3. Antennas  
+An **antenna** is responsible for transmitting and receiving radio frequency signals.  
+
+- Converts electrical energy into electromagnetic waves (and vice versa).  
+- Enhances signal quality and reduces interference.  
+- High-gain antennas extend the range of communication.
+
+### 4. Filters  
+Filters eliminate unwanted signals, reducing noise and interference to ensure that the transmitted or received signal is within the desired frequency range.
+
+### 5. Amplifiers  
+Amplifiers **increase signal strength**, allowing transmission over longer distances while maintaining quality. They also enhance receiver sensitivity.
+
+### 6. Mixers  
+Mixers **convert signal frequency** by combining two signals to produce a new signal with a frequency that is the sum or difference of the two input frequencies. This is essential in radio communication.
+
+!!! tip
+    High-gain antennas and amplifiers can significantly extend the communication range in wireless systems.
+
+---
+
+## Bluetooth Technology
+
+![alt text](image-14.png)
+
+**Bluetooth** is a short-range wireless technology that connects devices to form a **Personal Area Network (PAN)**. It operates in the **2.4 GHz to 2.485 GHz** range using ultra-high frequency (UHF) radio waves.  
+
+### Bluetooth Applications  
+- Wireless **laptops and PCs**  
+- **Mobile phones** and PDAs  
+- **Printers**  
+- **Wireless headsets**  
+- **Personal and Local Area Networks (PANs & LANs)**  
+- **Data transfer** (files, videos, images, music)  
+- Wireless **peripheral devices** (mouse, keyboards)  
+
+### Bluetooth Protocol Stack  
+
+![alt text](image-16.png)
+
+| **Protocol Layer** | **Description** |  
+|--------------------|---------------|  
+| **Radio** | Defines air interface, frequency bands, and modulation techniques. |  
+| **Baseband** | Defines addressing, packet format, and power control algorithms. |  
+| **LMP (Link Manager Protocol)** | Establishes and maintains logical links, handles authentication and encryption. |  
+| **L2CAP (Logical Link Control and Adaptation Protocol)** | Provides adaptation between upper-layer frames and baseband format. |  
+| **SDP (Service Discovery Protocol)** | Handles service-related queries for device connections. |  
+
+!!! warning  
+    Bluetooth operates on **shared frequency bands**, making it susceptible to **interference** from other wireless devices.  
+
+---
+
+## Protocols in the Bluetooth Protocol Stack  
+
+### Core Protocols  
+Includes essential Bluetooth layers:  
+- **Bluetooth Radio**  
+- **Baseband**  
+- **Link Manager Protocol (LMP)**  
+- **Logical Link Control and Adaptation Protocol (L2CAP)**  
+- **Service Discovery Protocol (SDP)**  
+
+### Cable Replacement Protocol  
+- **RFComm (Radio Frequency Communications Protocol)** – Provides a serial interface for replacing wired connections.  
+
+### Adopted Protocols  
+Bluetooth integrates several **standard networking protocols**:  
+- **Point-to-Point Protocol (PPP)**  
+- **Internet Protocol (IP)**  
+- **User Datagram Protocol (UDP)**  
+- **Transmission Control Protocol (TCP)**  
+- **Wireless Application Protocol (WAP)**  
+
+### Additional Protocols  
+- **AT Commands** – Command set for controlling Bluetooth devices.  
+- **Audio Protocol** – Handles voice and sound transmission over Bluetooth.  
+
+---
+
+## Bluetooth Frame Structure  
+
+![alt text](image-18.png)
+
+Bluetooth packets consist of **three main components**: **Access Code**, **Packet Header**, and **Payload**. Each field plays a crucial role in ensuring reliable communication within a Bluetooth network.  
+
+| **Field**          | **Size (bits)** | **Description** |  
+|--------------------|---------------|-----------------|  
+| **Access Code**   | 72            | Used for timing synchronization, piconet identification, and error detection. |  
+| **Packet Header** | 54            | Contains essential control information such as device address, type of packet, flow control, acknowledgment, sequence numbers, and error detection. |  
+| **Payload**       | 0-2744        | Carries actual data or voice, depending on the type of communication. |  
+
+---
+
+### 🔹 **Access Code (72 bits)**  
+The **Access Code** field is the **first part** of a Bluetooth packet and is primarily used for **device identification** and **synchronization**.  
+
+| **Subfield**       | **Size (bits)** | **Description** |  
+|--------------------|---------------|-----------------|  
+| **Preamble**      | 4             | Helps receivers synchronize with the incoming packet. It consists of alternating bits (1010 or 0101). |  
+| **Synchronization** | 64            | Uniquely identifies the piconet and is derived from the master's Bluetooth address. It allows a slave to recognize packets from its master. |  
+| **Trailer**       | 4             | Ensures correct signal detection and packet alignment. |  
+
+!!! note  
+    - The **Synchronization** field is crucial for filtering out unwanted Bluetooth signals from other nearby piconets.  
+    - The **Access Code** helps maintain **collision avoidance** and **packet integrity**.  
+
+---
+
+### 🔹 **Packet Header (54 bits)**  
+The **Packet Header** carries control and management information necessary for maintaining Bluetooth connections. It contains **six subfields**:  
+
+| **Subfield**       | **Size (bits)** | **Description** |  
+|--------------------|---------------|-----------------|  
+| **AM_ADDR (Active Member Address)** | 3 | Identifies one of the seven active slaves in a piconet (0 is reserved for broadcast). |  
+| **Type**          | 4             | Specifies the type of Bluetooth packet (e.g., data, control, or voice packet). |  
+| **Flow**          | 1             | Flow control bit used for managing buffer overflow conditions. |  
+| **ARQN (Acknowledgment Number)** | 1 | Acknowledges successful receipt of the last packet (1 = ACK, 0 = NACK). |  
+| **SEQN (Sequence Number)** | 1 | Ensures correct packet order and detects duplicates in retransmission. |  
+| **HEC (Header Error Check)** | 8 | Provides error detection for the header. It helps in identifying corrupt headers. |  
+
+!!! tip  
+    - The **SEQN** and **ARQN** fields work together to enable Bluetooth’s **Automatic Repeat reQuest (ARQ)** mechanism for reliable transmission.  
+    - The **HEC** ensures that header corruption is detected before processing further.  
+
+---
+
+### 🔹 **Payload (0-2744 bits)**  
+The **Payload** is the **data-carrying** part of the packet. Its size varies based on the type of packet:  
+
+| **Payload Type** | **Size (bits)** | **Purpose** |  
+|------------------|---------------|-------------|  
+| **Voice Data**  | Fixed 240     | Used for real-time audio communication. No retransmission occurs. |  
+| **Asynchronous Data (ACL)** | 0-2744 | Used for file transfer and general data communication. Supports error correction and retransmission. |  
+| **Synchronous Data (SCO/eSCO)** | 0-240 | Used for streaming applications like audio calls, with limited retransmission. |  
+
+!!! warning  
+    - **Voice packets** (SCO) have **no retransmission** due to real-time constraints.  
+    - **Data packets** (ACL) support **error correction and retransmission** for reliability.  
+
+---
+
+### 🔹 **Error Handling in Bluetooth Packets**  
+Bluetooth implements **several error detection and correction mechanisms**:  
+
+1. **Header Error Check (HEC)** – Detects corruption in the packet header.  
+2. **Cyclic Redundancy Check (CRC)** – Applied to payload data for error detection.  
+3. **Forward Error Correction (FEC)** – Helps correct errors in weak signals (1/3 and 2/3 FEC schemes).  
+4. **Automatic Repeat reQuest (ARQ)** – Retransmits packets when errors are detected.  
+
+!!! tip  
+    **Bluetooth’s robust error correction techniques ensure a balance between reliability and efficiency, making it suitable for both voice and data applications.**  
+
+---
+
