@@ -4,6 +4,7 @@ site_url: "https://rishikeshvadodaria.github.io/mkdocs/"
 nav:
   - Home: index.md
   - Mobile Computing: mc-m2.md
+  - Computer Vision: cv-m2.md
       # - Reinforcement Learning: RL_Unit1.md
       # - Computer Vision: computer-vision.md
       # - Mobile Computing: mobile-computing.md
