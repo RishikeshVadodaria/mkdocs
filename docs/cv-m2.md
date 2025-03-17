@@ -73,7 +73,6 @@ where:
 !!! tip  
     **SURF is a faster alternative to SIFT, making it suitable for real-time applications while maintaining robustness.**
 
-Here's a well-structured and visually appealing representation of the **Speeded-Up Robust Features (SURF) Algorithm**, formatted for MkDocs. It includes a **mermaid flowchart** for clarity.
 
 ---
 
@@ -98,3 +97,136 @@ Here's a well-structured and visually appealing representation of the **Speeded-
 !!! tip  
     **SURF is significantly faster than SIFT** due to its use of **box filters and integral images**, making it suitable for **real-time applications**.  
 
+## Speeded Up Robust Features (SURF) algorithm
+
+![alt text](image-22.png)
+
+### Applications of Feature Descriptors
+Feature descriptors are powerful tools in computer vision for identifying and describing local features in images. They enable a wide range of applications:
+
+1. Image Matching
+Matches keypoints between different images of the same scene or object.
+Essential for applications like panorama stitching, where multiple images are combined into a wide-angle view.
+2. Object Recognition
+Identifies and locates objects within images by matching features between a known object and a scene.
+Widely used in robotics and automated inspection systems.
+3. 3D Reconstruction
+Matches images taken from different viewpoints to reconstruct 3D models of objects or environments.
+Essential for applications in augmented reality (AR) and virtual reality (VR).
+4. Image Retrieval
+Enables content-based image retrieval by searching for and retrieving images based on visual content rather than metadata.
+5. Scene Recognition
+Analyzes the spatial arrangement of features to recognize and categorize scenes or environments.
+Useful in autonomous navigation and contextual AI systems.
+6. Robotic Vision
+Helps robots navigate, identify objects, and interact with their environment more effectively.
+7. Video Tracking
+Tracks objects or people in video sequences by matching keypoints frame-to-frame.
+Important for surveillance and motion analysis.
+8. Forgery Detection
+Used in digital forensics to detect tampered or forged images by identifying inconsistencies in local features.
+
+# **2D Gabor Filter – Parameters & Properties**  
+
+## **Overview**  
+The **Gabor filter** is a powerful tool used for feature extraction, especially in **texture and edge detection**. It is a **bandpass filter** that operates in both the **spatial and frequency domains**, mimicking the way the human visual system perceives textures.  
+
+## **Key Characteristics**  
+✅ **Localized in both space & frequency** – Helps capture patterns effectively.  
+✅ **Combination of Gaussian & Sinusoidal components** – Provides smooth feature extraction.  
+✅ **Mimics human vision** – Recognizes textures similar to human eyes.  
+
+---
+
+## **Mathematical Representation**  
+A **2D Gabor filter** is defined as:  
+
+\[
+G(x,y) = \exp\left( -\frac{x'^2 + \gamma^2 y'^2}{2\sigma^2} \right) \cos\left( \frac{2\pi x'}{\lambda} + \psi \right)
+\]
+
+where:  
+- \( x' = x \cos\theta + y \sin\theta \)  
+- \( y' = -x \sin\theta + y \cos\theta \)  
+
+---
+
+## **Core Parameters of Gabor Filter**  
+
+| **Parameter** | **Symbol** | **Description** |
+|--------------|------------|-----------------|
+| **Wavelength** | \( \lambda \) | Controls the width of the stripes in the Gabor function. |
+| **Orientation** | \( \theta \) | Defines the **angle** of the normal to the parallel stripes of the Gabor function. |
+| **Phase Offset** | \( \psi \) | Determines the **position** of the sinusoidal function, affecting edge detection. |
+| **Standard Deviation** | \( \sigma \) | Defines the **spread** of the Gaussian envelope, controlling the extent of localization. |
+| **Aspect Ratio** | \( \gamma \) | Specifies the **ellipticity** of the Gabor function's support. |
+| **Bandwidth** | \( B \) | Controls the **range of spatial frequencies** covered by the filter. |
+
+---
+
+## **How Parameters Affect the Gabor Filter**  
+
+### **1️⃣ Wavelength (λ) – Stripe Width**  
+- Controls the width of the sinusoidal pattern.  
+- Larger **λ** → Wider stripes → Detects coarse textures.  
+- Smaller **λ** → Narrower stripes → Detects fine textures.  
+
+### **2️⃣ Orientation (θ) – Direction of Features**  
+- Determines the **angle** at which the filter responds best to edges.  
+- Example: A **horizontal edge** detector has \( \theta = 90^\circ \).  
+
+### **3️⃣ Phase Offset (ψ) – Sinusoidal Shift**  
+- **\( \psi = 0 \)** → Cosine Gabor (Even filter) → Detects **bar-like** structures.  
+- **\( \psi = \frac{\pi}{2} \)** → Sine Gabor (Odd filter) → Detects **line-like** structures.  
+
+### **4️⃣ Standard Deviation (σ) – Gaussian Spread**  
+- Determines the **size of the receptive field**.  
+- Large \( \sigma \) → More **blurred** edges.  
+- Small \( \sigma \) → More **sharp** edges.  
+
+### **5️⃣ Aspect Ratio (γ) – Ellipticity**  
+- Specifies the **shape** of the filter.  
+- Larger \( \gamma \) → More elongated filter (stretches in one direction).  
+- Smaller \( \gamma \) → More circular response.  
+
+---
+
+
+## **Gray Level Co-occurrence Matrix (GLCM) – Texture Analysis**  
+
+## **Overview**  
+The **Gray Level Co-occurrence Matrix (GLCM)** is a powerful **statistical method** used in **image processing** and **computer vision** to analyze texture features by examining the spatial relationships between pixel intensities.  
+
+🔹 **Key Applications:**  
+✅ **Texture Analysis** – Identifies patterns in images.  
+✅ **Feature Extraction** – Helps in classification tasks.  
+✅ **Medical Imaging** – Detects abnormalities in scans.  
+✅ **Remote Sensing** – Analyzes satellite imagery.  
+
+---
+
+## **GLCM – How It Works**  
+GLCM computes how often pairs of **gray-level intensities** occur at a specific **spatial relationship** (distance & direction) within an image. This helps extract meaningful **texture features**.
+
+### **Statistical Features Derived from GLCM**  
+
+| **Feature**     | **Formula**                                          | **Description** |
+|---------------|------------------------------------------------------|----------------|
+| **Contrast** | \( \sum_{i,j} (i - j)^2 p(i, j) \) | Measures intensity **variation** (higher contrast = more difference in pixel values). |
+| **Dissimilarity** | \( \sum_{i,j} |i - j| p(i, j) \) | Similar to contrast but **less sensitive to large variations**. |
+| **Energy** | \( \sum_{i,j} p(i, j)^2 \) | Sum of squared elements → Measures **uniformity**. |
+| **Homogeneity** | \( \sum_{i,j} \frac{p(i, j)}{1 + |i - j|} \) | Measures **closeness** of distributed elements to the diagonal. |
+| **Entropy** | \( \sum_{i,j} -p(i, j) \log_2(p(i, j)) \) | Measures randomness → **Higher entropy = more complex textures**. |
+| **Correlation** | \( \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j) p(i, j)}{\sigma_i \sigma_j} \) | Measures **linear dependency** between pixel intensities. |
+
+---
+
+## **GLCM Mean & Variance**  
+
+- **GLCM Mean**: Represents the **average occurrence** of a pixel intensity based on spatial relationships.  
+ $$ \mu_i = \sum_{i,j} i p(i, j), \quad \mu_j = \sum_{i,j} j p(i, j) $$  
+
+- **GLCM Variance**: Measures **spread (dispersion)** of pixel intensities around the mean.  
+  $$   \sigma_i^2 = \sum_{i,j} p(i, j)(i - \mu_i )^2, \quad \sigma_j^2 = \sum_{i,j} p(i, j)(j - \mu_j )^2  $$
+
+---
