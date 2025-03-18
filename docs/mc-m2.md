@@ -1,4 +1,7 @@
+![alt text](image-23.png)
+
 # Unit 4: IPv6
+
 
 ## Understanding IPv4
 
@@ -1066,3 +1069,107 @@ Bluetooth implements **several error detection and correction mechanisms**:
 
 ---
 
+### **Wi-Fi Standards (IEEE 802.11 Family) – Summary Notes**  
+
+#### **Introduction**  
+Wi-Fi standards (IEEE 802.11) define wireless communication protocols, improving speed, frequency bands, and features over time.  
+
+---
+
+### **Major Wi-Fi Standards and Their Features**  
+
+| **Standard**  | **Year** | **Frequency Band**  | **Max Speed** | **Key Features** | **Also Known As** |
+|--------------|---------|-------------------|-------------|----------------|----------------|
+| **802.11 (Original)** | 1997  | 2.4 GHz  | 1-2 Mbps  | First wireless LAN standard using FHSS or DSSS | - |
+| **802.11a**  | 1999  | 5 GHz  | 54 Mbps  | Uses OFDM encoding scheme | - |
+| **802.11b**  | 1999  | 2.4 GHz  | 11 Mbps  | Uses DSSS, widely adopted first-gen Wi-Fi | **Wi-Fi (Original)** |
+| **802.11g**  | 2003  | 2.4 GHz  | 54 Mbps  | Combines features of 802.11a/b, backward compatible | - |
+| **802.11e**  | 2005  | 2.4 GHz & 5 GHz  | Up to 54 Mbps | Quality of Service (QoS) for better multimedia & VoIP support | **WMM (Wi-Fi Multimedia)** |
+| **802.11n**  | 2009  | 2.4 GHz & 5 GHz  | 600 Mbps  | Introduced MIMO for better speed & range | - |
+| **802.11ac**  | 2013  | 5 GHz only  | 3.5 Gbps  | Improved 802.11n with wider channels & better performance | **Wi-Fi 5** |
+| **802.11ac Wave 2** | ~2016  | 5 GHz only  | 6.93 Gbps  | Added MU-MIMO technology & enhancements | - |
+| **802.11ad**  | 2012  | 60 GHz  | 7 Gbps  | High-speed, short-range (WiGig) | **WiGig** |
+| **802.11ah**  | 2017  | Below 900 MHz  | Lower  | Extended range, better wall penetration | **Wi-Fi HaLow** |
+| **802.11r**  | -  | -  | -  | Fast BSS transition for VoIP handoff between access points | **Fast Roaming** |
+| **802.1X**  | -  | -  | -  | Security standard for network access control | - |
+
+---
+
+### **Key Takeaways**  
+✅ **Higher Frequencies (5 GHz, 60 GHz)** → Higher speeds but shorter range  
+✅ **Lower Frequencies (2.4 GHz, Below 900 MHz)** → Better range and penetration but lower speed  
+✅ **Newer Standards (802.11ac, 802.11ax, etc.)** → Improved speed, efficiency, and multi-device support  
+✅ **Wi-Fi 5 (802.11ac)** → Popular high-speed standard used today  
+✅ **Wi-Fi 6 (802.11ax - Not in table)** → Next-gen standard improving speed, efficiency, and congestion handling  
+
+
+### **Wireless LAN (WLAN)**  
+
+#### **What is WLAN?**  
+- **WLAN (Wireless Local Area Network)** allows mobile users to connect to a **Local Area Network (LAN)** wirelessly.  
+- Also known as **LAWN (Local Area Wireless Network)**.  
+- Defined by **IEEE 802.11 standards**.  
+- Uses **Ethernet protocol** and **CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)** for communication.  
+- Implements **WEP (Wired Equivalent Privacy)** encryption for security.  
+- Provides **high-speed data communication** in small areas (offices, buildings, etc.).  
+- Used to **reduce costs** and **avoid cable installation**, especially in public areas.  
+
+---
+
+### **Advantages of WLANs**  
+
+1. **Flexibility** 🛜  
+   - Devices can communicate **without physical connections**.  
+   - Radio waves **penetrate walls**, allowing hidden placements.  
+
+2. **Easy Planning** 🏗️  
+   - **Wireless ad-hoc networks** do not require pre-planning like wired networks.  
+
+3. **Compact Design** 📱  
+   - Allows development of **small, portable devices** (laptops, tablets, PDAs).  
+
+4. **Disaster Resilience** 🌪️  
+   - Works **even in natural disasters** where wired infrastructure might fail.  
+
+5. **Cost Efficiency** 💰  
+   - Cheaper **installation and maintenance** than traditional wired LANs.  
+   - **No extra cost** for adding users after initial setup.  
+
+6. **Ease of Use** 🎯  
+   - **Simple setup** for users, requiring minimal technical knowledge.  
+
+---
+
+### **Disadvantages of WLANs**  
+
+1. **Quality of Service (QoS) Issues** ⚠️  
+   - **Lower bandwidth** due to radio transmission limitations.  
+   - **Higher error rates** from interference.  
+   - **Increased latency** due to error correction.  
+
+2. **Proprietary Solutions** 🔏  
+   - Slow **standardization** leads to different vendor-specific solutions.  
+   - Most systems adhere to **IEEE 802.11a/b**.  
+
+3. **Regulatory Restrictions** 🚦  
+   - Governments impose **frequency restrictions** to avoid interference.  
+
+4. **Global Operation Issues** 🌍  
+   - Frequency regulations differ across countries.  
+   - Devices must comply with **international standards**.  
+
+5. **High Power Consumption** 🔋  
+   - Wireless devices **consume more power** than wired ones.  
+   - Requires **power-saving modes** for efficiency.  
+
+6. **Licensing Requirements** 📜  
+   - Operators prefer **license-free bands** like **2.4 GHz ISM band** for easier deployment.  
+
+---
+
+### **Conclusion**  
+✔ **WLANs** provide **mobility, flexibility, and cost-effectiveness**.  
+❌ They **suffer from QoS issues, power constraints, and regulatory challenges**.  
+💡 **IEEE 802.11** continues to evolve, improving performance and security.  
+
+Would you like me to summarize any specific aspect further? 😊
