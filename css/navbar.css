@@ -1,0 +1,5 @@
+/* Hide Table of Contents (Right Sidebar) */
+.md-sidebar--secondary {
+    display: none !important;
+}
+

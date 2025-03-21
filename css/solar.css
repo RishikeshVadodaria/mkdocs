@@ -1,0 +1,83 @@
+/* Centering Container */
+.center-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	width: 100%;
+}
+
+/* Atom Container */
+.atom {
+	position: relative;
+	width: 350px; /* Wider */
+	height: 150px; /* Shorter */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Center Nucleus */
+.center {
+	width: 40px;
+	height: 40px;
+	background: orange;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 20px orange, 0 0 50px orange;
+}
+
+/* Electron Orbits */
+.orbit {
+	position: absolute;
+	border-radius: 50%;
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+	transform-style: preserve-3d;
+	animation: rotate 6s linear infinite;
+}
+
+/* Each Orbit (Horizontally Stretched) */
+.orbit1 {
+	width: 350px;  /* Wider */
+	height: 100px; /* Flatter */
+	transform: rotateX(30deg);
+}
+
+.orbit2 {
+	width: 370px;
+	height: 110px;
+	transform: rotateX(-30deg);
+	animation-duration: 8s;
+}
+
+.orbit3 {
+	width: 400px;
+	height: 120px;
+	transform: rotateY(90deg);
+	animation-duration: 5s;
+}
+
+/* Electrons */
+.electron {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px cyan, 0 0 30px cyan;
+}
+
+.electron1 { background: rgba(0, 150, 255); }
+.electron2 { background: rgba(0, 0, 255); }
+.electron3 { background: rgba(255, 0, 255); }
+
+/* Rotation Animation */
+@keyframes rotate {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
