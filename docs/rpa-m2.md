@@ -39,3 +39,16 @@ The list should look similar to this:
      ```powerapps
      "Welcome, " & User().FullName
      ```  
+
+
+
+## Create a Canvas app that demonstrates how to use local and global variables.
+
+[local-variable.txt](txt-files/m2/local-variable.txt)
+
+
+[global-variable.txt](txt-files/m2/global-variable.txt)
+
+
+[calculator.txt](txt-files/m2/calculator.txt)
+
