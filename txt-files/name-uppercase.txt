@@ -1,0 +1,3 @@
+Display.InputDialog Message: $'''Enter your full name''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+Text.ChangeCase Text: UserInput NewCase: Text.CaseOption.UpperCase Result=> TextWithNewCase
+Display.ShowMessageDialog.ShowMessage Message: $'''Your Full Name is %TextWithNewCase% and is of %TextWithNewCase.length% characters.''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
