@@ -4,6 +4,8 @@
 [login-screen-1.txt](txt-files/m2/login-1.txt)  
 [login-screen-2.txt](txt-files/m2/login-2.txt)
 
+<div class="bright-line"></div>
+
 ## Create a SharePoint List and Implement Cascading Dropdowns in Power Apps  
 
 Create a new list in SharePoint under the team **RPA Sem 12**  
@@ -40,7 +42,7 @@ The list should look similar to this:
      "Welcome, " & User().FullName
      ```  
 
-
+<div class="bright-line"></div>
 
 ## Create a Canvas app that demonstrates how to use local and global variables.
 
@@ -52,3 +54,41 @@ The list should look similar to this:
 
 [calculator.txt](txt-files/m2/calculator.txt)
 
+
+<div class="bright-line"></div>
+
+## Create an expense tracker app for Microsoft teams and publish it in the team channel
+
+![alt text](image-26.png)
+
+1. **Set Up Data**  
+    - Use **Microsoft Lists, SharePoint, or Dataverse**.  
+    - Add columns: **Expense Name, Amount, Category, Date, Status (Hold/Approved/Rejected), Submitted By**.  
+
+2. **Create the App in Power Apps**  
+    - Connect to your data source.  
+    - Power Apps will auto-generate the form.  
+
+3. **Customize the Form**  
+    - Modify fields for better usability.  
+    - Use this formula for status color coding:  
+      ```PowerApps
+      Switch(
+          ThisItem.'Expense Status',
+          "Hold", Color.Orange,
+          "Approved", Color.Green,
+          "Rejected", Color.Red
+      )
+      ```  
+
+
+[expense-tracker.txt](txt-files/m2/expense-tracker.txt)
+
+<div class="bright-line"></div>
+
+## Search and Filter 
+
+[search.txt](txt-files/m2/search.txt)
+
+
+[filter.txt](txt-files/m2/filter.txt)
