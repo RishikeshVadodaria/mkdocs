@@ -29,15 +29,53 @@
   </script>
 
 
-## Schedule Table
-
-| Day & Date            | Course                                      | Time                |
-|-----------------------|---------------------------------------------|---------------------|
-| **Monday, 28 April, 2025** | Reverse Engineering and Malware Analysis | 2:00 pm - 5:00 pm |
-| **Wednesday, 30 April, 2025** | Robotic Process Automation  (Practical) | 10:00 am - 01:00 pm  |
-| **Friday, 2 May, 2025** | Information Systems Audit        | 10:00 am - 01:00 pm                   |
-| **Saturday, 3 May, 2025** | Computer Vision                | 2:00 pm - 5:00 pm   |
-| **Thursday, 8 May, 2025** | Reinforcement Learning (Practical) | 10:00 am - 01:00 pm             |
-| **Saturday, 10 May, 2025** | Mobile Computing              | 10:00 am - 01:00 pm                   |
-| **Monday, 12 May, 2025** | Mobile Device Security and Forensics  | 10:00 am - 01:00 pm                   |
-
+<details>
+  <summary><strong>Scheduled Time Table</strong></summary>
+  <br>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Day & Date</th>
+        <th>Course</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monday, 28 April, 2025</strong></td>
+        <td>Reverse Engineering and Malware Analysis</td>
+        <td>2:00 pm - 5:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday, 30 April, 2025</strong></td>
+        <td>Robotic Process Automation (Practical)</td>
+        <td>10:00 am - 01:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Friday, 2 May, 2025</strong></td>
+        <td>Information Systems Audit</td>
+        <td>10:00 am - 01:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Saturday, 3 May, 2025</strong></td>
+        <td>Computer Vision</td>
+        <td>2:00 pm - 5:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Thursday, 8 May, 2025</strong></td>
+        <td>Reinforcement Learning (Practical)</td>
+        <td>10:00 am - 01:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Saturday, 10 May, 2025</strong></td>
+        <td>Mobile Computing</td>
+        <td>10:00 am - 01:00 pm</td>
+      </tr>
+      <tr>
+        <td><strong>Monday, 12 May, 2025</strong></td>
+        <td>Mobile Device Security and Forensics</td>
+        <td>10:00 am - 01:00 pm</td>
+      </tr>
+    </tbody>
+  </table>
+</details>

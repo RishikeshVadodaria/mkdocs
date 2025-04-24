@@ -1,24 +1,55 @@
-.nav-item {
-  display: inline-flex; /* Flex but inline so they sit side by side */
+.nav-wrapper {
+  background-color: #1e1e1e; /* Dark background */
+  padding: 15px; /* Reduced padding for compact look */
+  border-radius: 8px; /* Slightly smaller radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  margin: 20px 0; /* Reduced margin for MkDocs integration */
+  width: 100%; /* Full width of parent */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Evenly spaced items */
+  gap: 10px; /* Consistent gap between items */
+  flex-wrap: nowrap; /* Prevent wrapping */
   align-items: center;
-  justify-content: center;
-  color: #f0f0f0;
-  font-size: 1.1em;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.nav-item {
+  color: #f0f0f0; /* Light gray text */
+  font-size: 0.9em; /* Smaller font for 8 items */
   font-family: 'Segoe UI', Arial, sans-serif;
   transition: all 0.3s ease;
   cursor: pointer;
-  min-width: 150px;
-  height: 50px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  background-color: #3a3a3a;
-  text-decoration: none; /* Optional, if <a> */
+  padding: 8px 12px; /* Compact padding */
+  border-radius: 5px; /* Smaller radius */
+  background-color: #3a3a3a; /* Button background */
+  text-decoration: none; /* No underline for links */
+  flex: 1; /* Equal width for all items */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px; /* Reduced for 8 items */
 }
 
+/* Remove redundant ::after to avoid text duplication */
 .nav-item::after {
-  content: attr(data-title);
-  display: inline-block; /* Treat like actual text */
-  color: #f0f0f0;
-  font-size: 1.2em;
-  text-align: center;
+  content: none; /* Disable data-title display */
+}
+
+.nav-item:hover {
+  background-color: #FFD52E; /* Yellow on hover */
+  color: #000000; /* Black text on hover */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .nav-wrapper {
+      flex-direction: column; /* Stack items vertically */
+      gap: 8px; /* Smaller gap */
+  }
+  .nav-item {
+      min-width: 100%; /* Full width on mobile */
+      padding: 10px; /* Slightly larger padding */
+  }
 }

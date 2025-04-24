@@ -662,7 +662,6 @@ Imagine a party with many participants from different countries who communicate 
 
 ## Unit 3 
 
-
 ### Logical Mobility
 
 **Logical Mobility** refers to the ability to transfer software components, code, or computational elements between different systems or devices.
