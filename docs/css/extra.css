@@ -1,129 +1,166 @@
+/* Theme Variables */
 :root {
-  --md-primary-fg-color: #FFD52E; /* Accent Color */
+  --md-primary-fg-color: #FFD52E; /* Accent color */
   --md-accent-fg-color: #FFD52E;
   --md-accent-bg-color: #FFD52E;
-
-  --md-default-fg-color: #FFFFFF; /* White Text */
-  --md-typeset-a-color: #FFD52E; /* Link Colors */
-  --md-default-bg-color: #000000; /* Black Background */
+  --md-default-fg-color: #FFFFFF; /* White text */
+  --md-typeset-a-color: #FFD52E; /* Link color */
+  --md-default-bg-color: #000000; /* Black background */
 }
 
-/* Full Black Background for Container */
+/* Main Container */
 .md-container {
-background-color: #000000 !important;
-color: #FFFFFF !important; /* Ensures all text is white */
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
-.md-nav__title {
-background-color: #000000 !important;
-color: #FFFFFF !important; /* Ensures all text is white */
-box-shadow: 0 0 0.4rem 0.4rem #000000 !important;
-
-}
-
-
-/* Sidebar background */
-.md-sidebar--primary {
-  background-color: #000000 !important;
-}
-
-/* Reduce Sidebar Width */
-.md-sidebar {
-  width: 180px !important;
-}
-
-/* Make Content Take More Space */
-.md-content {
-  max-width: 1300px !important;
-  margin: auto;
-}
-
-/* Remove Extra Padding/Margins */
-.md-main__inner {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Sidebar Links Styling */
-.md-nav__item a {
-  color: #FFD52E !important; /* Sidebar Text */
-}
-
-.md-nav__item a:hover {
-  background-color: #FFD52E !important;
-  color: #000000 !important;
-}
-
-/* Make Header Text and Icons White */
+/* Header Styling */
 .md-header__button,
 .md-header__title {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .md-header__button:hover {
+  color: #FFEE58;
+}
+
+/* Sidebar Styling */
+.md-sidebar--primary {
+  background-color: #000000;
+}
+
+.md-sidebar {
+  width: 180px; /* Reduced sidebar width */
+}
+
+.md-nav__title {
+  background-color: #000000;
+  color: #FFFFFF;
+  box-shadow: 0 0 0.4rem 0.4rem #000000;
+}
+
+/* Sidebar Links */
+.md-nav__item a {
   color: #FFD52E !important;
 }
 
-/* Dark Theme for Admonitions (Notes, Tips, Warnings, etc.) */
+.md-nav__item a:hover {
+  background-color: #FFD52E;
+  color: #000000;
+}
+
+/* Content Area */
+.md-content {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.md-main__inner {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Heading Text */
+.md-typeset h1 {
+  color: #FFFFFF !important; /* White main heading */
+}
+
+/* Admonitions (Notes, Tips, Warnings) */
 .md-typeset .admonition {
-background-color: #111111 !important; /* Dark Background */
-color: #FFD52E !important; /* Yellow Text */
+  background-color: #111111;
+  color: #FFD52E;
 }
 
 .md-typeset .admonition-title {
-background-color: #000000 !important; /* Even Darker Header */
-color: #FFD52E !important; /* Accent Title Color */
-font-weight: bold;
+  background-color: #000000;
+  color: #FFD52E;
+  font-weight: bold;
 }
 
-/* Hover Effect for Admonitions */
 .md-typeset .admonition:hover {
-background-color: #222222 !important; /* Slightly Lighter */
-transition: background-color 0.3s ease-in-out;
+  background-color: #222222;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Dark Theme for Tables */
+/* Tables */
 .md-typeset table {
-width: 100%;
-background-color: #111111 !important; /* Dark Table Background */
-color: #FFFFFF !important; /* White Text */
-border: 1px solid #FFD52E !important; /* Accent Border */
+  width: 100%;
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #FFD52E;
 }
 
-/* Table Header */
 .md-typeset th {
-background-color: #000000 !important; /* Darker Header */
-color: #FFD52E !important; /* Accent Header Text */
-padding: 10px;
-text-align: left;
+  background-color: #000000;
+  color: #FFD52E;
+  padding: 10px;
+  text-align: left;
 }
 
-/* Table Cells */
 .md-typeset td {
-border: 1px solid #18122B !important;
-padding: 8px;
+  border: 1px solid #FFD52E;
+  padding: 8px;
 }
 
-/* Hover Effect for Table Rows */
 .md-typeset tr:hover {
-background-color: #222222 !important; /* Slightly Lighter on Hover */
-transition: background-color 0.3s ease-in-out;
+  background-color: #222222;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Styling Links Inside Tables */
 .md-typeset td a {
-color: #FFD52E !important; /* Accent Links */
+  color: #FFD52E;
 }
 
 .md-typeset td a:hover {
-text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Thematic Breaks (HR) */
-.md-typeset hr {
-border: none;
-height: 1px;
-background-color: #FFD52E !important;
-margin: 20px 0;
+.md-nav--primary .md-nav__title {
+  background: #000000;
+  box-shadow: 0 0 .4rem .4rem #000000;
+}
+
+.md-sidebar--primary {
+  display: none;
+}
+.md-main {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+  background-color: #000000;
+  color: #FFFFFF;
+  display: block;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #FFD52E;
+}
+
+th {
+  background-color: #111111;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #111111;
+}
+
+tr:nth-child(odd) {
+  background-color: #000000;
+}
+
+strong {
+  color: #FFFFFF;
+}
+
+td:empty {
+  background-color: #111111;
+  color: #FFD52E;
 }

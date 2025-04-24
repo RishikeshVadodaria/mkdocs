@@ -1,0 +1,70 @@
+.flip-clock {
+    text-align: center;
+    perspective: 400px;
+    margin: 20px auto;
+  }
+  
+  .flip-clock__piece {
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+    width: 50px;
+    height: 80px;
+  }
+  
+  .flip-clock__piece .flip-clock__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .flip-clock__piece.flipping .flip-clock__card {
+    transform: rotateX(180deg);
+  }
+  
+  .flip-clock__piece .card__top,
+  .flip-clock__piece .card__bottom,
+  .flip-clock__piece .card__back {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #1e2a30;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .flip-clock__piece .card__top {
+    top: 0;
+    transform-origin: bottom;
+    background: #23343d;
+  }
+  
+  .flip-clock__piece .card__bottom {
+    bottom: 0;
+    background: #2f3e46;
+  }
+  
+  .flip-clock__piece .card__back {
+    top: 0;
+    transform: rotateX(180deg);
+    background: #374850;
+  }
+  
+  .flip-clock__piece .card__back .card__bottom {
+    transform: rotateX(180deg);
+  }
+  
+  .flip-clock__slot {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #7a8c93;
+  }
