@@ -7,7 +7,7 @@
   
   <div class="page reinforcement-learrning" data-title="Reinforcement Learning" data-subtitle="Training agents via rewards in dynamic environments." data-link="https://rishikeshvadodaria.github.io/mkdocs/RL_Unit1/"></div>
   
-  <div class="page rpa" data-title="Robot Processing Activites" data-subtitle="Automating repetitive tasks using software bots." data-link="https://rishikeshvadodaria.github.io/mkdocs/rpa/"></div>
+  <div class="page rpa" data-title="Robot Processing Activites" data-subtitle="Automating repetitive tasks using software bots." data-link="https://rishikeshvadodaria.github.io/mkdocs/rpa-pad/"></div>
 </div>
 
 
