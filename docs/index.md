@@ -3,7 +3,7 @@
 <div class="page-container">
   <div class="page mobile-computing" data-title="Mobile Computing" data-subtitle="Exploring mobile platforms, protocols & services." data-link="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit%201/"></div>
   
-  <div class="page computer-vision" data-title="Computer Vision" data-subtitle="Understanding how machines interpret visual data." data-link="https://rishikeshvadodaria.github.io/mkdocs/computer-vision/"></div>
+  <div class="page computer-vision" data-title="Computer Vision" data-subtitle="Understanding how machines interpret visual data." data-link="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit 1/"></div>
   
   <div class="page reinforcement-learrning" data-title="Reinforcement Learning" data-subtitle="Training agents via rewards in dynamic environments." data-link="https://rishikeshvadodaria.github.io/mkdocs/RL_Unit1/"></div>
   
