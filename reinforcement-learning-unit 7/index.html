@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/reinforcement-learning-unit%207/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Policy Approximation in Reinforcement Learning - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#policy-approximation-in-reinforcement-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Policy Approximation in Reinforcement Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-policy-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Policy Approximation?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is Policy Approximation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-what-is-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background: What Is a Policy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-approximate-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Approximate a Policy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-policy-approximations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Policy Approximations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approaches-to-rl-with-policy-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approaches to RL with Policy Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-policy-approximation-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Policy Approximation Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-approximation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy Approximation Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trade-Offs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naive-reinforce-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive REINFORCE Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Naive REINFORCE Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforce-with-baselines" class="md-nav__link">
+    <span class="md-ellipsis">
+      REINFORCE with Baselines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REINFORCE with Baselines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforce-with-baselines-actor-critic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      REINFORCE with Baselines + Actor-Critic Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REINFORCE with Baselines + Actor-Critic Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-flow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-rl-methods-combine-policy-and-value-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which RL Methods Combine Policy and Value Learning?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Which RL Methods Combine Policy and Value Learning?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-combine-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Combine Both?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-elements-of-naive-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Elements of Naive Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Elements of Naive Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revision Checklist
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="policy-approximation-in-reinforcement-learning">Policy Approximation in Reinforcement Learning<a class="headerlink" href="#policy-approximation-in-reinforcement-learning" title="Permanent link">&para;</a></h1>
+<p>Policy approximation is a critical technique in reinforcement learning (RL) for handling large or continuous state and action spaces. It involves representing the policy function—mapping states to actions—using parameterized models like neural networks, rather than storing explicit policies for every state. This set of notes covers policy approximation, the Naive REINFORCE algorithm, REINFORCE with baselines, Actor-Critic methods, RL methods combining policy and value learning, and the essential elements of Naive RL, with detailed explanations, examples, and comparisons.</p>
+<h2 id="what-is-policy-approximation">What Is Policy Approximation?<a class="headerlink" href="#what-is-policy-approximation" title="Permanent link">&para;</a></h2>
+<p><strong>Policy approximation</strong> refers to representing an RL agent's policy using a parameterized function, such as a neural network or linear model, instead of explicitly defining actions for every possible state. This is essential for scalability and generalization in complex environments with large or continuous state spaces.</p>
+<h3 id="background-what-is-a-policy">Background: What Is a Policy?<a class="headerlink" href="#background-what-is-a-policy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>policy</strong> <span class="arithmatex">\( \pi \)</span> defines the agent’s behavior, mapping states to actions:</li>
+<li><strong>Deterministic Policy</strong>: <span class="arithmatex">\( \pi(s) = a \)</span>, where <span class="arithmatex">\( a \)</span> is the action taken in state <span class="arithmatex">\( s \)</span>.</li>
+<li><strong>Stochastic Policy</strong>: <span class="arithmatex">\( \pi(a|s) = P(a|s) \)</span>, the probability of taking action <span class="arithmatex">\( a \)</span> in state <span class="arithmatex">\( s \)</span>.</li>
+<li><strong>Objective</strong>: Find a policy <span class="arithmatex">\( \pi \)</span> that maximizes the expected cumulative reward:</li>
+</ul>
+<div class="arithmatex">\[
+J(\pi) = E_{\pi} \left[ \sum_{t=0}^\infty \gamma^t r_t \right]
+\]</div>
+<p>where <span class="arithmatex">\( \gamma \in [0, 1) \)</span> is the discount factor, and <span class="arithmatex">\( r_t \)</span> is the reward at time <span class="arithmatex">\( t \)</span>.</p>
+<h3 id="why-approximate-a-policy">Why Approximate a Policy?<a class="headerlink" href="#why-approximate-a-policy" title="Permanent link">&para;</a></h3>
+<p><strong>Scalability</strong>:</p>
+<ul>
+<li>In real-world problems (e.g., robotics, games, autonomous driving), state spaces are vast or continuous (e.g., <span class="arithmatex">\( 10^{10} \)</span> states or <span class="arithmatex">\( \mathbb{R}^n \)</span>).</li>
+<li>Storing a tabular policy (one entry per state) is infeasible due to memory and computation constraints.</li>
+</ul>
+<p><strong>Generalization</strong>:</p>
+<ul>
+<li>A parameterized policy <span class="arithmatex">\( \pi_\theta(s) \)</span> generalizes to unseen states by learning patterns in the state space.</li>
+<li>Example: In a driving simulator, a neural network policy can handle new road configurations based on learned features.</li>
+</ul>
+<p><strong>Continuous Spaces</strong>:
+   - Approximation enables policies for continuous state or action spaces, where tabular methods fail.</p>
+<p><strong>Efficiency</strong>:
+   - Parameterized models (e.g., neural networks with thousands of parameters) are compact compared to millions of state-action pairs.</p>
+<h3 id="types-of-policy-approximations">Types of Policy Approximations<a class="headerlink" href="#types-of-policy-approximations" title="Permanent link">&para;</a></h3>
+<p><strong>Parametric Approximation</strong>:
+   - Represent the policy as a function <span class="arithmatex">\( \pi_\theta(s) \)</span> or <span class="arithmatex">\( \pi_\theta(a|s) \)</span> with parameters <span class="arithmatex">\( \theta \)</span>.
+   - Examples:
+     - <strong>Linear Model</strong>: <span class="arithmatex">\( \pi_\theta(s) = \theta^T \phi(s) \)</span>, where <span class="arithmatex">\( \phi(s) \)</span> is a feature vector (e.g., state coordinates).
+     - <strong>Neural Network (Deep RL)</strong>: <span class="arithmatex">\( \pi_\theta(s) = \text{NN}_\theta(s) \)</span>, outputting actions or action probabilities.
+     - <strong>Radial Basis Functions (RBF)</strong>: Use localized basis functions for smooth approximations.
+   - The policy is updated by optimizing <span class="arithmatex">\( \theta \)</span> to maximize expected rewards.</p>
+<p><strong>Non-Parametric Approximation</strong>:
+   - Use methods like kernel-based models or decision trees, less common in deep RL.</p>
+<h3 id="approaches-to-rl-with-policy-approximation">Approaches to RL with Policy Approximation<a class="headerlink" href="#approaches-to-rl-with-policy-approximation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Approach</strong></th>
+<th><strong>Learns</strong></th>
+<th><strong>Uses Approximation?</strong></th>
+<th><strong>Example Algorithms</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Value-Based</strong></td>
+<td>Optimal value function <span class="arithmatex">\( V^*(s) \)</span> or <span class="arithmatex">\( Q^*(s,a) \)</span></td>
+<td>Yes (for <span class="arithmatex">\( V \)</span> or <span class="arithmatex">\( Q \)</span>)</td>
+<td>Q-Learning, DQN</td>
+</tr>
+<tr>
+<td><strong>Policy-Based</strong></td>
+<td>Optimal policy</td>
+<td>Yes (for <span class="arithmatex">\( \pi \)</span>)</td>
+<td>REINFORCE, TRPO, PPO</td>
+</tr>
+<tr>
+<td><strong>Actor-Critic</strong></td>
+<td>Both policy and value function</td>
+<td>Yes (for both)</td>
+<td>A2C, A3C, DDPG, SAC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-policy-approximation-works">How Policy Approximation Works<a class="headerlink" href="#how-policy-approximation-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Goal</strong>: Optimize parameters <span class="arithmatex">\( \theta \)</span> to maximize the expected return:</li>
+</ul>
+<div class="arithmatex">\[
+J(\theta) = E_{\pi_\theta} \left[ \sum_{t=0}^\infty \gamma^t r_t \right]
+\]</div>
+<ul>
+<li><strong>Methods</strong>:</li>
+<li><strong>Policy Gradient Methods</strong>:<ul>
+<li>Use gradient ascent to update <span class="arithmatex">\( \theta \)</span>:</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[
+\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)
+\]</div>
+<div class="highlight"><pre><span></span><code> - Algorithms: REINFORCE, PPO, TRPO.
+</code></pre></div>
+<ol>
+<li><strong>Imitation Learning/Behavior Cloning</strong>:<ul>
+<li>Train <span class="arithmatex">\( \pi_\theta(a|s) \)</span> to mimic expert demonstrations using supervised learning.</li>
+<li>Example: Train a self-driving car policy using human driver data.</li>
+</ul>
+</li>
+<li><strong>Value-Based Policy Derivation</strong>:<ul>
+<li>Approximate <span class="arithmatex">\( Q_\theta(s,a) \)</span>, then derive <span class="arithmatex">\( \pi(s) = \arg\max_a Q_\theta(s,a) \)</span>.</li>
+<li>Example: DQN uses a neural network for <span class="arithmatex">\( Q \)</span>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="policy-approximation-techniques">Policy Approximation Techniques<a class="headerlink" href="#policy-approximation-techniques" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Suitable For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linear Models</strong></td>
+<td>Simple, low-capacity, <span class="arithmatex">\( \pi_\theta = \theta^T \phi(s) \)</span></td>
+<td>Simple problems, low-dimensional states</td>
+</tr>
+<tr>
+<td><strong>Neural Networks</strong></td>
+<td>High expressiveness, handles complex patterns</td>
+<td>High-dimensional, continuous spaces</td>
+</tr>
+<tr>
+<td><strong>Radial Basis Functions</strong></td>
+<td>Local generalization, smooth approximations</td>
+<td>Medium-complexity problems</td>
+</tr>
+<tr>
+<td><strong>Decision Trees/Boosting</strong></td>
+<td>Structured, interpretable approximations</td>
+<td>Discrete or structured actions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trade-offs">Trade-Offs<a class="headerlink" href="#trade-offs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Advantages</strong>:</li>
+<li>Generalizes to unseen states, reducing memory needs.</li>
+<li>Handles continuous state/action spaces.</li>
+<li>Compact representation (e.g., <span class="arithmatex">\( 10^5 \)</span> parameters vs. <span class="arithmatex">\( 10^{10} \)</span> states).</li>
+<li><strong>Challenges</strong>:</li>
+<li><strong>Overfitting/Underfitting</strong>: Poor generalization if the model is too complex or simple.</li>
+<li><strong>Training Stability</strong>: Gradient-based optimization can be unstable.</li>
+<li><strong>Tuning</strong>: Requires careful selection of architecture, learning rates, and regularization.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Key Idea</p>
+<p>Policy approximation replaces tabular policies with parameterized functions to scale RL to large, continuous, or complex environments.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Mnemonic: Policy Approximation</p>
+<p><strong>"APPROX"</strong>: <strong>A</strong>daptable, <strong>P</strong>arameterized <strong>P</strong>olicy <strong>R</strong>epresentation <strong>O</strong>ptimizes <strong>X</strong>pected rewards.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Challenge</p>
+<p>Poorly designed approximators (e.g., insufficient capacity or noisy gradients) can lead to suboptimal policies or instability.</p>
+</div>
+<h2 id="naive-reinforce-algorithm">Naive REINFORCE Algorithm<a class="headerlink" href="#naive-reinforce-algorithm" title="Permanent link">&para;</a></h2>
+<p>The <strong>Naive REINFORCE algorithm</strong> is a policy gradient method that directly optimizes a stochastic policy <span class="arithmatex">\( \pi_\theta(a|s) \)</span> by maximizing the expected return using gradient ascent. It is a foundational algorithm in policy-based RL.</p>
+<h3 id="core-idea">Core Idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Objective</strong>: Maximize <span class="arithmatex">\( J(\theta) = E_{\pi_\theta} \left[ \sum_{t=0}^\infty \gamma^t r_t \right] \)</span>.</li>
+<li><strong>Approach</strong>: Sample trajectories under <span class="arithmatex">\( \pi_\theta \)</span>, compute returns, and update <span class="arithmatex">\( \theta \)</span> to increase the likelihood of high-reward actions.</li>
+<li><strong>Policy Gradient Theorem</strong>: The gradient of the objective is:</li>
+</ul>
+<div class="arithmatex">\[
+\nabla_\theta J(\theta) = E_{\pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t \right]
+\]</div>
+<p>where <span class="arithmatex">\( G_t = \sum_{k=t}^T \gamma^{k-t} r_k \)</span> is the return from time <span class="arithmatex">\( t \)</span>.</p>
+<h3 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h3>
+<p><strong>Initialize</strong>: Policy parameters <span class="arithmatex">\( \theta \)</span>, learning rate <span class="arithmatex">\( \alpha \)</span>.</p>
+<p><strong>For each episode</strong>:
+   - Generate a trajectory: <span class="arithmatex">\( s_0, a_0, r_1, s_1, a_1, \dots, s_T \)</span>, sampling <span class="arithmatex">\( a_t \sim \pi_\theta(a_t|s_t) \)</span>.
+   - Compute returns: <span class="arithmatex">\( G_t = \sum_{k=t}^T \gamma^{k-t} r_k \)</span> for each <span class="arithmatex">\( t \)</span>.
+   - Compute gradient: <span class="arithmatex">\( \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t \)</span>.
+   - Update: <span class="arithmatex">\( \theta \leftarrow \theta + \alpha \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t \)</span>.</p>
+<h3 id="numerical-example">Numerical Example<a class="headerlink" href="#numerical-example" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Setup</strong>: 2 states (<span class="arithmatex">\( s_1, s_2 \)</span>), 2 actions (<span class="arithmatex">\( a_1, a_2 \)</span>), policy <span class="arithmatex">\( \pi_\theta(a|s) = \text{softmax}(\theta^T \phi(s,a)) \)</span>, <span class="arithmatex">\( \gamma = 0.9 \)</span>, <span class="arithmatex">\( \alpha = 0.1 \)</span>.</li>
+<li><strong>Trajectory</strong>: <span class="arithmatex">\( s_1, a_1, r_1=1, s_2, a_2, r_2=2, s_1 \)</span>.</li>
+<li><strong>Returns</strong>:</li>
+<li><span class="arithmatex">\( G_1 = r_1 + \gamma r_2 = 1 + 0.9 \cdot 2 = 2.8 \)</span>.</li>
+<li><span class="arithmatex">\( G_2 = r_2 = 2 \)</span>.</li>
+<li><strong>Gradient</strong>: Assume <span class="arithmatex">\( \nabla_\theta \log \pi_\theta(a_1|s_1) = [1, 0] \)</span>, <span class="arithmatex">\( \nabla_\theta \log \pi_\theta(a_2|s_2) = [0, 1] \)</span>.</li>
+<li>Total gradient: <span class="arithmatex">\( [1, 0] \cdot 2.8 + [0, 1] \cdot 2 = [2.8, 2] \)</span>.</li>
+<li><strong>Update</strong>: <span class="arithmatex">\( \theta = \theta + 0.1 \cdot [2.8, 2] = \theta + [0.28, 0.2] \)</span>.</li>
+</ul>
+<h3 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Model-Free</strong>: No environment model needed.</li>
+<li><strong>On-Policy</strong>: Learns from trajectories generated by <span class="arithmatex">\( \pi_\theta \)</span>.</li>
+<li><strong>Monte Carlo</strong>: Uses full episode returns <span class="arithmatex">\( G_t \)</span>.</li>
+<li><strong>High Variance</strong>: <span class="arithmatex">\( G_t \)</span> varies across episodes, making updates noisy.</li>
+<li><strong>No Bias</strong>: Gradient is unbiased but slow to converge.</li>
+</ul>
+<h3 id="process-flow">Process Flow<a class="headerlink" href="#process-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>
+graph TD
+    A[Agent] --&gt;|Sample action from policy| B[Environment]
+    B --&gt;|Return next state and reward| A
+    A --&gt;|Compute return Gt| C[Store Trajectory]
+    C --&gt;|End Episode| D[Compute Gradient]
+    D --&gt;|Update policy parameters| A
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Policy Gradient Theorem</p>
+<p>The gradient <span class="arithmatex">\( \nabla_\theta J(\theta) \propto E[\nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t] \)</span> weights actions by their returns, increasing the probability of high-reward actions.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Mnemonic: Naive REINFORCE</p>
+<p><strong>"FORCE"</strong>: <strong>F</strong>ollow <strong>O</strong>ptimal <strong>R</strong>eturns, <strong>C</strong>ompute <strong>E</strong>xpected gradients.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">High Variance</p>
+<p>The reliance on full returns <span class="arithmatex">\( G_t \)</span> causes noisy gradients, slowing convergence, especially in long episodes.</p>
+</div>
+<h2 id="reinforce-with-baselines">REINFORCE with Baselines<a class="headerlink" href="#reinforce-with-baselines" title="Permanent link">&para;</a></h2>
+<p><strong>REINFORCE with Baselines</strong> improves the Naive REINFORCE algorithm by subtracting a baseline from the return to reduce gradient variance, stabilizing learning without introducing bias.</p>
+<h3 id="core-idea_1">Core Idea<a class="headerlink" href="#core-idea_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Problem</strong>: In Naive REINFORCE, <span class="arithmatex">\( G_t \)</span> varies widely, leading to high-variance gradients.</li>
+<li><strong>Solution</strong>: Subtract a state-dependent baseline <span class="arithmatex">\( b(s_t) \)</span> (e.g., the value function <span class="arithmatex">\( V(s_t) \)</span>) from <span class="arithmatex">\( G_t \)</span>:</li>
+</ul>
+<div class="arithmatex">\[
+\nabla_\theta J(\theta) = E_{\pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot (G_t - b(s_t)) \right]
+\]</div>
+<ul>
+<li><strong>Effect</strong>: Centers the advantage <span class="arithmatex">\( G_t - b(s_t) \)</span>, reducing variance while keeping the gradient unbiased.</li>
+</ul>
+<h3 id="update-rule">Update Rule<a class="headerlink" href="#update-rule" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\theta \leftarrow \theta + \alpha \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot (G_t - b(s_t))
+\]</div>
+<ul>
+<li><strong>Common Baseline</strong>: <span class="arithmatex">\( b(s_t) = V(s_t) \)</span>, the expected return from state <span class="arithmatex">\( s_t \)</span>.</li>
+<li><strong>Learning <span class="arithmatex">\( V(s_t) \)</span></strong>: Use a separate parameterized model <span class="arithmatex">\( V_w(s) \)</span>, updated via regression:</li>
+</ul>
+<div class="arithmatex">\[
+w \leftarrow w - \beta \cdot \nabla_w (V_w(s_t) - G_t)^2
+\]</div>
+<h3 id="numerical-example_1">Numerical Example<a class="headerlink" href="#numerical-example_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Setup</strong>: Same as Naive REINFORCE example, with baseline <span class="arithmatex">\( V_w(s_1) = 2 \)</span>, <span class="arithmatex">\( V_w(s_2) = 1 \)</span>.</li>
+<li><strong>Trajectory</strong>: <span class="arithmatex">\( s_1, a_1, r_1=1, s_2, a_2, r_2=2 \)</span>.</li>
+<li><strong>Returns</strong>: <span class="arithmatex">\( G_1 = 2.8 \)</span>, <span class="arithmatex">\( G_2 = 2 \)</span>.</li>
+<li><strong>Advantages</strong>:</li>
+<li><span class="arithmatex">\( t=1 \)</span>: <span class="arithmatex">\( G_1 - V_w(s_1) = 2.8 - 2 = 0.8 \)</span>.</li>
+<li><span class="arithmatex">\( t=2 \)</span>: <span class="arithmatex">\( G_2 - V_w(s_2) = 2 - 1 = 1 \)</span>.</li>
+<li><strong>Gradient</strong>: <span class="arithmatex">\( [1, 0] \cdot 0.8 + [0, 1] \cdot 1 = [0.8, 1] \)</span>.</li>
+<li><strong>Update</strong>: <span class="arithmatex">\( \theta = \theta + 0.1 \cdot [0.8, 1] = \theta + [0.08, 0.1] \)</span>.</li>
+<li><strong>Critic Update</strong>: For <span class="arithmatex">\( s_1 \)</span>, minimize <span class="arithmatex">\( (V_w(s_1) - 2.8)^2 \)</span>, adjust <span class="arithmatex">\( w \)</span>.</li>
+</ul>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Lower Variance</strong>: <span class="arithmatex">\( G_t - b(s_t) \)</span> has smaller magnitude than <span class="arithmatex">\( G_t \)</span>, reducing gradient fluctuations.</li>
+<li><strong>Unbiased</strong>: The baseline does not affect the expected gradient.</li>
+<li><strong>Faster Convergence</strong>: Stabilizes learning, especially in noisy environments.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Why Baseline Works</p>
+<p>The baseline <span class="arithmatex">\( b(s_t) \)</span> centers the advantage, reducing the magnitude of gradient updates without altering their direction.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Mnemonic: REINFORCE with Baseline</p>
+<p><strong>"BASE"</strong>: <strong>B</strong>alance <strong>A</strong>dvantage, <strong>S</strong>tabilize <strong>E</strong>xpectations.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Baseline Choice</p>
+<p>An inaccurate baseline (e.g., poorly trained <span class="arithmatex">\( V_w(s) \)</span>) can increase variance or slow learning.</p>
+</div>
+<h2 id="reinforce-with-baselines-actor-critic-methods">REINFORCE with Baselines + Actor-Critic Methods<a class="headerlink" href="#reinforce-with-baselines-actor-critic-methods" title="Permanent link">&para;</a></h2>
+<p><strong>Actor-Critic methods</strong> combine policy-based (actor) and value-based (critic) learning, using a learned value function as a baseline to reduce variance and enable online updates. They extend REINFORCE with baselines by integrating temporal-difference (TD) learning.</p>
+<h3 id="core-idea_2">Core Idea<a class="headerlink" href="#core-idea_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Actor</strong>: A policy <span class="arithmatex">\( \pi_\theta(a|s) \)</span> that selects actions.</li>
+<li><strong>Critic</strong>: A value function <span class="arithmatex">\( V_w(s) \)</span> or <span class="arithmatex">\( Q_w(s,a) \)</span> that estimates expected returns, serving as a baseline.</li>
+<li><strong>Interaction</strong>: The critic evaluates the actor’s actions, guiding policy updates with lower-variance advantages.</li>
+</ul>
+<h3 id="update-rules">Update Rules<a class="headerlink" href="#update-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Actor Update</strong> (Policy Optimization):
+[
+\theta \leftarrow \theta + \alpha \cdot \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot (G_t - V_w(s_t))
+]</p>
+</li>
+<li>
+<p>Or, using TD error for online updates:</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+\theta \leftarrow \theta + \alpha \cdot \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot \delta_t
+\]</div>
+<p>where <span class="arithmatex">\( \delta_t = r_t + \gamma V_w(s_{t+1}) - V_w(s_t) \)</span> is the TD error.</p>
+<ol>
+<li><strong>Critic Update</strong> (Value Learning):</li>
+</ol>
+<div class="arithmatex">\[
+w \leftarrow w - \beta \cdot \nabla_w (V_w(s_t) - (r_t + \gamma V_w(s_{t+1})))^2
+\]</div>
+<ul>
+<li>Minimizes the TD error to improve <span class="arithmatex">\( V_w(s) \)</span>.</li>
+</ul>
+<h3 id="numerical-example_2">Numerical Example<a class="headerlink" href="#numerical-example_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Setup</strong>: Same trajectory: <span class="arithmatex">\( s_1, a_1, r_1=1, s_2, a_2, r_2=2 \)</span>. <span class="arithmatex">\( \gamma = 0.9 \)</span>, <span class="arithmatex">\( \alpha = 0.1 \)</span>, <span class="arithmatex">\( \beta = 0.05 \)</span>.</li>
+<li><strong>Critic</strong>: <span class="arithmatex">\( V_w(s_1) = 2 \)</span>, <span class="arithmatex">\( V_w(s_2) = 1 \)</span>, <span class="arithmatex">\( V_w(s_3) = 0 \)</span>.</li>
+<li><strong>Step 1</strong>:</li>
+<li>TD error: <span class="arithmatex">\( \delta_1 = r_1 + \gamma V_w(s_2) - V_w(s_1) = 1 + 0.9 \cdot 1 - 2 = 0.9 - 2 = -1.1 \)</span>.</li>
+<li>Actor: <span class="arithmatex">\( \nabla_\theta \log \pi_\theta(a_1|s_1) = [1, 0] \)</span>, update: <span class="arithmatex">\( \theta + 0.1 \cdot [1, 0] \cdot (-1.1) = \theta + [-0.11, 0] \)</span>.</li>
+<li>Critic: Update <span class="arithmatex">\( V_w(s_1) \)</span> to minimize <span class="arithmatex">\( (V_w(s_1) - (r_1 + \gamma V_w(s_2)))^2 \)</span>.</li>
+<li><strong>Step 2</strong>:</li>
+<li>TD error: <span class="arithmatex">\( \delta_2 = r_2 + \gamma V_w(s_3) - V_w(s_2) = 2 + 0.9 \cdot 0 - 1 = 1 \)</span>.</li>
+<li>Actor: <span class="arithmatex">\( \nabla_\theta \log \pi_\theta(a_2|s_2) = [0, 1] \)</span>, update: <span class="arithmatex">\( \theta + 0.1 \cdot [0, 1] \cdot 1 = \theta + [0, 0.1] \)</span>.</li>
+</ul>
+<h3 id="benefits_1">Benefits<a class="headerlink" href="#benefits_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Online Learning</strong>: TD-based updates allow learning within an episode, unlike Monte Carlo.</li>
+<li><strong>Lower Variance</strong>: TD error or value-based baseline reduces noise compared to raw returns.</li>
+<li><strong>Flexibility</strong>: Supports both discrete and continuous action spaces (e.g., DDPG for continuous control).</li>
+</ul>
+<h3 id="process-flow_1">Process Flow<a class="headerlink" href="#process-flow_1" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TD
+    A[Actor] --&gt;|Select action a_t| B[Environment]
+    B --&gt;|Return s_t+1 and r_t+1| A
+    B --&gt;|Send s_t, r_t, s_t+1| C[Critic]
+    C --&gt;|Compute delta_t| A
+    A --&gt;|Update theta| A
+    C --&gt;|Update w| C</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Actor-Critic Advantage</p>
+<p>The critic provides a dynamic baseline, enabling faster and more stable learning than REINFORCE.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Mnemonic: Actor-Critic</p>
+<p><strong>"ACT"</strong>: <strong>A</strong>ctor <strong>C</strong>hooses, <strong>T</strong>eacher (Critic) evaluates.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Complexity</p>
+<p>Training two models (actor and critic) requires careful tuning of learning rates and network architectures.</p>
+</div>
+<h2 id="which-rl-methods-combine-policy-and-value-learning">Which RL Methods Combine Policy and Value Learning?<a class="headerlink" href="#which-rl-methods-combine-policy-and-value-learning" title="Permanent link">&para;</a></h2>
+<p><strong>Actor-Critic methods</strong> are the primary RL approaches that combine <strong>policy optimization</strong> (learning <span class="arithmatex">\( \pi_\theta(a|s) \)</span>) and <strong>value estimation</strong> (learning <span class="arithmatex">\( V_w(s) \)</span> or <span class="arithmatex">\( Q_w(s,a) \)</span>). Examples include:</p>
+<ul>
+<li><strong>A2C (Advantage Actor-Critic)</strong>: Uses advantage function <span class="arithmatex">\( A(s,a) = Q(s,a) - V(s) \)</span>.</li>
+<li><strong>A3C (Asynchronous A2C)</strong>: Parallelizes learning for efficiency.</li>
+<li><strong>PPO (Proximal Policy Optimization)</strong>: Stabilizes policy updates with clipped objectives.</li>
+<li><strong>DDPG (Deep Deterministic Policy Gradient)</strong>: Handles continuous actions.</li>
+<li><strong>SAC (Soft Actor-Critic)</strong>: Incorporates entropy for exploration.</li>
+</ul>
+<h3 id="why-combine-both">Why Combine Both?<a class="headerlink" href="#why-combine-both" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Policy Learning</strong>: Directly optimizes actions, suitable for continuous or complex spaces.</li>
+<li><strong>Value Learning</strong>: Provides baselines or TD errors, reducing variance and enabling online updates.</li>
+<li><strong>Synergy</strong>: The critic guides the actor, improving sample efficiency and stability.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Key Feature</p>
+<p>Actor-Critic methods leverage the strengths of policy-based (direct optimization) and value-based (stable estimation) approaches.</p>
+</div>
+<h2 id="essential-elements-of-naive-reinforcement-learning">Essential Elements of Naive Reinforcement Learning<a class="headerlink" href="#essential-elements-of-naive-reinforcement-learning" title="Permanent link">&para;</a></h2>
+<p>Naive RL, exemplified by the <strong>Naive REINFORCE algorithm</strong>, is characterized by the following elements:</p>
+<ol>
+<li><strong>Stochastic Policy <span class="arithmatex">\( \pi_\theta(a|s) \)</span></strong>:</li>
+<li>Outputs probabilities over actions, enabling exploration.</li>
+<li>Parameterized (e.g., neural network) for approximation.</li>
+<li><strong>Episode-Based Learning (Monte Carlo)</strong>:</li>
+<li>Collects full trajectories before updating.</li>
+<li>Uses complete returns <span class="arithmatex">\( G_t \)</span>, not TD estimates.</li>
+<li><strong>Return Estimation</strong>:</li>
+<li>Computes <span class="arithmatex">\( G_t = \sum_{k=t}^T \gamma^{k-t} r_k \)</span> for each timestep.</li>
+<li>Measures the quality of actions taken.</li>
+<li><strong>Gradient Ascent</strong>:</li>
+<li>Updates <span class="arithmatex">\( \theta \)</span> to increase <span class="arithmatex">\( J(\theta) \)</span> using:</li>
+</ol>
+<div class="arithmatex">\[
+\theta \leftarrow \theta + \alpha \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t
+\]</div>
+<ol>
+<li><strong>No Baselines or Critics</strong>:</li>
+<li>Relies on raw returns, leading to high variance.</li>
+<li>No separate value function to stabilize learning.</li>
+</ol>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>High Variance</strong>: <span class="arithmatex">\( G_t \)</span> fluctuates, slowing convergence.</li>
+<li><strong>Sample Inefficiency</strong>: Requires full episodes, unsuitable for online learning.</li>
+<li><strong>Scalability Issues</strong>: Struggles with long horizons or complex environments.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Naive RL Simplicity</p>
+<p>Naive RL is a pure policy-based approach, ideal for understanding policy gradients but impractical for large-scale problems.</p>
+</div>
+<h2 id="comparison-table">Comparison Table<a class="headerlink" href="#comparison-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Learns Policy?</strong></th>
+<th><strong>Learns Value?</strong></th>
+<th><strong>Variance</strong></th>
+<th><strong>Bias</strong></th>
+<th><strong>Stability</strong></th>
+<th><strong>Online Learning?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Naive REINFORCE</strong></td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+<td>🔺 High</td>
+<td>❌ No</td>
+<td>❌ Low</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>REINFORCE + Baseline</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes (Baseline)</td>
+<td>🔻 Medium</td>
+<td>❌ No</td>
+<td>✅ Medium</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>Actor-Critic</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>🔻 Low</td>
+<td>🔺 Some</td>
+<td>✅ High</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="revision-checklist">Revision Checklist<a class="headerlink" href="#revision-checklist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Explain policy approximation, its necessity, types (parametric, value-based, policy-based), and trade-offs.</li>
+<li>[ ] Describe the Naive REINFORCE algorithm, including the policy gradient theorem, update rule, and a numerical example.</li>
+<li>[ ] Detail REINFORCE with baselines, how it reduces variance, and provide a numerical example.</li>
+<li>[ ] Explain Actor-Critic methods, their actor and critic components, TD-based updates, and a numerical example.</li>
+<li>[ ] Identify RL methods combining policy and value learning (e.g., A2C, PPO, DDPG, SAC).</li>
+<li>[ ] List the essential elements of Naive RL and their limitations.</li>
+<li>[ ] Compare Naive REINFORCE, REINFORCE with baselines, and Actor-Critic in terms of variance, bias, and stability.</li>
+<li>[ ] Understand the process flows for REINFORCE and Actor-Critic using Mermaid diagrams.</li>
+<li>[ ] Memorize mnemonics: APPROX, FORCE, BASE, ACT.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

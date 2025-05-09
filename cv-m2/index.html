@@ -1,0 +1,1011 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/cv-m2/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../rpa-m2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Computer Vision - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scale-invariant-feature-transform-sift" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Computer Vision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-sift-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of SIFT Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integral-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integral Image
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integral Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-integral-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of Integral Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-sift-and-surf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of SIFT and SURF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeded-up-robust-features-surf-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speeded-Up Robust Features (SURF) Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-descriptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Descriptor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeded-up-robust-features-surf-algorithm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speeded Up Robust Features (SURF) algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Speeded Up Robust Features (SURF) algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-feature-descriptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Feature Descriptors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-sift-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of SIFT Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integral-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integral Image
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integral Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-integral-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of Integral Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-sift-and-surf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of SIFT and SURF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeded-up-robust-features-surf-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speeded-Up Robust Features (SURF) Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-descriptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Descriptor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeded-up-robust-features-surf-algorithm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speeded Up Robust Features (SURF) algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Speeded Up Robust Features (SURF) algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-feature-descriptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Feature Descriptors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="scale-invariant-feature-transform-sift">Scale-Invariant Feature Transform (SIFT)<a class="headerlink" href="#scale-invariant-feature-transform-sift" title="Permanent link">&para;</a></h1>
+<p>SIFT is an algorithm used to detect distinct key points or features in an image.<br />
+These key points are <strong>robust to changes</strong> in <strong>scale, rotation, and affine transformations</strong>, making SIFT widely used in object recognition, image stitching, and 3D reconstruction.</p>
+<hr />
+<h2 id="advantages-of-sift-detector">Advantages of SIFT Detector<a class="headerlink" href="#advantages-of-sift-detector" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SIFT provides a <strong>highly distinctive</strong> feature descriptor, making it useful for matching objects in large databases.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th><strong>Advantage</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Locality</strong></td>
+<td>Features are local and robust to <strong>occlusion</strong>. Does not require <strong>segmentation</strong> of objects.</td>
+</tr>
+<tr>
+<td><strong>Distinctiveness</strong></td>
+<td>Features can be <strong>matched</strong> to a <strong>large database</strong> of objects.</td>
+</tr>
+<tr>
+<td><strong>Quantity</strong></td>
+<td>Generates <strong>many features</strong>, even for small objects.</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Close to <strong>real-time performance</strong>.</td>
+</tr>
+<tr>
+<td><strong>Extensibility</strong></td>
+<td>Easily extends to <strong>various feature types</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="SIFT Keypoint Detection" src="../image-20.png" />  </p>
+<p><em>The image above illustrates SIFT algorithm.</em></p>
+<hr />
+<h2 id="integral-image">Integral Image<a class="headerlink" href="#integral-image" title="Permanent link">&para;</a></h2>
+<p>An <strong>integral image</strong> is a technique that allows for the <strong>fast computation</strong> of the sum of pixel values over a rectangular region.</p>
+<h3 id="key-properties"><strong>Key Properties</strong><a class="headerlink" href="#key-properties" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Speeds up</strong> sum calculations for <strong>box-type filters</strong>.</li>
+<li><strong>Reduces computational cost</strong> for large-scale image processing.</li>
+</ul>
+<h3 id="mathematical-representation"><strong>Mathematical Representation</strong><a class="headerlink" href="#mathematical-representation" title="Permanent link">&para;</a></h3>
+<p>For an input image <span class="arithmatex">\( I(x,y) \)</span>, the integral image <span class="arithmatex">\( I_{Int}(x,y) \)</span> at a location <span class="arithmatex">\( (x,y) \)</span> is computed as:</p>
+<div class="arithmatex">\[
+I_{Int}(x, y) = \sum_{i=0}^{x} \sum_{j=0}^{y} I(i, j)
+\]</div>
+<p><img alt="alt text" src="../image-21.png" /></p>
+<h3 id="use-of-integral-image"><strong>Use of Integral Image</strong><a class="headerlink" href="#use-of-integral-image" title="Permanent link">&para;</a></h3>
+<p>The sum of all pixel values in a region can be quickly computed using four values:</p>
+<div class="arithmatex">\[
+S = A - B - C + D
+\]</div>
+<p>where:
+- <span class="arithmatex">\( A, B, C, \)</span> and <span class="arithmatex">\( D \)</span> are elements of the <strong>integral image</strong> at the corners of the selected region.</p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even if size of filter increases, number of computations (3 additions/subtractions) does not increase</p>
+</div>
+<h3 id="comparison-of-sift-and-surf"><strong>Comparison of SIFT and SURF</strong><a class="headerlink" href="#comparison-of-sift-and-surf" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><strong>SIFT (Scale-Invariant Feature Transform)</strong></th>
+<th><strong>SURF (Speeded-Up Robust Features)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dimensionality</strong></td>
+<td>High-dimensional feature descriptor</td>
+<td>Lower dimensional, more compact descriptor</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Reduction in dimensionality decreases accuracy</td>
+<td>More efficient without significant accuracy loss</td>
+</tr>
+<tr>
+<td><strong>Keypoint Detection</strong></td>
+<td>Approximates <strong>Laplacian of Gaussian (LoG)</strong> using <strong>Difference of Gaussian (DoG)</strong></td>
+<td>Approximates <strong>LoG</strong> using <strong>Box Filters</strong></td>
+</tr>
+<tr>
+<td><strong>Computation</strong></td>
+<td>Uses <strong>determinant and trace</strong> of the Hessian matrix</td>
+<td>Uses <strong>only determinant</strong> of Hessian matrix</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Computationally expensive</td>
+<td>Faster due to <strong>integral images and parallel convolution</strong></td>
+</tr>
+<tr>
+<td><strong>Real-Time Applications</strong></td>
+<td>Not optimized for real-time processing</td>
+<td>Suitable for <strong>real-time tracking &amp; object recognition</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>SURF is a faster alternative to SIFT, making it suitable for real-time applications while maintaining robustness.</strong></p>
+</div>
+<hr />
+<h2 id="speeded-up-robust-features-surf-algorithm"><strong>Speeded-Up Robust Features (SURF) Algorithm</strong><a class="headerlink" href="#speeded-up-robust-features-surf-algorithm" title="Permanent link">&para;</a></h2>
+<h2 id="1-detector"><strong>1. Detector</strong><a class="headerlink" href="#1-detector" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Construct Hessian matrix</strong> using box filters at each pixel to determine keypoints.  </li>
+<li><strong>Increase the size of box filters</strong> and repeat step 1.  </li>
+<li>For each keypoint, <strong>select points</strong> within a radius of <strong>6σ</strong> (where <strong>σ</strong> is the standard deviation of the keypoint's filter).  </li>
+<li><strong>Apply a Gaussian filter</strong> of <strong>2.5σ</strong> on the keypoint.  </li>
+<li>Use a <strong>Haar wavelet of size 4σ</strong> to determine the <strong>magnitude</strong> and <strong>direction</strong> of points.  </li>
+<li>Draw a <strong>histogram with 6 bins</strong> to identify the <strong>orientation</strong> of the keypoint.  </li>
+</ol>
+<h2 id="2-descriptor"><strong>2. Descriptor</strong><a class="headerlink" href="#2-descriptor" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Around each keypoint, <strong>select a square region</strong> of size <strong>(20σ × 20σ)</strong>.  </li>
+<li><strong>Divide the region</strong> into <strong>16 sub-regions</strong>.  </li>
+<li>For each sub-region, <strong>determine a vector</strong> of length <strong>4</strong>.  </li>
+<li>The <strong>final descriptor vector</strong> has a total length of <strong>64</strong>.  </li>
+</ol>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>SURF is significantly faster than SIFT</strong> due to its use of <strong>box filters and integral images</strong>, making it suitable for <strong>real-time applications</strong>.  </p>
+</div>
+<h2 id="speeded-up-robust-features-surf-algorithm_1">Speeded Up Robust Features (SURF) algorithm<a class="headerlink" href="#speeded-up-robust-features-surf-algorithm_1" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="../image-22.png" /></p>
+<h3 id="applications-of-feature-descriptors">Applications of Feature Descriptors<a class="headerlink" href="#applications-of-feature-descriptors" title="Permanent link">&para;</a></h3>
+<p>Feature descriptors are powerful tools in computer vision for identifying and describing local features in images. They enable a wide range of applications:</p>
+<ol>
+<li>Image Matching
+Matches keypoints between different images of the same scene or object.
+Essential for applications like panorama stitching, where multiple images are combined into a wide-angle view.</li>
+<li>Object Recognition
+Identifies and locates objects within images by matching features between a known object and a scene.
+Widely used in robotics and automated inspection systems.</li>
+<li>3D Reconstruction
+Matches images taken from different viewpoints to reconstruct 3D models of objects or environments.
+Essential for applications in augmented reality (AR) and virtual reality (VR).</li>
+<li>Image Retrieval
+Enables content-based image retrieval by searching for and retrieving images based on visual content rather than metadata.</li>
+<li>Scene Recognition
+Analyzes the spatial arrangement of features to recognize and categorize scenes or environments.
+Useful in autonomous navigation and contextual AI systems.</li>
+<li>Robotic Vision
+Helps robots navigate, identify objects, and interact with their environment more effectively.</li>
+<li>Video Tracking
+Tracks objects or people in video sequences by matching keypoints frame-to-frame.
+Important for surveillance and motion analysis.</li>
+<li>Forgery Detection
+Used in digital forensics to detect tampered or forged images by identifying inconsistencies in local features.</li>
+</ol>
+<h1 id="2d-gabor-filter-parameters-properties"><strong>2D Gabor Filter – Parameters &amp; Properties</strong><a class="headerlink" href="#2d-gabor-filter-parameters-properties" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <strong>Gabor filter</strong> is a powerful tool used for feature extraction, especially in <strong>texture and edge detection</strong>. It is a <strong>bandpass filter</strong> that operates in both the <strong>spatial and frequency domains</strong>, mimicking the way the human visual system perceives textures.  </p>
+<h2 id="key-characteristics"><strong>Key Characteristics</strong><a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
+<p>✅ <strong>Localized in both space &amp; frequency</strong> – Helps capture patterns effectively.<br />
+✅ <strong>Combination of Gaussian &amp; Sinusoidal components</strong> – Provides smooth feature extraction.<br />
+✅ <strong>Mimics human vision</strong> – Recognizes textures similar to human eyes.  </p>
+<hr />
+<h2 id="mathematical-representation_1"><strong>Mathematical Representation</strong><a class="headerlink" href="#mathematical-representation_1" title="Permanent link">&para;</a></h2>
+<p>A <strong>2D Gabor filter</strong> is defined as:  </p>
+<div class="arithmatex">\[
+G(x,y) = \exp\left( -\frac{x'^2 + \gamma^2 y'^2}{2\sigma^2} \right) \cos\left( \frac{2\pi x'}{\lambda} + \psi \right)
+\]</div>
+<p>where:<br />
+- <span class="arithmatex">\( x' = x \cos\theta + y \sin\theta \)</span><br />
+- <span class="arithmatex">\( y' = -x \sin\theta + y \cos\theta \)</span>  </p>
+<hr />
+<h2 id="core-parameters-of-gabor-filter"><strong>Core Parameters of Gabor Filter</strong><a class="headerlink" href="#core-parameters-of-gabor-filter" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Symbol</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wavelength</strong></td>
+<td><span class="arithmatex">\( \lambda \)</span></td>
+<td>Controls the width of the stripes in the Gabor function.</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td><span class="arithmatex">\( \theta \)</span></td>
+<td>Defines the <strong>angle</strong> of the normal to the parallel stripes of the Gabor function.</td>
+</tr>
+<tr>
+<td><strong>Phase Offset</strong></td>
+<td><span class="arithmatex">\( \psi \)</span></td>
+<td>Determines the <strong>position</strong> of the sinusoidal function, affecting edge detection.</td>
+</tr>
+<tr>
+<td><strong>Standard Deviation</strong></td>
+<td><span class="arithmatex">\( \sigma \)</span></td>
+<td>Defines the <strong>spread</strong> of the Gaussian envelope, controlling the extent of localization.</td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td><span class="arithmatex">\( \gamma \)</span></td>
+<td>Specifies the <strong>ellipticity</strong> of the Gabor function's support.</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td><span class="arithmatex">\( B \)</span></td>
+<td>Controls the <strong>range of spatial frequencies</strong> covered by the filter.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-parameters-affect-the-gabor-filter"><strong>How Parameters Affect the Gabor Filter</strong><a class="headerlink" href="#how-parameters-affect-the-gabor-filter" title="Permanent link">&para;</a></h2>
+<h3 id="1-wavelength-stripe-width"><strong>1️⃣ Wavelength (λ) – Stripe Width</strong><a class="headerlink" href="#1-wavelength-stripe-width" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Controls the width of the sinusoidal pattern.  </li>
+<li>Larger <strong>λ</strong> → Wider stripes → Detects coarse textures.  </li>
+<li>Smaller <strong>λ</strong> → Narrower stripes → Detects fine textures.  </li>
+</ul>
+<h3 id="2-orientation-direction-of-features"><strong>2️⃣ Orientation (θ) – Direction of Features</strong><a class="headerlink" href="#2-orientation-direction-of-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Determines the <strong>angle</strong> at which the filter responds best to edges.  </li>
+<li>Example: A <strong>horizontal edge</strong> detector has <span class="arithmatex">\( \theta = 90^\circ \)</span>.  </li>
+</ul>
+<h3 id="3-phase-offset-sinusoidal-shift"><strong>3️⃣ Phase Offset (ψ) – Sinusoidal Shift</strong><a class="headerlink" href="#3-phase-offset-sinusoidal-shift" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><span class="arithmatex">\( \psi = 0 \)</span></strong> → Cosine Gabor (Even filter) → Detects <strong>bar-like</strong> structures.  </li>
+<li><strong><span class="arithmatex">\( \psi = \frac{\pi}{2} \)</span></strong> → Sine Gabor (Odd filter) → Detects <strong>line-like</strong> structures.  </li>
+</ul>
+<h3 id="4-standard-deviation-gaussian-spread"><strong>4️⃣ Standard Deviation (σ) – Gaussian Spread</strong><a class="headerlink" href="#4-standard-deviation-gaussian-spread" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Determines the <strong>size of the receptive field</strong>.  </li>
+<li>Large <span class="arithmatex">\( \sigma \)</span> → More <strong>blurred</strong> edges.  </li>
+<li>Small <span class="arithmatex">\( \sigma \)</span> → More <strong>sharp</strong> edges.  </li>
+</ul>
+<h3 id="5-aspect-ratio-ellipticity"><strong>5️⃣ Aspect Ratio (γ) – Ellipticity</strong><a class="headerlink" href="#5-aspect-ratio-ellipticity" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Specifies the <strong>shape</strong> of the filter.  </li>
+<li>Larger <span class="arithmatex">\( \gamma \)</span> → More elongated filter (stretches in one direction).  </li>
+<li>Smaller <span class="arithmatex">\( \gamma \)</span> → More circular response.  </li>
+</ul>
+<hr />
+<h2 id="gray-level-co-occurrence-matrix-glcm-texture-analysis"><strong>Gray Level Co-occurrence Matrix (GLCM) – Texture Analysis</strong><a class="headerlink" href="#gray-level-co-occurrence-matrix-glcm-texture-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="overview_1"><strong>Overview</strong><a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h2>
+<p>The <strong>Gray Level Co-occurrence Matrix (GLCM)</strong> is a powerful <strong>statistical method</strong> used in <strong>image processing</strong> and <strong>computer vision</strong> to analyze texture features by examining the spatial relationships between pixel intensities.  </p>
+<p>🔹 <strong>Key Applications:</strong><br />
+✅ <strong>Texture Analysis</strong> – Identifies patterns in images.<br />
+✅ <strong>Feature Extraction</strong> – Helps in classification tasks.<br />
+✅ <strong>Medical Imaging</strong> – Detects abnormalities in scans.<br />
+✅ <strong>Remote Sensing</strong> – Analyzes satellite imagery.  </p>
+<hr />
+<h2 id="glcm-how-it-works"><strong>GLCM – How It Works</strong><a class="headerlink" href="#glcm-how-it-works" title="Permanent link">&para;</a></h2>
+<p>GLCM computes how often pairs of <strong>gray-level intensities</strong> occur at a specific <strong>spatial relationship</strong> (distance &amp; direction) within an image. This helps extract meaningful <strong>texture features</strong>.</p>
+<h3 id="statistical-features-derived-from-glcm"><strong>Statistical Features Derived from GLCM</strong><a class="headerlink" href="#statistical-features-derived-from-glcm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Formula</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contrast</strong></td>
+<td><span class="arithmatex">\( \sum_{i,j} (i - j)^2 p(i, j) \)</span></td>
+<td>Measures intensity <strong>variation</strong> (higher contrast = more difference in pixel values).</td>
+</tr>
+<tr>
+<td><strong>Dissimilarity</strong></td>
+<td>( \sum_{i,j}</td>
+<td>i - j</td>
+</tr>
+<tr>
+<td><strong>Energy</strong></td>
+<td><span class="arithmatex">\( \sum_{i,j} p(i, j)^2 \)</span></td>
+<td>Sum of squared elements → Measures <strong>uniformity</strong>.</td>
+</tr>
+<tr>
+<td><strong>Homogeneity</strong></td>
+<td>( \sum_{i,j} \frac{p(i, j)}{1 +</td>
+<td>i - j</td>
+</tr>
+<tr>
+<td><strong>Entropy</strong></td>
+<td><span class="arithmatex">\( \sum_{i,j} -p(i, j) \log_2(p(i, j)) \)</span></td>
+<td>Measures randomness → <strong>Higher entropy = more complex textures</strong>.</td>
+</tr>
+<tr>
+<td><strong>Correlation</strong></td>
+<td><span class="arithmatex">\( \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j) p(i, j)}{\sigma_i \sigma_j} \)</span></td>
+<td>Measures <strong>linear dependency</strong> between pixel intensities.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="glcm-mean-variance"><strong>GLCM Mean &amp; Variance</strong><a class="headerlink" href="#glcm-mean-variance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>GLCM Mean</strong>: Represents the <strong>average occurrence</strong> of a pixel intensity based on spatial relationships.<br />
+ $$ \mu_i = \sum_{i,j} i p(i, j), \quad \mu_j = \sum_{i,j} j p(i, j) $$  </p>
+</li>
+<li>
+<p><strong>GLCM Variance</strong>: Measures <strong>spread (dispersion)</strong> of pixel intensities around the mean.<br />
+  $$   \sigma_i^2 = \sum_{i,j} p(i, j)(i - \mu_i )^2, \quad \sigma_j^2 = \sum_{i,j} p(i, j)(j - \mu_j )^2  $$</p>
+</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

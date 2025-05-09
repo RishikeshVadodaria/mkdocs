@@ -1,0 +1,919 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit%205/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Mobile computing unit 5 - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobile-databases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile computing unit 5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-mobile-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Mobile Databases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#need-for-mobile-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need for Mobile Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Need for Mobile Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uses-of-mobile-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uses of Mobile Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uses of Mobile Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-databases-design-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile Databases: Design Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile Databases: Design Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems-in-mobile-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems in Mobile Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems in Mobile Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoverability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recoverability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-coda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to CODA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mechanisms-of-the-coda-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mechanisms of the CODA File System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mechanisms of the CODA File System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Replication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnected-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disconnected Operation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-side-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client-Side Caching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Resolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability and Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#venus-states-in-coda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Venus States in CODA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Venus States in CODA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hoarding-preparation-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hoarding (Preparation Phase)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulation-disconnected-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emulation (Disconnected Operation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reintegration-reconnection-syncing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reintegration (Reconnection &amp; Syncing)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-structure-in-coda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Structure in CODA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-rationale-of-coda-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Rationale of CODA File System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Mobile computing unit 5</h1>
+
+<div class="nav-wrapper">
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 1/" class="nav-item mobile-computing" data-title="Unit 1">Unit 1</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 2/" class="nav-item mobile-computing" data-title="Unit 2">Unit 2</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 3/" class="nav-item mobile-computing" data-title="Unit 3">Unit 3</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 4/" class="nav-item mobile-computing" data-title="Unit 4">Unit 4</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 5/" class="nav-item mobile-computing" data-title="Unit 5">Unit 5</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 6/" class="nav-item mobile-computing" data-title="Unit 6">Unit 6</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 7/" class="nav-item mobile-computing" data-title="Unit 7">Unit 7</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 8/" class="nav-item mobile-computing" data-title="Unit 8">Unit 8</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 9/" class="nav-item mobile-computing" data-title="Unit 8">Unit 9</a>
+</div>
+
+<h2 id="mobile-databases">Mobile Databases<a class="headerlink" href="#mobile-databases" title="Permanent link">&para;</a></h2>
+<h3 id="introduction-to-mobile-databases">Introduction to Mobile Databases<a class="headerlink" href="#introduction-to-mobile-databases" title="Permanent link">&para;</a></h3>
+<p>Mobile databases are specialized data management systems designed for mobile devices. They address unique challenges such as:</p>
+<ul>
+<li>Limited device resources: Optimizing power and storage usage.</li>
+<li>Intermittent network connectivity: Ensuring seamless synchronization.</li>
+<li>Data distribution: Managing access across multiple locations.</li>
+</ul>
+<p>These databases enable:</p>
+<ul>
+<li>Efficient data querying.</li>
+<li>Offline operations.</li>
+<li>Secure data handling.</li>
+<li>Synchronization between mobile devices and central servers.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mobile databases allow devices to function independently while staying connected to a broader data ecosystem.</p>
+</div>
+<hr />
+<h3 id="need-for-mobile-databases">Need for Mobile Databases<a class="headerlink" href="#need-for-mobile-databases" title="Permanent link">&para;</a></h3>
+<p>Users require seamless access to their data and the ability to perform transactions securely on mobile devices.</p>
+<h4 id="key-requirements">Key Requirements<a class="headerlink" href="#key-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Transaction handling: Making secure payments, updating records.</li>
+<li>Everyday convenience: Sending money, booking seats, trading stocks.</li>
+<li>Continuous access: Uninterrupted availability of information.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The demand for "anytime, anywhere" access makes mobile databases essential in modern applications.</p>
+</div>
+<hr />
+<h3 id="uses-of-mobile-databases">Uses of Mobile Databases<a class="headerlink" href="#uses-of-mobile-databases" title="Permanent link">&para;</a></h3>
+<p>Mobile databases empower developers to build and deploy applications for handheld devices.</p>
+<h4 id="common-use-cases">Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Corporate Access:</li>
+<li>Employees connect to their company's network.</li>
+<li>Data is downloaded for offline work.</li>
+<li>Updates sync back when connected.</li>
+<li>Real-world Example:
+  A food delivery app rider using mobile databases can:</li>
+<li>Accept new orders while on the move.</li>
+<li>Track delivery locations and customer details offline.</li>
+<li>Update delivery status in real-time.</li>
+<li>Sync all completed deliveries to the restaurant’s system.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mobile databases ensure real-time tracking and offline functionality for critical applications.</p>
+</div>
+<hr />
+<h3 id="mobile-databases-design-issues">Mobile Databases: Design Issues<a class="headerlink" href="#mobile-databases-design-issues" title="Permanent link">&para;</a></h3>
+<p>Mobile databases must be built for mobility rather than adapted from traditional database systems.</p>
+<h4 id="key-challenges">Key Challenges<a class="headerlink" href="#key-challenges" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query Optimization</td>
+<td>Users move constantly, making it hard to determine the best way to process data requests.</td>
+</tr>
+<tr>
+<td>Time Management</td>
+<td>Mobile networks often charge based on connection time and data usage, requiring efficient retrieval.</td>
+</tr>
+<tr>
+<td>Power Efficiency</td>
+<td>Limited battery life demands minimal energy consumption for database operations.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Poor optimization can lead to high costs, battery drain, and slow performance.</p>
+</div>
+<hr />
+<h3 id="problems-in-mobile-databases">Problems in Mobile Databases<a class="headerlink" href="#problems-in-mobile-databases" title="Permanent link">&para;</a></h3>
+<h4 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h4>
+<p>One of the biggest costs in wireless communication is connection time. Efficient routing reduces this expense.</p>
+<h4 id="query-processing">Query Processing<a class="headerlink" href="#query-processing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Mobile devices often disconnect for extended periods.</li>
+<li>Users may issue queries or updates on cached data while offline.</li>
+</ul>
+<h4 id="recoverability">Recoverability<a class="headerlink" href="#recoverability" title="Permanent link">&para;</a></h4>
+<ul>
+<li>If a disconnected device fails, all locally stored updates may be lost permanently.</li>
+</ul>
+<h4 id="consistency">Consistency<a class="headerlink" href="#consistency" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Cached data can become outdated, and devices won’t detect inconsistencies until they reconnect.</li>
+<li>No updates can sync until the device is back online.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using synchronization mechanisms and conflict resolution strategies can mitigate these issues.</p>
+</div>
+<hr />
+<h3 id="introduction-to-coda">Introduction to CODA<a class="headerlink" href="#introduction-to-coda" title="Permanent link">&para;</a></h3>
+<p>CODA is a distributed file system designed for high availability, scalability, and fault tolerance. It was developed as an extension of the Andrew File System (AFS) at Carnegie Mellon University. CODA ensures continuous data access even in the presence of network failures or server disconnections by using client-side caching, replication, and disconnected operation.</p>
+<hr />
+<h3 id="mechanisms-of-the-coda-file-system">Mechanisms of the CODA File System<a class="headerlink" href="#mechanisms-of-the-coda-file-system" title="Permanent link">&para;</a></h3>
+<h4 id="server-replication">Server Replication<a class="headerlink" href="#server-replication" title="Permanent link">&para;</a></h4>
+<p>Server replication ensures that data remains accessible by storing multiple read-write replicas across different servers.</p>
+<ul>
+<li>Volumes have read-write replicas stored on multiple servers, forming a Volume Storage Group (VSG).</li>
+<li>Clients track available servers through an Accessible Volume Storage Group (AVSG).</li>
+<li>Venus (cache manager) ensures consistency by implementing a coherence protocol.</li>
+<li>Servers notify clients whenever cached copies become stale or invalid.</li>
+<li>Modifications are propagated simultaneously across all AVSG sites and later synced to missing VSG sites.</li>
+</ul>
+<h4 id="disconnected-operation">Disconnected Operation<a class="headerlink" href="#disconnected-operation" title="Permanent link">&para;</a></h4>
+<p>CODA supports offline access by allowing clients to function independently when the network is unavailable.</p>
+<ul>
+<li>Venus handles all file system requests using local cache data.</li>
+<li>When the client reconnects, Venus syncs modifications to the server and returns to replication mode.</li>
+<li>Ensures uninterrupted access for mobile users.</li>
+</ul>
+<h4 id="client-side-caching">Client-Side Caching<a class="headerlink" href="#client-side-caching" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Uses Venus, the CODA client module, to cache frequently accessed files locally.</li>
+<li>Improves performance by reducing the need for frequent server requests.</li>
+<li>Cached files allow users to work offline and sync changes later.</li>
+</ul>
+<h4 id="conflict-resolution">Conflict Resolution<a class="headerlink" href="#conflict-resolution" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automatic resolution for simple conflicts (e.g., appending to logs).</li>
+<li>Manual intervention required for complex conflicts where two users modify the same file.</li>
+<li>Uses resolution tools to merge conflicting versions.</li>
+</ul>
+<h4 id="scalability-and-performance">Scalability and Performance<a class="headerlink" href="#scalability-and-performance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Efficient handling of large-scale distributed systems.</li>
+<li>Supports large numbers of clients with minimal performance degradation.</li>
+<li>Balances workload using adaptive caching and replication strategies.</li>
+</ul>
+<h4 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Uses Kerberos authentication for secure access control.</li>
+<li>Encrypts data transmissions to protect sensitive information.</li>
+<li>Access control lists (ACLs) manage user permissions.</li>
+</ul>
+<hr />
+<h3 id="venus-states-in-coda">Venus States in CODA<a class="headerlink" href="#venus-states-in-coda" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../image-12.png" /></p>
+<p>Venus operates in three distinct states, depending on the network connection status.</p>
+<h4 id="hoarding-preparation-phase">Hoarding (Preparation Phase)<a class="headerlink" href="#hoarding-preparation-phase" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Venus proactively caches essential data before disconnection.</li>
+<li>Frequently accessed files are prefetched while online.</li>
+<li>Uses Least Recently Used (LRU) strategy to manage cache content efficiently.</li>
+</ul>
+<h4 id="emulation-disconnected-operation">Emulation (Disconnected Operation)<a class="headerlink" href="#emulation-disconnected-operation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>When disconnected, Venus operates as a pseudo-server, providing local file access.</li>
+<li>Applications access cached files without needing server connectivity.</li>
+<li>Venus tracks all changes and assigns temporary file IDs for new objects.</li>
+<li>Conflict detection: After reconnection, file versions are compared, and conflicts are flagged for manual resolution.</li>
+</ul>
+<h4 id="reintegration-reconnection-syncing">Reintegration (Reconnection &amp; Syncing)<a class="headerlink" href="#reintegration-reconnection-syncing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Venus propagates all changes made during disconnection back to the server.</li>
+<li>The system updates cached files to reflect server changes.</li>
+<li>Reintegration occurs automatically upon network reconnection.</li>
+<li>If conflicting updates exist, files are stored as separate copies for manual integration.</li>
+</ul>
+<hr />
+<h3 id="client-structure-in-coda">Client Structure in CODA<a class="headerlink" href="#client-structure-in-coda" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../image-13.png" /></p>
+<p>CODA's client-side architecture is designed for flexibility and efficiency.</p>
+<ul>
+<li>Venus runs at the user level, not the kernel level, allowing easier updates and flexibility.</li>
+<li>A mini-cache inside the kernel filters frequent Venus-kernel interactions, improving performance.</li>
+<li>File access process:</li>
+<li>Applications request files via the Vnode interface.</li>
+<li>If the mini-cache contains the file, the request is processed instantly.</li>
+<li>If not, Venus fetches the file from the server and updates the cache.</li>
+<li>After processing, control returns to the application.</li>
+<li>Venus periodically updates the mini-cache to maintain consistency.</li>
+</ul>
+<hr />
+<h3 id="design-rationale-of-coda-file-system">Design Rationale of CODA File System<a class="headerlink" href="#design-rationale-of-coda-file-system" title="Permanent link">&para;</a></h3>
+<p>CODA was designed with specific goals in mind to support mobile and distributed computing.</p>
+<ul>
+<li>Standard Hardware Compatibility: Works on commercial systems without requiring special equipment.</li>
+<li>Transparency: Users do not need to know where files are stored.</li>
+<li>Scalability: Handles growing networks and large data volumes efficiently.</li>
+<li>Mobile Computing Support: Built for portable workstations and remote access.</li>
+<li>High Availability: Ensures continuous access even during network failures.</li>
+<li>Strong Consistency: Synchronizes data accurately across all replicas.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

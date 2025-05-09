@@ -1,0 +1,782 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit%203/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Computer vision unit 3 - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#image-segmentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Computer vision unit 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-means Clustering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-means Clustering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elbow-method-for-optimal-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elbow Method for Optimal k
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-shift-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mean Shift Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mean Shift Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segmentation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segmentation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segmentation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-image-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Image Segmentation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="nav-wrapper">
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit 1/" class="nav-item mobile-computing" data-title="Unit 1">Unit 1</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit 2/" class="nav-item mobile-computing" data-title="Unit 2">Unit 2</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit 3/" class="nav-item mobile-computing" data-title="Unit 3">Unit 3</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/computer-vision-unit 4/" class="nav-item mobile-computing" data-title="Unit 4">Unit 4</a>
+   </div>
+
+<h1 id="image-segmentation">Image Segmentation<a class="headerlink" href="#image-segmentation" title="Permanent link">&para;</a></h1>
+<h2 id="unit-3">Unit 3<a class="headerlink" href="#unit-3" title="Permanent link">&para;</a></h2>
+<p>Image segmentation partitions an image into multiple regions based on pixel characteristics, grouping similar pixels into regions with assigned labels to identify objects and boundaries (lines, curves, etc.).</p>
+<h2 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h2>
+<p><strong>Definition</strong>: Divides an image into regions where pixels share similar attributes (e.g., texture, color).</p>
+<p><strong>Purpose</strong>: Locates objects and boundaries in images for applications like object detection and medical imaging.</p>
+<p><strong>Algorithms</strong>:
+  - Divisive Clustering
+  - Hierarchical Clustering
+  - K-means Clustering
+  - Mean Shift Clustering
+  - Graph Cuts</p>
+<p><strong>Categories</strong>:
+  - Region-Based Segmentation
+  - Edge Detection Based Segmentation
+  - Cluster-Based Segmentation
+  - CNN-Based Segmentation</p>
+<p><strong>Applications</strong>:
+  - Object detection and recognition
+  - Medical imaging (e.g., MRI, CT scans)
+  - Texture segmentation
+  - Video tracking</p>
+<h2 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>💡 <strong>Tip</strong>: Use the Elbow Method to select the optimal number of clusters (<code>k</code>) in K-means clustering by identifying the "knee" in the WCSS plot.</p>
+<p>⚠️ <strong>Caution</strong>: K-means clustering is sensitive to the Random Initialization Trap, where poor centroid initialization can lead to suboptimal clustering.</p>
+<p>💡 <strong>Tip</strong>: In Mean Shift, adjust the bandwidth parameter carefully—smaller values yield finer segmentation, while larger values produce coarser results.</p>
+</blockquote>
+<h2 id="k-means-clustering">K-means Clustering<a class="headerlink" href="#k-means-clustering" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>K-means is an unsupervised algorithm that groups data points based on similarity (e.g., pixel values, texture).</p>
+<h3 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Randomly select <code>k</code> initial clusters.</li>
+<li>Assign each data point to one of the <code>k</code> clusters randomly.</li>
+<li>Calculate the centroid (mean) of each cluster.</li>
+<li>Compute the distance of each point from all centroids.</li>
+<li>Reassign points to the nearest centroid.</li>
+<li>Recalculate centroids for the new clusters.</li>
+<li>Repeat steps 4–6 until centroids stabilize, points stop changing clusters, or a set number of iterations is reached.</li>
+</ol>
+<h3 id="elbow-method-for-optimal-k">Elbow Method for Optimal <code>k</code><a class="headerlink" href="#elbow-method-for-optimal-k" title="Permanent link">&para;</a></h3>
+<p>To determine the best <code>k</code>, use the Within Cluster Sum of Squares (WCSS):
+<div class="highlight"><pre><span></span><code><span class="c1"># Pseudo-code for calculating WCSS</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_wcss</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">wcss</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">k_clusters</span><span class="p">:</span>
+        <span class="n">centroid</span> <span class="o">=</span> <span class="n">compute_centroid</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">cluster</span><span class="p">:</span>
+            <span class="n">wcss</span> <span class="o">+=</span> <span class="n">distance</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">centroid</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">wcss</span>
+
+<span class="c1"># Compute WCSS for different k values</span>
+<span class="n">wcss_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_k</span><span class="p">):</span>
+    <span class="n">wcss_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_wcss</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+
+<span class="c1"># Plot WCSS vs k to find the elbow</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">wcss_values</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fast and suitable for large datasets.</li>
+<li>Low computational complexity.</li>
+</ul>
+<h3 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requires choosing <code>k</code>.</li>
+<li>Sensitive to centroid initialization, rescaling, and outliers.</li>
+<li>Works best with spherical clusters, not complex shapes.</li>
+</ul>
+<h2 id="mean-shift-algorithm">Mean Shift Algorithm<a class="headerlink" href="#mean-shift-algorithm" title="Permanent link">&para;</a></h2>
+<h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
+<p>Mean Shift is an unsupervised clustering algorithm that identifies clusters without specifying the number of clusters beforehand. It shifts data points toward the regional mean in each iteration, grouping pixels that converge to the same mode.</p>
+<h3 id="process_1">Process<a class="headerlink" href="#process_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Convert Image to Feature Space</strong>:</li>
+<li>Use spatial (x, y) coordinates and color values (e.g., RGB, Lab) or texture features.</li>
+<li>Optionally use histogram backprojection for pixel distribution.</li>
+<li><strong>Mean Shift Clustering</strong>:</li>
+<li>For each pixel, apply Mean Shift to move the kernel to the region of highest data density (mode).</li>
+<li><strong>Assign Labels</strong>:</li>
+<li>Pixels converging to the same mode are assigned the same cluster label.</li>
+</ol>
+<h3 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Kernel Density Estimation (KDE)</strong>:</li>
+<li>Uses a kernel window (circular or Gaussian) to calculate the mean of pixels within it.</li>
+<li>Updates pixel values to the new mean until convergence.</li>
+<li><strong>Bandwidth Parameter</strong>:</li>
+<li>Controls kernel window size.</li>
+<li>Small bandwidth: More clusters, finer segmentation.</li>
+<li>Large bandwidth: Fewer clusters, coarser segmentation.</li>
+<li><strong>Weighted Mean Function</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Pseudo-code for weighted mean in Mean Shift</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">weighted_mean</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">total_weight</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">weighted_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">)</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">gaussian_weight</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+        <span class="n">weighted_sum</span> <span class="o">+=</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">neighbor</span>
+        <span class="n">total_weight</span> <span class="o">+=</span> <span class="n">weight</span>
+    <span class="k">return</span> <span class="n">weighted_sum</span> <span class="o">/</span> <span class="n">total_weight</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gaussian_weight</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">d</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></li>
+</ul>
+<h3 id="pros_1">Pros<a class="headerlink" href="#pros_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Automatically determines the number of clusters.</li>
+<li>Robust to noise and outliers by focusing on high-density regions.</li>
+<li>Non-parametric, handling arbitrary cluster shapes.</li>
+</ul>
+<h3 id="cons_1">Cons<a class="headerlink" href="#cons_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sensitive to bandwidth choice, which can cause under- or over-segmentation.</li>
+<li>Computationally expensive, especially for high-resolution images.</li>
+<li>May identify noisy pixels as clusters.</li>
+<li>Slow due to iterative kernel movement for each pixel.</li>
+</ul>
+<h2 id="segmentation-techniques">Segmentation Techniques<a class="headerlink" href="#segmentation-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="comparison-table">Comparison Table<a class="headerlink" href="#comparison-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Algorithm</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Advantages</strong></th>
+<th><strong>Limitations</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Region-Based Segmentation</strong></td>
+<td>Separates objects using threshold value(s).</td>
+<td>Simple, fast, effective with high contrast.</td>
+<td>Struggles with low grayscale differences or overlapping pixel values.</td>
+</tr>
+<tr>
+<td><strong>Edge Detection Segmentation</strong></td>
+<td>Detects edges to define object boundaries.</td>
+<td>Good for high-contrast images.</td>
+<td>Not suitable for images with many edges or low contrast.</td>
+</tr>
+<tr>
+<td><strong>Segmentation Based on Clustering</strong></td>
+<td>Groups pixels into homogeneous clusters (e.g., K-means, Mean Shift).</td>
+<td>Effective for small datasets, produces excellent clusters.</td>
+<td>High computation time, not ideal for non-convex clusters.</td>
+</tr>
+<tr>
+<td><strong>Mask R-CNN</strong></td>
+<td>Outputs class, bounding box, and mask for each object.</td>
+<td>Flexible, state-of-the-art for segmentation.</td>
+<td>Requires significant training time.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="applications-of-image-segmentation">Applications of Image Segmentation<a class="headerlink" href="#applications-of-image-segmentation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Object Detection and Recognition</strong>:</li>
+<li>Groups similar pixels to identify distinct objects.</li>
+<li><strong>Medical Imaging</strong>:</li>
+<li>Segments MRI, CT scans, or X-rays to highlight tumors, organs, or abnormalities.</li>
+<li><strong>Texture Segmentation</strong>:</li>
+<li>Separates regions based on texture or color (e.g., landscape segmentation).</li>
+<li><strong>Video Tracking</strong>:</li>
+<li>Tracks objects across video frames by clustering similar features.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

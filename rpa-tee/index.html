@@ -1,0 +1,817 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/rpa-tee/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>PAD Automation - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pad-automation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PAD Automation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-bot-to-check-palindrome-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Bot to Check Palindrome Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-vowel-or-consonant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Vowel or Consonant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-pdf-and-docx-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move PDF and DOCX Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-even-or-odd-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Even or Odd Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-full-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Full Name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-mobile-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate Mobile Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-addition-and-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perform Addition and Subtraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-employees-by-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Employees by Salary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-tutorial-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract Tutorial Titles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrape-book-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scrape Book Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collect-holiday-destination-suggestions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collect Holiday Destination Suggestions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hr-onboarding-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      HR Onboarding Process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-excel-and-store-in-text-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Excel and Store in Text File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-statement-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Statement Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplication Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-flows-and-power-automate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Flows and Power Automate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Flows and Power Automate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-email-notification-for-microsoft-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send Email Notification for Microsoft Forms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leave-request-approval-flow-first-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leave Request Approval Flow (First Instance)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leave-request-approval-flow-second-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leave Request Approval Flow (Second Instance)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Apps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-functionality-with-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login Functionality with Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expense-tracker-app-for-microsoft-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expense Tracker App for Microsoft Teams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cascading-list-with-sharepoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cascading List with SharePoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-functionality-in-power-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search Functionality in Power App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-app-with-personalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas App with Personalization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expense-tracking-power-app-for-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expense Tracking Power App for Teams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharepoint-list-with-canvas-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      SharePoint List with Canvas App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-validation-and-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Validation and Save
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-variables-in-canvas-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Variables in Canvas App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collection-variables-in-canvas-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collection Variables in Canvas App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-navigation-in-canvas-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Navigation in Canvas App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-credentials-with-sharepoint-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login Credentials with SharePoint List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-driven-reference-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Driven Reference Links
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pad-automation">PAD Automation<a class="headerlink" href="#pad-automation" title="Permanent link">&para;</a></h1>
+<h3 id="create-a-bot-to-check-palindrome-number">Create a Bot to Check Palindrome Number<a class="headerlink" href="#create-a-bot-to-check-palindrome-number" title="Permanent link">&para;</a></h3>
+<p>Create a bot to check the given number is palindrome or not.</p>
+<h3 id="check-vowel-or-consonant">Check Vowel or Consonant<a class="headerlink" href="#check-vowel-or-consonant" title="Permanent link">&para;</a></h3>
+<p>Create PAD to know input character is vowels or consonant.</p>
+<h3 id="move-pdf-and-docx-files">Move PDF and DOCX Files<a class="headerlink" href="#move-pdf-and-docx-files" title="Permanent link">&para;</a></h3>
+<p>Create PAD flow to moves pdf and docx files from download location to pdf and docx folder that is create in drive present in your machine.</p>
+<h3 id="check-even-or-odd-number">Check Even or Odd Number<a class="headerlink" href="#check-even-or-odd-number" title="Permanent link">&para;</a></h3>
+<p>Take a number input from the user and Display the given number is Even or odd (e.g. If Even Display message "Even Number" else "Odd Number").</p>
+<h3 id="process-full-name">Process Full Name<a class="headerlink" href="#process-full-name" title="Permanent link">&para;</a></h3>
+<p>Prompt the user to provide their complete name, Change the case to UPPER, Count the characters and display Your full name is %name% and is of %number% characters.</p>
+<h3 id="validate-mobile-number">Validate Mobile Number<a class="headerlink" href="#validate-mobile-number" title="Permanent link">&para;</a></h3>
+<p>Ask the user for a mobile number, ensure it is 10 digits and print it using a message dialog box.</p>
+<h3 id="perform-addition-and-subtraction">Perform Addition and Subtraction<a class="headerlink" href="#perform-addition-and-subtraction" title="Permanent link">&para;</a></h3>
+<p>Take two number input from user and Derive the Addition, Subtraction and Display using the Message Box.</p>
+<h3 id="group-employees-by-salary">Group Employees by Salary<a class="headerlink" href="#group-employees-by-salary" title="Permanent link">&para;</a></h3>
+<p>Read the Employee Salary Data from the Excel As per the Salary value divide the Employee into the group like if Salary&gt;40k then Group A Else Group B Write the Group into the excel Group column Save and Close Excel.</p>
+<h3 id="extract-tutorial-titles">Extract Tutorial Titles<a class="headerlink" href="#extract-tutorial-titles" title="Permanent link">&para;</a></h3>
+<p>Create a bot to Extract all the tutorials title from <a href="https://www.xelplus.com/all-tutorials/">https://www.xelplus.com/all-tutorials/</a> and display the extracted data in a message box.</p>
+<h3 id="scrape-book-details">Scrape Book Details<a class="headerlink" href="#scrape-book-details" title="Permanent link">&para;</a></h3>
+<p>Design a bot to scrape book details from <a href="http://books.toscrape.com">http://books.toscrape.com</a>, save them into text files and Excel, categorize them, identify the highest-priced book, calculate the average price, and submit these details through a form.</p>
+<h3 id="collect-holiday-destination-suggestions">Collect Holiday Destination Suggestions<a class="headerlink" href="#collect-holiday-destination-suggestions" title="Permanent link">&para;</a></h3>
+<p>Create a bot that collects family holiday destination suggestions from three members (India, US, UK), adds them to a list, randomly removes two destinations, and displays the remaining options through a message box.</p>
+<h3 id="hr-onboarding-process">HR Onboarding Process<a class="headerlink" href="#hr-onboarding-process" title="Permanent link">&para;</a></h3>
+<p>Create a bot for the HR onboarding process that reads data from an Excel file (EmployeeID Generation.xlsx), fills in data dynamically on the portal, generates Employee ID and Corporate ID, and stores them in an Excel file (<a href="http://happybots.in/Employee-Onboarding-Process.html">http://happybots.in/Employee-Onboarding-Process.html</a>).</p>
+<h3 id="read-excel-and-store-in-text-file">Read Excel and Store in Text File<a class="headerlink" href="#read-excel-and-store-in-text-file" title="Permanent link">&para;</a></h3>
+<p>Create a PAD flow read the data from excel and store in text file.</p>
+<h3 id="conditional-statement-examples">Conditional Statement Examples<a class="headerlink" href="#conditional-statement-examples" title="Permanent link">&para;</a></h3>
+<p>Conditional statement examples.</p>
+<h3 id="multiplication-table">Multiplication Table<a class="headerlink" href="#multiplication-table" title="Permanent link">&para;</a></h3>
+<p>Multiplication Table</p>
+<h2 id="cloud-flows-and-power-automate">Cloud Flows and Power Automate<a class="headerlink" href="#cloud-flows-and-power-automate" title="Permanent link">&para;</a></h2>
+<h3 id="send-email-notification-for-microsoft-forms">Send Email Notification for Microsoft Forms<a class="headerlink" href="#send-email-notification-for-microsoft-forms" title="Permanent link">&para;</a></h3>
+<p>Create a cloud flow that sends an email notification whenever a new response is submitted through a Microsoft Forms survey.</p>
+<h3 id="leave-request-approval-flow-first-instance">Leave Request Approval Flow (First Instance)<a class="headerlink" href="#leave-request-approval-flow-first-instance" title="Permanent link">&para;</a></h3>
+<p>Demonstrate the Leave request approval flow using Power Automate.</p>
+<h3 id="leave-request-approval-flow-second-instance">Leave Request Approval Flow (Second Instance)<a class="headerlink" href="#leave-request-approval-flow-second-instance" title="Permanent link">&para;</a></h3>
+<p>Leave Request approval flow using Power automate. </p>
+<h2 id="power-apps">Power Apps<a class="headerlink" href="#power-apps" title="Permanent link">&para;</a></h2>
+<h3 id="login-functionality-with-validation">Login Functionality with Validation<a class="headerlink" href="#login-functionality-with-validation" title="Permanent link">&para;</a></h3>
+<p>Create an app that demonstrates the Login Functionality with validation in the power app.</p>
+<h3 id="expense-tracker-app-for-microsoft-teams">Expense Tracker App for Microsoft Teams<a class="headerlink" href="#expense-tracker-app-for-microsoft-teams" title="Permanent link">&para;</a></h3>
+<p>Create an expense tracker app for Microsoft Teams and publish it in the team channel.</p>
+<h3 id="cascading-list-with-sharepoint">Cascading List with SharePoint<a class="headerlink" href="#cascading-list-with-sharepoint" title="Permanent link">&para;</a></h3>
+<p>Create a list on SharePoint with fields Country, City and demonstrate cascading list using canvas app. Add personalization at the bottom of the left corner.</p>
+<h3 id="search-functionality-in-power-app">Search Functionality in Power App<a class="headerlink" href="#search-functionality-in-power-app" title="Permanent link">&para;</a></h3>
+<p>Create an app that demonstrates the Search functionality in a Power app and creates a list, as mentioned in Snap.</p>
+<h3 id="canvas-app-with-personalization">Canvas App with Personalization<a class="headerlink" href="#canvas-app-with-personalization" title="Permanent link">&para;</a></h3>
+<p>Create a Canvas App as per the provided snapshot and add personalization to the bottom right corner.</p>
+<h3 id="expense-tracking-power-app-for-teams">Expense Tracking Power App for Teams<a class="headerlink" href="#expense-tracking-power-app-for-teams" title="Permanent link">&para;</a></h3>
+<p>Design a Power App for Teams that facilitates expense tracking for team members. The app should feature a single screen where users can add, view, edit, and delete expense entries. Each expense entry should include date, description, category, amount, and status fields. Implement CRUD functionality to enable users to manage their expenses effectively directly within the Team environment. Ensure that the app provides a user-friendly interface and seamless integration with Microsoft Teams for convenient access and usage by team members.</p>
+<h3 id="sharepoint-list-with-canvas-app">SharePoint List with Canvas App<a class="headerlink" href="#sharepoint-list-with-canvas-app" title="Permanent link">&para;</a></h3>
+<p>Create a list on SharePoint and call it emp_data with the following fields and connect to the Canvas app display form:
+- Employee ID
+- Name
+- Age
+- Gender
+- Department
+- Job Role Add personalization at the bottom of the left corner.</p>
+<h3 id="form-validation-and-save">Form Validation and Save<a class="headerlink" href="#form-validation-and-save" title="Permanent link">&para;</a></h3>
+<p>Perform validation on the form. Employee ID and Age must be 5 and 3 digits respectively. Add a 'Save' button. Clicking on this button will save the list data.</p>
+<h3 id="global-variables-in-canvas-app">Global Variables in Canvas App<a class="headerlink" href="#global-variables-in-canvas-app" title="Permanent link">&para;</a></h3>
+<p>Create a Canvas app that demonstrates how to use global variables.</p>
+<h3 id="collection-variables-in-canvas-app">Collection Variables in Canvas App<a class="headerlink" href="#collection-variables-in-canvas-app" title="Permanent link">&para;</a></h3>
+<p>Create a Canvas app that demonstrates how to use collection variables.</p>
+<h3 id="screen-navigation-in-canvas-app">Screen Navigation in Canvas App<a class="headerlink" href="#screen-navigation-in-canvas-app" title="Permanent link">&para;</a></h3>
+<p>Create a Canvas app that demonstrates how to navigate from one screen to another.</p>
+<h3 id="login-credentials-with-sharepoint-list">Login Credentials with SharePoint List<a class="headerlink" href="#login-credentials-with-sharepoint-list" title="Permanent link">&para;</a></h3>
+<p>Create a list with login credentials like username and password and connect to Canvas App.</p>
+<h3 id="module-driven-reference-links">Module Driven Reference Links<a class="headerlink" href="#module-driven-reference-links" title="Permanent link">&para;</a></h3>
+<p>Module Driven Reference Link FYR
+<a href="https://www.youtube.com/watch?v=Lpet21432-Y&amp;list=PLpAhafsPn3DsrwenYiCjVR9zMj-Dx7Lx-&amp;index=2">https://www.youtube.com/watch?v=Lpet21432-Y&amp;list=PLpAhafsPn3DsrwenYiCjVR9zMj-Dx7Lx-&amp;index=2</a>
+<a href="https://www.youtube.com/watch?v=d-XGkPOFjz0&amp;list=PLpAhafsPn3DsrwenYiCjVR9zMj-Dx7Lx-&amp;index=4">https://www.youtube.com/watch?v=d-XGkPOFjz0&amp;list=PLpAhafsPn3DsrwenYiCjVR9zMj-Dx7Lx-&amp;index=4</a></p>
+<h3 id="patch-function">Patch Function<a class="headerlink" href="#patch-function" title="Permanent link">&para;</a></h3>
+<p>Patch Function</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

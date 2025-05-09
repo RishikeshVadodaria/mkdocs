@@ -1,0 +1,15 @@
+Folder.GetFiles Folder: $'''D:\\EY\\Power Automate''' FileFilter: $'''*.pdf''' IncludeSubfolders: False FailOnAccessDenied: True SortBy1: Folder.SortBy.NoSort SortDescending1: False SortBy2: Folder.SortBy.NoSort SortDescending2: False SortBy3: Folder.SortBy.NoSort SortDescending3: False Files=> Files
+Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''D:\\EY\\Power Automate\\output.xlsx''' Visible: True ReadOnly: False Instance=> ExcelInstance
+LOOP FOREACH CurrentItem IN Files
+    Pdf.ExtractTextFromPDF.ExtractText PDFFile: CurrentItem DetectLayout: False ExtractedText=> ExtractedPDFText
+    Text.ParseText.ParseForFirstOccurrence Text: ExtractedPDFText TextToFind: $'''Date of Joining''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> Position
+    Variables.IncreaseVariable Value: Position IncrementValue: 18
+    Text.GetSubtext.GetSubtext Text: ExtractedPDFText CharacterPosition: Position NumberOfChars: 12 Subtext=> Subtext
+    Excel.GetFirstFreeColumnRow Instance: ExcelInstance FirstFreeColumn=> FirstFreeColumn FirstFreeRow=> FirstFreeRow
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: Subtext Column: 1 Row: FirstFreeRow
+END
+Excel.SaveExcel.Save Instance: ExcelInstance
+Excel.CloseExcel.CloseAndSave Instance: ExcelInstance
+
+
+

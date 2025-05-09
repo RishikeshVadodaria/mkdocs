@@ -1,0 +1,2335 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit%204/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Mobile computing unit 4 - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understanding-ipv4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile computing unit 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding IPv4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv4-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPv4 Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv4 Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile IPv4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Benefits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-advertisement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Advertisement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Advertisement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-ip-basic-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile IP: Basic Operation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile IP: Basic Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-solicitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Solicitation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registration Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration-reply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registration Reply
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Encapsulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Encapsulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encapsulation Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-in-ip-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP-in-IP Encapsulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimal Encapsulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-routing-encapsulation-gre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic Routing Encapsulation (GRE)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-ip-and-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile IP and IPv6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile IP and IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-mobile-ip-in-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features of Mobile IP in IPv6
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-host-configuration-protocol-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Host Configuration Protocol (DHCP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Host Configuration Protocol (DHCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of DHCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-dhcp-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How DHCP Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-client-server-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Client-Server Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-in-mobile-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP in Mobile IP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-transport-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile Transport Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile Transport Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-transport-layer-support-is-needed-for-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Transport Layer Support is Needed for Mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-user-datagram-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP (User Datagram Protocol)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-vs-tcp-in-mobile-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP vs. TCP in Mobile Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-of-tcp-in-mobile-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges of TCP in Mobile Networks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-tcp-and-congestion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional TCP and Congestion Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traditional TCP and Congestion Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-the-sender-detect-packet-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Does the Sender Detect Packet Loss?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Does the Sender Detect Packet Loss?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incorrect Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correct-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correct Approach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-slow-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Slow Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Slow Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditions-for-stopping-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions for Stopping Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-congestion-control-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Congestion Control Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fast-retransmit-and-fast-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Retransmit and Fast Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast Retransmit and Fast Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-retransmit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Retransmit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Recovery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implications-of-tcp-on-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implications of TCP on Mobility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implications of TCP on Mobility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incorrect Assumptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-ip-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile IP Issue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-improvements-indirect-tcp-i-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Improvements: Indirect TCP (I-TCP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Improvements: Indirect TCP (I-TCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-i-tcp-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How I-TCP Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-i-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of I-TCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disadvantages-of-i-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages of I-TCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-tcp-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of TCP Enhancements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snooping-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snooping TCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Snooping TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-snooping-tcp-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Snooping TCP Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-transfer-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Transfer Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-mac-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with MAC Layer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-snooping-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Snooping TCP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-tcp-m-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile TCP (M-TCP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile TCP (M-TCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-m-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why M-TCP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-m-tcp-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How M-TCP Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-m-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of M-TCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages-of-m-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages of M-TCP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fast-retransmit-fast-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Retransmit / Fast Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast Retransmit / Fast Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmission-timeout-freezing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmission / Timeout Freezing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmission / Timeout Freezing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selective-retransmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selective Retransmission
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selective Retransmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-its-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why It’s Needed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-selective-retransmission-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Selective Retransmission Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-oriented-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction-Oriented TCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction-Oriented TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-with-traditional-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem with Traditional TCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issues-with-standard-tcp-for-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues with Standard TCP for Transactions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-transaction-oriented-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution: Transaction-Oriented TCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantage-for-certain-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantage for Certain Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-enhancements-for-wireless-and-mobile-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Enhancements for Wireless and Mobile Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Enhancements for Wireless and Mobile Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snooping-tcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snooping TCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Snooping TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-tcp-m-tcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile TCP (M-TCP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile TCP (M-TCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fast-retransmit-fast-recovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Retransmit &amp; Fast Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast Retransmit &amp; Fast Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmission-timeout-freezing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmission Timeout Freezing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmission Timeout Freezing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selective-retransmission_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selective Retransmission
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selective Retransmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-over-25g3g-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Over 2.5G/3G Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Over 2.5G/3G Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenges-in-25g3g" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in 2.5G/3G
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-tcp-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended TCP Optimizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-enhancing-proxies-pep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance-Enhancing Proxies (PEP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance-Enhancing Proxies (PEP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Mobile computing unit 4</h1>
+
+<div class="nav-wrapper">
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 1/" class="nav-item mobile-computing" data-title="Unit 1">Unit 1</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 2/" class="nav-item mobile-computing" data-title="Unit 2">Unit 2</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 3/" class="nav-item mobile-computing" data-title="Unit 3">Unit 3</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 4/" class="nav-item mobile-computing" data-title="Unit 4">Unit 4</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 5/" class="nav-item mobile-computing" data-title="Unit 5">Unit 5</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 6/" class="nav-item mobile-computing" data-title="Unit 6">Unit 6</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 7/" class="nav-item mobile-computing" data-title="Unit 7">Unit 7</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 8/" class="nav-item mobile-computing" data-title="Unit 8">Unit 8</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 9/" class="nav-item mobile-computing" data-title="Unit 8">Unit 9</a>
+</div>
+<h2 id="understanding-ipv4">Understanding IPv4<a class="headerlink" href="#understanding-ipv4" title="Permanent link">&para;</a></h2>
+<p>An IP address (Internet Protocol address) is a unique identifier assigned to each device connected to a network using the Internet Protocol. It serves two main purposes:</p>
+<ul>
+<li>Identification: Uniquely identifies a device on a network.</li>
+<li>Location Addressing: Indicates where a device is located within a network, enabling data routing.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>IP addresses are essential for devices to communicate over the internet, ensuring proper identification and data transmission.</p>
+</div>
+<hr />
+<h2 id="ipv4-format">IPv4 Format<a class="headerlink" href="#ipv4-format" title="Permanent link">&para;</a></h2>
+<p>IPv4 (Internet Protocol Version 4) is the most widely used system for identifying devices on a network. It uses a 32-bit addressing scheme, represented as four numbers separated by periods.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>192.168.0.1
+</code></pre></div>
+<p>Each number (octet) can range from 0 to 255.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>IPv4 supports approximately 4.3 billion unique addresses, which is why IPv6 was introduced to handle the growing number of devices.</p>
+</div>
+<hr />
+<h2 id="mobile-ipv4">Mobile IPv4<a class="headerlink" href="#mobile-ipv4" title="Permanent link">&para;</a></h2>
+<p>Mobile IPv4 is a protocol that enables devices to maintain their IP address and network connectivity while moving between different networks.</p>
+<h3 id="key-benefits">Key Benefits<a class="headerlink" href="#key-benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ensures continuous network connections when a device changes its network (e.g., switching from Wi-Fi to cellular data).</li>
+<li>Maintains seamless communication for mobile users.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Without Mobile IPv4, devices would lose their network sessions when changing networks, leading to dropped connections and data loss.</p>
+</div>
+<hr />
+<h2 id="agent-advertisement">Agent Advertisement<a class="headerlink" href="#agent-advertisement" title="Permanent link">&para;</a></h2>
+<p>Agent Advertisement is a process where Home Agents (HA) and Foreign Agents (FA) periodically send advertisement messages into their physical subnets.</p>
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HA/FA broadcast advertisement messages (ICMP messages) into the subnet.</li>
+<li>These messages act as beacons to notify Mobile Nodes (MN) of available networks.</li>
+<li>Packet Details:</li>
+<li>TTL (Time To Live): Set to 1 to prevent forwarding.</li>
+<li>Destination Address:<ul>
+<li>224.0.0.1 (Multicast Address) or</li>
+<li>255.255.255.255 (Broadcast Address)</li>
+</ul>
+</li>
+<li>Mobile Node (MN) Actions:</li>
+<li>Listens for advertisement messages.</li>
+<li>Detects if it's in a home or foreign network.</li>
+<li>Reads a Care-of Address (COA) from FA advertisement messages.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TTL</td>
+<td>1 (Prevents forwarding)</td>
+</tr>
+<tr>
+<td>Destination Address</td>
+<td>224.0.0.1 (Multicast)</td>
+</tr>
+<tr>
+<td>Destination Address</td>
+<td>255.255.255.255 (Broadcast)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Care-of Address (COA) allows the mobile device to register its new location while roaming, ensuring uninterrupted communication.</p>
+</div>
+<p><img alt="alt text" src="../image.png" /></p>
+<hr />
+<h2 id="mobile-ip-basic-operation">Mobile IP: Basic Operation<a class="headerlink" href="#mobile-ip-basic-operation" title="Permanent link">&para;</a></h2>
+<h3 id="agent-solicitation">Agent Solicitation<a class="headerlink" href="#agent-solicitation" title="Permanent link">&para;</a></h3>
+<p>If no agent advertisements are present, or if the time between two advertisements is too high, the mobile node must send an Agent Solicitation message.</p>
+<ul>
+<li>The solicitation message should not flood the network.</li>
+<li>A mobile node can send up to three solicitations per second upon entering a foreign network.</li>
+<li>If no response is received, the solicitation rate decreases exponentially to avoid network congestion.</li>
+<li>Agent discovery allows the mobile node to establish a better connection.</li>
+<li>Once an agent is discovered, the mobile node obtains a Care-of Address (COA).</li>
+</ul>
+<hr />
+<h2 id="registration-request">Registration Request<a class="headerlink" href="#registration-request" title="Permanent link">&para;</a></h2>
+<p>Registration requests use UDP packets with the following structure:</p>
+<ul>
+<li>Source Address: Mobile Node (MN) IP address.</li>
+<li>Destination Address: Home Agent (HA) or Foreign Agent (FA) IP address (depending on COA location).</li>
+<li>Type Field: Set to 1 to indicate a registration request.</li>
+<li>Flags:</li>
+<li>S – Request Home Agent to retain previous mobility binding.</li>
+<li>B – Request to receive broadcast packets from the home network.</li>
+<li>D – Mobile Node will handle decapsulation at the tunnel (if COA is located at MN).</li>
+<li>M/G – Defines encapsulation type.</li>
+<li>T – Enables reverse tunneling.</li>
+<li>Lifetime: Defines the validity of the registration (in seconds).</li>
+<li>Home Address: Fixed IP address of the Mobile Node.</li>
+<li>Home Agent: IP address of the Home Agent.</li>
+<li>COA (Care-of Address): Represents the tunnel endpoint.</li>
+<li>Identification: 64-bit identifier generated by MN to match registration requests and replies, preventing replay attacks.</li>
+</ul>
+<p><img alt="alt text" src="../image-1.png" /></p>
+<hr />
+<h2 id="registration-reply">Registration Reply<a class="headerlink" href="#registration-reply" title="Permanent link">&para;</a></h2>
+<p>Once a registration request is processed, a registration reply is sent back using UDP packets:</p>
+<ul>
+<li>Type Field: Set to 3 to indicate a registration reply.</li>
+<li>Code Field: Specifies the result of the registration request.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Registration replies confirm whether a Mobile Node's registration was successful and provide status codes for troubleshooting.</p>
+</div>
+<hr />
+<h2 id="types-of-encapsulation">Types of Encapsulation<a class="headerlink" href="#types-of-encapsulation" title="Permanent link">&para;</a></h2>
+<p>Encapsulation is essential in Mobile IP to ensure packets reach the Care-of Address (COA). The Home Agent (HA) takes the original packet (with the Mobile Node (MN) as the destination), places it inside the data portion of a new packet, and sets a new IP header so that it is correctly routed to the COA.</p>
+<p>The newly added IP header is called the outer header.</p>
+<h3 id="encapsulation-methods">Encapsulation Methods<a class="headerlink" href="#encapsulation-methods" title="Permanent link">&para;</a></h3>
+<p>There are three primary types of encapsulation:</p>
+<ol>
+<li>IP-in-IP Encapsulation</li>
+<li>Minimal Encapsulation</li>
+<li>Generic Routing Encapsulation (GRE)</li>
+</ol>
+<hr />
+<h3 id="ip-in-ip-encapsulation">IP-in-IP Encapsulation<a class="headerlink" href="#ip-in-ip-encapsulation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Defined in RFC 2003 (Mandatory)</li>
+<li>Creates a tunnel between the Home Agent (HA) and the COA.</li>
+<li>The entire original IP packet is encapsulated within a new IP header.</li>
+<li>Used when the MN is using a foreign agent COA.</li>
+</ul>
+<p><img alt="alt text" src="../image-2.png" /></p>
+<hr />
+<h3 id="minimal-encapsulation">Minimal Encapsulation<a class="headerlink" href="#minimal-encapsulation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces redundancy present in IP-in-IP encapsulation.</li>
+<li>Only essential fields from the original header are included.</li>
+<li>Helps in reducing overhead, improving efficiency.</li>
+</ul>
+<p><img alt="alt text" src="../image-3.png" /></p>
+<hr />
+<h3 id="generic-routing-encapsulation-gre">Generic Routing Encapsulation (GRE)<a class="headerlink" href="#generic-routing-encapsulation-gre" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unlike IP-in-IP and Minimal Encapsulation, which work only for IP packets, GRE supports other network layer protocols.</li>
+<li>Allows encapsulation of different protocol suites into the payload portion of a packet.</li>
+<li>Uses an outer IP header, with TTL and TOS values copied from the original header.</li>
+<li>Provides flexibility for non-IP protocols to be transported over an IP network.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GRE is widely used in VPNs and multicast routing to carry non-IP traffic efficiently over an IP-based network.</p>
+</div>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p><img alt="alt text" src="../image-5.png" /></p>
+<hr />
+<h2 id="mobile-ip-and-ipv6">Mobile IP and IPv6<a class="headerlink" href="#mobile-ip-and-ipv6" title="Permanent link">&para;</a></h2>
+<h3 id="key-features-of-mobile-ip-in-ipv6">Key Features of Mobile IP in IPv6<a class="headerlink" href="#key-features-of-mobile-ip-in-ipv6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Integrated Security: Unlike IPv4, security is built into IPv6 rather than being an add-on. Authentication for registration is included.</li>
+<li>Auto-Configuration of COA:</li>
+<li>IPv6 supports automatic configuration of the Care-of Address (COA).</li>
+<li>DHCPv6 can be used for dynamic COA assignment.</li>
+<li>Every IPv6 node has built-in address auto-configuration.</li>
+<li>No Need for a Foreign Agent (FA):</li>
+<li>In IPv6, all routers perform router advertisements, eliminating the need for a dedicated Foreign Agent.</li>
+<li>Direct COA Signaling (Route Optimization):</li>
+<li>The Mobile Node (MN) can directly inform a sender of its COA, bypassing the Home Agent (HA).</li>
+<li>This enables automatic path optimization, reducing latency.</li>
+<li>Soft Handovers (Seamless Mobility):</li>
+<li>IPv6 supports smooth handovers without packet loss between subnets.</li>
+<li>The MN sends its new COA to the old router.</li>
+<li>The old router encapsulates and forwards packets to the new COA.</li>
+<li>Authentication remains intact throughout the process.</li>
+</ul>
+<hr />
+<h2 id="dynamic-host-configuration-protocol-dhcp">Dynamic Host Configuration Protocol (DHCP)<a class="headerlink" href="#dynamic-host-configuration-protocol-dhcp" title="Permanent link">&para;</a></h2>
+<h3 id="overview-of-dhcp">Overview of DHCP<a class="headerlink" href="#overview-of-dhcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DHCP is a standardized networking protocol used by servers to dynamically allocate IP addresses to computers in a network.</li>
+<li>Primary Purpose: Automates IP configuration without requiring a network administrator.</li>
+</ul>
+<h3 id="how-dhcp-works">How DHCP Works<a class="headerlink" href="#how-dhcp-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li>IP Address Allocation</li>
+<li>DHCP assigns IP addresses from a predefined range stored in a server database.</li>
+<li>Each IP is assigned for a lease period, after which the device must renew or acquire a new address.</li>
+<li>Full Network Integration</li>
+<li>DHCP provides additional configuration details:<ul>
+<li>DNS Server Address</li>
+<li>Default Gateway (Router)</li>
+<li>Subnet Mask</li>
+<li>Domain Name</li>
+<li>IP Address</li>
+</ul>
+</li>
+</ol>
+<h3 id="dhcp-client-server-model">DHCP Client-Server Model<a class="headerlink" href="#dhcp-client-server-model" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DHCP follows a client/server model where clients request IP configurations from servers.</li>
+<li>Clients send broadcast requests using MAC addresses to find available DHCP servers.</li>
+<li>A DHCP relay agent forwards requests if servers are in a different network segment.</li>
+</ul>
+<p><img alt="alt text" src="../image-6.png" />
+<img alt="alt text" src="../image-7.png" /></p>
+<h3 id="dhcp-process">DHCP Process<a class="headerlink" href="#dhcp-process" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Client broadcasts a DHCPDISCOVER to find available DHCP servers.</li>
+<li>DHCP servers respond with DHCPOFFER, listing available configurations.</li>
+<li>Client sends a DHCPREQUEST to accept one configuration and reject others.</li>
+<li>Selected server sends a DHCPACK, confirming the lease.</li>
+<li>If the client leaves the subnet, it sends a DHCPRELEASE to free the assigned IP.</li>
+</ol>
+<h3 id="dhcp-in-mobile-ip">DHCP in Mobile IP<a class="headerlink" href="#dhcp-in-mobile-ip" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DHCP is a strong candidate for Care-of Address (COA) assignment in Mobile IP.</li>
+<li>Security Concern: Without authentication, neither the Mobile Node (MN) nor the DHCP server can trust each other.</li>
+</ul>
+<hr />
+<h2 id="mobile-transport-layer">Mobile Transport Layer<a class="headerlink" href="#mobile-transport-layer" title="Permanent link">&para;</a></h2>
+<h3 id="why-transport-layer-support-is-needed-for-mobility">Why Transport Layer Support is Needed for Mobility<a class="headerlink" href="#why-transport-layer-support-is-needed-for-mobility" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mobile networks introduce challenges beyond just network-layer mobility.</li>
+<li>The Transport Layer plays a critical role in:</li>
+<li>Checksumming over user data.</li>
+<li>Multiplexing/Demultiplexing data to and from applications.</li>
+</ul>
+<h3 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)<a class="headerlink" href="#udp-user-datagram-protocol" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple addressing mechanism.</li>
+<li>Connectionless (No established connection).</li>
+<li>No reliability guarantees (No retransmission, no in-order delivery).</li>
+</ul>
+<h3 id="udp-vs-tcp-in-mobile-networks">UDP vs. TCP in Mobile Networks<a class="headerlink" href="#udp-vs-tcp-in-mobile-networks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>UDP</th>
+<th>TCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection Type</td>
+<td>Connectionless</td>
+<td>Connection-oriented</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>No reliability</td>
+<td>Reliable (retransmissions, acknowledgments)</td>
+</tr>
+<tr>
+<td>Congestion Control</td>
+<td>None</td>
+<td>Reduces speed in case of network congestion</td>
+</tr>
+<tr>
+<td>Order of Delivery</td>
+<td>No guarantee</td>
+<td>Ensures in-order delivery</td>
+</tr>
+<tr>
+<td>Usage in Mobility</td>
+<td>Suitable for real-time applications</td>
+<td>Requires adaptation for mobile networks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="challenges-of-tcp-in-mobile-networks">Challenges of TCP in Mobile Networks<a class="headerlink" href="#challenges-of-tcp-in-mobile-networks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TCP assumes packet loss is due to network congestion, reducing the transmission rate unnecessarily.</li>
+<li>Mobile networks require optimized TCP for 3G, 4G, and 5G environments.</li>
+</ul>
+<hr />
+<h2 id="traditional-tcp-and-congestion-control">Traditional TCP and Congestion Control<a class="headerlink" href="#traditional-tcp-and-congestion-control" title="Permanent link">&para;</a></h2>
+<p>TCP was originally designed for fixed networks with stable end-systems where:</p>
+<ul>
+<li>Hardware introduces minimal transmission errors.</li>
+<li>Packet loss typically occurs due to network congestion.</li>
+<li>Routers drop packets when overloaded.</li>
+</ul>
+<h3 id="how-does-the-sender-detect-packet-loss">How Does the Sender Detect Packet Loss?<a class="headerlink" href="#how-does-the-sender-detect-packet-loss" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Missing Acknowledgements (ACKs).</li>
+</ul>
+<h4 id="incorrect-approach">Incorrect Approach<a class="headerlink" href="#incorrect-approach" title="Permanent link">&para;</a></h4>
+<p>Simply retransmitting the missing packet without adjusting the transmission rate.</p>
+<h4 id="correct-approach">Correct Approach<a class="headerlink" href="#correct-approach" title="Permanent link">&para;</a></h4>
+<p>TCP slows down dramatically using congestion control mechanisms.</p>
+<hr />
+<h2 id="tcp-slow-start">TCP Slow Start<a class="headerlink" href="#tcp-slow-start" title="Permanent link">&para;</a></h2>
+<p>After detecting congestion, TCP enters Slow Start mode:</p>
+<ul>
+<li>The congestion window (cwnd) begins at 1 segment.</li>
+<li>For every successful ACK, cwnd doubles (exponential growth).</li>
+<li>Growth continues until reaching a threshold (ssthresh).</li>
+<li>After reaching ssthresh, TCP switches to linear increase.</li>
+</ul>
+<h3 id="conditions-for-stopping-growth">Conditions for Stopping Growth<a class="headerlink" href="#conditions-for-stopping-growth" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Time-out due to missing ACK.</li>
+<li>Multiple ACKs for the same packet (duplicate ACKs).</li>
+</ol>
+<h3 id="tcp-congestion-control-steps">TCP Congestion Control Steps<a class="headerlink" href="#tcp-congestion-control-steps" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Action Taken</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First packet drop detected</td>
+<td>Reduce ssthresh to half</td>
+</tr>
+<tr>
+<td>Restart slow start</td>
+<td>Reset cwnd to 1 segment</td>
+</tr>
+<tr>
+<td>Continue with linear increase</td>
+<td>Until new loss occurs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fast-retransmit-and-fast-recovery">Fast Retransmit and Fast Recovery<a class="headerlink" href="#fast-retransmit-and-fast-recovery" title="Permanent link">&para;</a></h2>
+<h3 id="fast-retransmit">Fast Retransmit<a class="headerlink" href="#fast-retransmit" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If multiple duplicate ACKs are received before a timeout, the sender immediately retransmits the lost packet.</li>
+<li>Avoids waiting for the retransmission timer.</li>
+</ul>
+<h3 id="fast-recovery">Fast Recovery<a class="headerlink" href="#fast-recovery" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instead of resetting to slow start, TCP continues with the current congestion window.</li>
+<li>This prevents unnecessary performance degradation.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Fast retransmit helps avoid unnecessary delays and ensures smoother TCP performance.</p>
+</div>
+<hr />
+<h2 id="implications-of-tcp-on-mobility">Implications of TCP on Mobility<a class="headerlink" href="#implications-of-tcp-on-mobility" title="Permanent link">&para;</a></h2>
+<p>TCP performs poorly in mobile environments due to incorrect assumptions.</p>
+<h3 id="incorrect-assumptions">Incorrect Assumptions<a class="headerlink" href="#incorrect-assumptions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Packet loss = Network congestion (but mobile networks lose packets due to handovers).</li>
+<li>Wireless error rates = Wired error rates (wireless links are more error-prone).</li>
+</ul>
+<h3 id="mobile-ip-issue">Mobile IP Issue<a class="headerlink" href="#mobile-ip-issue" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Packets in transit to the old Foreign Agent (FA) are lost when the Mobile Node (MN) moves.</li>
+<li>TCP cannot differentiate between congestion-based and mobility-based packet losses.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TCP uses error control mechanisms to handle network congestion, which is not ideal for mobile networks.</p>
+</div>
+<hr />
+<h2 id="tcp-improvements-indirect-tcp-i-tcp">TCP Improvements: Indirect TCP (I-TCP)<a class="headerlink" href="#tcp-improvements-indirect-tcp-i-tcp" title="Permanent link">&para;</a></h2>
+<h3 id="how-i-tcp-works">How I-TCP Works<a class="headerlink" href="#how-i-tcp-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keeps standard TCP for fixed networks.</li>
+<li>Uses an optimized TCP for mobile devices.</li>
+<li>Splits the TCP connection at the Foreign Agent (FA) into two separate connections.</li>
+</ul>
+<h3 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Correspondent host sends a packet.</li>
+<li>Foreign Agent acknowledges and forwards it to the Mobile Node.</li>
+<li>Any packet loss in the wireless network is handled by the Foreign Agent.</li>
+<li>If handover occurs, socket state (sequence numbers, ports, etc.) is migrated.</li>
+</ol>
+<hr />
+<h2 id="advantages-of-i-tcp">Advantages of I-TCP<a class="headerlink" href="#advantages-of-i-tcp" title="Permanent link">&para;</a></h2>
+<ul>
+<li>No changes needed in existing TCP implementations.</li>
+<li>Wireless errors don’t affect fixed networks.</li>
+<li>Faster packet loss recovery (shorter wireless delays).</li>
+<li>Allows different transport protocols between FA and MN.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I-TCP enhances TCP performance in wireless environments without altering fixed-network implementations.</p>
+</div>
+<hr />
+<h2 id="disadvantages-of-i-tcp">Disadvantages of I-TCP<a class="headerlink" href="#disadvantages-of-i-tcp" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Loses TCP’s end-to-end reliability if FA crashes.</li>
+<li>Increased handover latency due to buffering at FA.</li>
+<li>Security risks: FA must be trusted, especially for encrypted data.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the Foreign Agent crashes, the entire session might fail, causing disruptions.</p>
+</div>
+<hr />
+<h2 id="summary-of-tcp-enhancements">Summary of TCP Enhancements<a class="headerlink" href="#summary-of-tcp-enhancements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Standard= Standard TCP</th>
+<th>Fast Retransmit</th>
+<th>I-TCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handles congestion</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Works in mobile networks</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Requires protocol changes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Improves packet loss recovery</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Preserves end-to-end connection</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>I-TCP is a powerful improvement for mobile networks, but it compromises end-to-end reliability.</p>
+</div>
+<hr />
+<h2 id="snooping-tcp">Snooping TCP<a class="headerlink" href="#snooping-tcp" title="Permanent link">&para;</a></h2>
+<p>One of the drawbacks of I-TCP is the segmentation of the TCP connection, which violates end-to-end TCP semantics. Snooping TCP offers a transparent extension of TCP at the Foreign Agent (FA) to mitigate this issue.</p>
+<h3 id="how-snooping-tcp-works">How Snooping TCP Works<a class="headerlink" href="#how-snooping-tcp-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The Foreign Agent (FA) buffers packets sent to the mobile host (MH) until an ACK is received.</li>
+<li>FA monitors (snoops) the packet flow in both directions.</li>
+<li>If a packet is lost on the wireless link, FA immediately retransmits it (local retransmission).</li>
+<li>The FA filters duplicate ACKs and prevents unnecessary congestion control actions in the fixed network.</li>
+</ul>
+<h3 id="data-transfer-mechanism">Data Transfer Mechanism<a class="headerlink" href="#data-transfer-mechanism" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To the Mobile Host:</li>
+<li>FA buffers data until it receives an ACK from MH.</li>
+<li>If a duplicate ACK or timeout occurs, FA quickly retransmits the packet.</li>
+<li>From the Mobile Host:</li>
+<li>FA detects lost packets via sequence numbers.</li>
+<li>FA sends a Negative Acknowledgment (NACK) to MH for quick retransmission.</li>
+</ul>
+<h3 id="integration-with-mac-layer">Integration with MAC Layer<a class="headerlink" href="#integration-with-mac-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The MAC layer already detects duplicate packets due to retransmissions.</li>
+<li>This prevents redundant retransmissions by TCP.</li>
+</ul>
+<h3 id="advantages-of-snooping-tcp">Advantages of Snooping TCP<a class="headerlink" href="#advantages-of-snooping-tcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preserves end-to-end semantics (FA does not acknowledge data on behalf of MH).</li>
+<li>Reduces packet loss impact on wireless links.</li>
+<li>No changes required in the fixed network.</li>
+</ul>
+<hr />
+<h2 id="mobile-tcp-m-tcp">Mobile TCP (M-TCP)<a class="headerlink" href="#mobile-tcp-m-tcp" title="Permanent link">&para;</a></h2>
+<h3 id="why-m-tcp">Why M-TCP?<a class="headerlink" href="#why-m-tcp" title="Permanent link">&para;</a></h3>
+<p>M-TCP improves overall TCP performance in mobile environments by:
+- Maintaining end-to-end TCP semantics.
+- Reducing delay in case of handovers.
+- Enhancing throughput and handling frequent disconnections.</p>
+<h3 id="how-m-tcp-works">How M-TCP Works<a class="headerlink" href="#how-m-tcp-works" title="Permanent link">&para;</a></h3>
+<p>Like I-TCP, M-TCP splits the TCP connection, but with key differences:
+- Uses a Supervisory Host (SH) instead of a Foreign Agent.
+- SH does not cache or retransmit packets.
+- If disconnection is detected, SH sets sender window size to 0.
+- The sender goes into persistent mode, preventing unnecessary retransmissions.
+- When connectivity is restored, SH restores the sender window to its original value.</p>
+<h3 id="advantages-of-m-tcp">Advantages of M-TCP<a class="headerlink" href="#advantages-of-m-tcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preserves end-to-end TCP semantics (SH does not modify ACKs).</li>
+<li>Handles disconnections efficiently without slow starts.</li>
+<li>No buffering at SH, reducing memory usage.</li>
+</ul>
+<h3 id="disadvantages-of-m-tcp">Disadvantages of M-TCP<a class="headerlink" href="#disadvantages-of-m-tcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Packet loss on wireless links affects the fixed network.</li>
+<li>Requires modifications to both MH protocol stack and network infrastructure.</li>
+</ul>
+<hr />
+<h2 id="fast-retransmit-fast-recovery">Fast Retransmit / Fast Recovery<a class="headerlink" href="#fast-retransmit-fast-recovery" title="Permanent link">&para;</a></h2>
+<p>This approach forces TCP’s Fast Retransmit mechanism to handle handovers efficiently.</p>
+<h3 id="how-it-works_1">How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When the mobile host (MH) moves to a new Foreign Agent (FA), it immediately sends duplicate ACKs to the Correspondent Host (CH).</li>
+<li>Sending three duplicate ACKs triggers Fast Retransmit at CH.</li>
+<li>This prevents Slow Start, improving handover performance.</li>
+</ul>
+<h3 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple to implement.</li>
+<li>Faster recovery from handover-related losses.</li>
+</ul>
+<h3 id="disadvantages">Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Retransmitted packets still travel through the entire network.</li>
+<li>If handover takes too long, CH may initiate retransmissions prematurely.</li>
+<li>This approach does not address wireless link issues.</li>
+</ul>
+<hr />
+<h2 id="transmission-timeout-freezing">Transmission / Timeout Freezing<a class="headerlink" href="#transmission-timeout-freezing" title="Permanent link">&para;</a></h2>
+<p>TCP performance degrades in long interruptions (e.g., tunnels, no coverage areas). Timeout Freezing prevents unnecessary retransmissions.</p>
+<h3 id="how-it-works_2">How It Works<a class="headerlink" href="#how-it-works_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The MAC layer detects connection loss early.</li>
+<li>TCP pauses timers and freezes the congestion window.</li>
+<li>Once connectivity is restored, TCP resumes from the exact point it was stopped.</li>
+</ul>
+<h3 id="advantages_1">Advantages<a class="headerlink" href="#advantages_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prevents unnecessary retransmissions during long disconnections.</li>
+<li>Maintains TCP state without requiring modifications in the fixed network.</li>
+<li>Works independently of acknowledgments or sequence numbers.</li>
+</ul>
+<h3 id="disadvantages_1">Disadvantages<a class="headerlink" href="#disadvantages_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Relies on MAC layer to detect interruptions accurately.</li>
+<li>Encryption mechanisms with time-dependent keys may cause issues.</li>
+</ul>
+<hr />
+<h2 id="selective-retransmission">Selective Retransmission<a class="headerlink" href="#selective-retransmission" title="Permanent link">&para;</a></h2>
+<h3 id="why-its-needed">Why It’s Needed<a class="headerlink" href="#why-its-needed" title="Permanent link">&para;</a></h3>
+<p>Standard TCP cumulatively acknowledges packets. If a single packet is lost, TCP retransmits all subsequent packets, wasting bandwidth.</p>
+<h3 id="how-selective-retransmission-works">How Selective Retransmission Works<a class="headerlink" href="#how-selective-retransmission-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The receiver requests only the lost packets.</li>
+<li>The sender sends the missing packets instead of retransmitting everything.</li>
+</ul>
+<h3 id="advantages_2">Advantages<a class="headerlink" href="#advantages_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Minimizes retransmission overhead, especially in wireless networks.</li>
+<li>Improves efficiency on low-bandwidth connections.</li>
+</ul>
+<h3 id="disadvantages_2">Disadvantages<a class="headerlink" href="#disadvantages_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requires additional buffer space at the receiver.</li>
+<li>More complex implementation compared to standard TCP.</li>
+</ul>
+<hr />
+<h2 id="transaction-oriented-tcp">Transaction-Oriented TCP<a class="headerlink" href="#transaction-oriented-tcp" title="Permanent link">&para;</a></h2>
+<h3 id="problem-with-traditional-tcp">Problem with Traditional TCP<a class="headerlink" href="#problem-with-traditional-tcp" title="Permanent link">&para;</a></h3>
+<p>For short-lived requests, such as a mobile host sending a single request to a server, TCP’s connection setup overhead is too high.</p>
+<h3 id="issues-with-standard-tcp-for-transactions">Issues with Standard TCP for Transactions<a class="headerlink" href="#issues-with-standard-tcp-for-transactions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Three-way handshake for connection setup.</li>
+<li>Multiple packets needed for transmission.</li>
+<li>Three more packets for connection teardown.</li>
+<li>If the data fits in one packet, TCP still requires seven packets.</li>
+</ul>
+<h3 id="solution-transaction-oriented-tcp">Solution: Transaction-Oriented TCP<a class="headerlink" href="#solution-transaction-oriented-tcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces TCP overhead for short transactions.</li>
+<li>Uses minimal packet exchanges.</li>
+<li>T/TCP can combine packets for connection establishment and connection release with user data packets.</li>
+<li>This can reduce the number of packets down to two instead of seven.</li>
+</ul>
+<p><img alt="alt text" src="../image-8.png" /></p>
+<h3 id="advantage-for-certain-applications">Advantage for Certain Applications<a class="headerlink" href="#advantage-for-certain-applications" title="Permanent link">&para;</a></h3>
+<p>The reduction in the overhead which standard TCP has for connection setup and connection release.</p>
+<h3 id="disadvantage">Disadvantage<a class="headerlink" href="#disadvantage" title="Permanent link">&para;</a></h3>
+<p>T/TCP is not the original TCP anymore, so it requires changes in the mobile host and all correspondent hosts.</p>
+<hr />
+<h2 id="tcp-enhancements-for-wireless-and-mobile-networks">TCP Enhancements for Wireless and Mobile Networks<a class="headerlink" href="#tcp-enhancements-for-wireless-and-mobile-networks" title="Permanent link">&para;</a></h2>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Transmission Control Protocol (TCP) was originally designed for wired networks, where packet loss is primarily due to congestion. However, in wireless and mobile networks, factors such as high latency, jitter, and packet loss due to handovers or signal interference significantly degrade TCP performance. This document explores various TCP improvements tailored for wireless environments.</p>
+<hr />
+<h2 id="snooping-tcp_1">Snooping TCP<a class="headerlink" href="#snooping-tcp_1" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Snooping TCP is a transparent extension of TCP within the foreign agent (FA) to optimize performance in mobile networks.</p>
+</div>
+<h3 id="how-it-works_3">How It Works<a class="headerlink" href="#how-it-works_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The foreign agent (FA) buffers packets destined for the mobile host (MH) until an acknowledgment (ACK) is received.</li>
+<li>If a packet is lost on the wireless link, the FA retransmits it locally instead of relying on the original sender.</li>
+<li>The FA snoops acknowledgments and filters duplicate ACKs, reducing unnecessary retransmissions.</li>
+</ul>
+<h3 id="advantages_3">Advantages<a class="headerlink" href="#advantages_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preserves end-to-end TCP semantics by acknowledging only when the MH responds.</li>
+<li>Faster retransmissions as lost packets are handled locally.</li>
+<li>Works transparently without modifications to the TCP sender.</li>
+</ul>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requires modifications at the foreign agent.</li>
+<li>Does not work with encrypted TCP headers (e.g., IPsec).</li>
+</ul>
+<hr />
+<h2 id="mobile-tcp-m-tcp_1">Mobile TCP (M-TCP)<a class="headerlink" href="#mobile-tcp-m-tcp_1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>M-TCP improves throughput while maintaining end-to-end TCP semantics and ensuring efficient handovers.</p>
+</div>
+<h3 id="how-it-works_4">How It Works<a class="headerlink" href="#how-it-works_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Supervisory Host (SH) monitors TCP traffic but does not cache or retransmit packets.</li>
+<li>If the mobile host disconnects, the SH sets the sender’s TCP window size to zero, preventing unnecessary retransmissions.</li>
+<li>Once connectivity is restored, the window is reopened at the previous value, resuming normal data transfer.</li>
+</ul>
+<h3 id="advantages_4">Advantages<a class="headerlink" href="#advantages_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Supports long disconnections without breaking connections.</li>
+<li>Prevents slow start by maintaining the sender’s state.</li>
+<li>No buffering at the supervisory host, reducing overhead.</li>
+</ul>
+<h3 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Packet loss on the wireless link affects the fixed network.</li>
+<li>Requires modifications to the mobile host’s TCP stack.</li>
+</ul>
+<hr />
+<h2 id="fast-retransmit-fast-recovery_1">Fast Retransmit &amp; Fast Recovery<a class="headerlink" href="#fast-retransmit-fast-recovery_1" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method artificially triggers fast retransmission to prevent slow start during handovers.</p>
+</div>
+<h3 id="how-it-works_5">How It Works<a class="headerlink" href="#how-it-works_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When a mobile host moves to a new foreign agent, it sends three duplicate ACKs to the correspondent host.</li>
+<li>This forces the correspondent host into fast retransmit mode without triggering slow start.</li>
+</ul>
+<h3 id="advantages_5">Advantages<a class="headerlink" href="#advantages_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces delay during handovers.</li>
+<li>Simple to implement with minor modifications.</li>
+</ul>
+<h3 id="limitations_2">Limitations<a class="headerlink" href="#limitations_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inefficient for networks with high latency.</li>
+<li>If the handover is slow, the retransmitted packets may arrive too late.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Example: Mobile host sends 3 duplicate ACKs -&gt; Fast retransmit triggered
+</code></pre></div>
+<hr />
+<h2 id="transmission-timeout-freezing_1">Transmission Timeout Freezing<a class="headerlink" href="#transmission-timeout-freezing_1" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When a long disconnection (e.g., moving through a tunnel) is detected, TCP freezes its state to prevent timeouts.</p>
+</div>
+<h3 id="how-it-works_6">How It Works<a class="headerlink" href="#how-it-works_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The MAC layer detects a connection issue before TCP is interrupted.</li>
+<li>TCP pauses timers and stops retransmissions, maintaining the congestion window state.</li>
+<li>Once connectivity is restored, TCP resumes without triggering slow start.</li>
+</ul>
+<h3 id="advantages_6">Advantages<a class="headerlink" href="#advantages_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ideal for long interruptions (e.g., tunnels, network congestion).</li>
+<li>Independent of TCP mechanisms like sequence numbers and acknowledgments.</li>
+</ul>
+<h3 id="limitations_3">Limitations<a class="headerlink" href="#limitations_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requires MAC layer awareness of connection issues.</li>
+<li>Does not work with encryption methods that rely on timestamps.</li>
+</ul>
+<hr />
+<h2 id="selective-retransmission_1">Selective Retransmission<a class="headerlink" href="#selective-retransmission_1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Instead of retransmitting all unacknowledged packets, TCP resends only the lost ones using Selective Acknowledgment (SACK).</p>
+</div>
+<h3 id="how-it-works_7">How It Works<a class="headerlink" href="#how-it-works_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The receiver informs the sender exactly which packets were lost.</li>
+<li>The sender only retransmits those specific packets.</li>
+</ul>
+<h3 id="advantages_7">Advantages<a class="headerlink" href="#advantages_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces bandwidth consumption, especially on wireless links.</li>
+<li>Speeds up recovery from packet loss.</li>
+</ul>
+<h3 id="limitations_4">Limitations<a class="headerlink" href="#limitations_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requires more complex receiver logic.</li>
+<li>Buffering overhead for out-of-order packets.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Example: Lost packet #4 detected -&gt; Only #4 is retransmitted
+</code></pre></div>
+<hr />
+<h2 id="tcp-over-25g3g-networks">TCP Over 2.5G/3G Networks<a class="headerlink" href="#tcp-over-25g3g-networks" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TCP performance in 2.5G/3G networks is affected by high latency, jitter, and bandwidth fluctuations.</p>
+</div>
+<h3 id="challenges-in-25g3g">Challenges in 2.5G/3G<a class="headerlink" href="#challenges-in-25g3g" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Impact on TCP</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latency</td>
+<td>Increases RTT due to error correction</td>
+<td>Use timestamp option for better RTT estimation</td>
+</tr>
+<tr>
+<td>Jitter</td>
+<td>Causes random delay spikes</td>
+<td>Enable Explicit Congestion Notification (ECN)</td>
+</tr>
+<tr>
+<td>Packet Loss</td>
+<td>Occurs during handovers</td>
+<td>Use Selective Acknowledgment (SACK)</td>
+</tr>
+<tr>
+<td>Bandwidth Oscillations</td>
+<td>Reduces throughput unpredictably</td>
+<td>Use large windows and limited transmit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-tcp-optimizations">Recommended TCP Optimizations<a class="headerlink" href="#recommended-tcp-optimizations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Large TCP Window Size to adapt to higher latency.</li>
+<li>Limited Transmit (RFC 3042) to improve performance for small data transmissions.</li>
+<li>Explicit Congestion Notification (ECN) to signal congestion without dropping packets.</li>
+<li>Selective Acknowledgment (SACK) for efficient retransmission.</li>
+<li>Avoid TCP Header Compression (RFC 1144) as it performs poorly with packet loss.</li>
+</ul>
+<hr />
+<h2 id="performance-enhancing-proxies-pep">Performance-Enhancing Proxies (PEP)<a class="headerlink" href="#performance-enhancing-proxies-pep" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proxies are used to improve TCP performance in wireless networks by handling retransmissions locally.</p>
+</div>
+<h3 id="how-it-works_8">How It Works<a class="headerlink" href="#how-it-works_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Splits the connection between sender and mobile host.</li>
+<li>Optimizes data flow by caching and retransmitting lost packets at the proxy level.</li>
+</ul>
+<h3 id="advantages_8">Advantages<a class="headerlink" href="#advantages_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces delay by handling retransmissions locally.</li>
+<li>Improves throughput in high-latency wireless networks.</li>
+</ul>
+<h3 id="limitations_5">Limitations<a class="headerlink" href="#limitations_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Breaks end-to-end TCP semantics.</li>
+<li>Not compatible with IPsec encryption.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

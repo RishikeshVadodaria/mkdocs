@@ -1,0 +1,1076 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit%208/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Mobile computing unit 8 - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobile-ad-hoc-networks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile computing unit 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-ad-hoc-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile Ad-hoc Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile Ad-hoc Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wireless-networks-mobile-connectivity-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireless Networks - Mobile Connectivity Challenges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-ad-hoc-networks-manets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile Ad-Hoc Networks (MANETs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ad-hoc-network-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad-Hoc Network Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manet-characteristics-and-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      MANET Characteristics and Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-hop-wireless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Hop Wireless
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-ad-hoc-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Ad-Hoc Networks?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manet-and-mobile-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      MANET and Mobile IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-in-ad-hoc-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing in Ad-Hoc Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences-in-routing-wired-vs-ad-hoc-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Differences in Routing: Wired vs. Ad-Hoc Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems-with-ad-hoc-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems with Ad-Hoc Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-vector-and-link-state-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distance-Vector and Link-State Routing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-and-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing and Mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-protocols-in-manets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Protocols in MANETs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proactive-routing-destination-sequenced-distance-vector-dsdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proactive Routing: Destination Sequenced Distance Vector (DSDV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactive-routing-dynamic-source-routing-dsr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reactive Routing: Dynamic Source Routing (DSR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactive-routing-ad-hoc-on-demand-distance-vector-aodv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reactive Routing: Ad-Hoc On-Demand Distance Vector (AODV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-routing-zone-routing-protocol-zrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hybrid Routing: Zone Routing Protocol (ZRP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-state-routing-protocol-hsr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical State Routing Protocol (HSR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-aware-routing-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power-Aware Routing Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-flow-aodv-route-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Flow (AODV Route Discovery)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Mobile computing unit 8</h1>
+
+<div class="nav-wrapper">
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 1/" class="nav-item mobile-computing" data-title="Unit 1">Unit 1</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 2/" class="nav-item mobile-computing" data-title="Unit 2">Unit 2</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 3/" class="nav-item mobile-computing" data-title="Unit 3">Unit 3</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 4/" class="nav-item mobile-computing" data-title="Unit 4">Unit 4</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 5/" class="nav-item mobile-computing" data-title="Unit 5">Unit 5</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 6/" class="nav-item mobile-computing" data-title="Unit 6">Unit 6</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 7/" class="nav-item mobile-computing" data-title="Unit 7">Unit 7</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 8/" class="nav-item mobile-computing" data-title="Unit 8">Unit 8</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 9/" class="nav-item mobile-computing" data-title="Unit 8">Unit 9</a>
+</div>
+
+<h2 id="mobile-ad-hoc-networks">Mobile Ad-hoc Networks<a class="headerlink" href="#mobile-ad-hoc-networks" title="Permanent link">&para;</a></h2>
+<h3 id="wireless-networks-mobile-connectivity-challenges">Wireless Networks - Mobile Connectivity Challenges<a class="headerlink" href="#wireless-networks-mobile-connectivity-challenges" title="Permanent link">&para;</a></h3>
+<p>Wireless networks connect mobile users to services, but face challenges when infrastructure is limited.</p>
+<ul>
+<li><strong>Infrastructure-Based Issues</strong>:</li>
+<li><strong>Mobile IP</strong>: Needs home agents, tunnels, and default routers to work.</li>
+<li><strong>DHCP</strong>: Requires dedicated servers and broadcast-capable networks.</li>
+<li><strong>Cellular Networks</strong>: Depend on costly base stations.</li>
+<li><strong>Challenges</strong>: High costs or lack of infrastructure in some areas make deployment tough.</li>
+<li><strong>Example</strong>: Setting up a cellular tower in a remote village is too expensive.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Wireless networks struggle without infrastructure, like trying to call without a phone tower.</p>
+</div>
+<h3 id="mobile-ad-hoc-networks-manets">Mobile Ad-Hoc Networks (MANETs)<a class="headerlink" href="#mobile-ad-hoc-networks-manets" title="Permanent link">&para;</a></h3>
+<p><strong>MANETs</strong> are self-configuring wireless networks that work without fixed infrastructure.</p>
+<ul>
+<li><strong>Key Features</strong>:</li>
+<li>Provide connectivity where traditional networks are unavailable or impractical.</li>
+<li>Excel in scenarios like military communications, disaster relief, temporary events, or home networks.</li>
+<li>Operate without centralized control, making them resilient.</li>
+<li><strong>Example</strong>: Rescue teams using MANETs to communicate after an earthquake destroys cell towers.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANETs are like a group of radios linking up without a central station.</p>
+</div>
+<h3 id="ad-hoc-network-applications">Ad-Hoc Network Applications<a class="headerlink" href="#ad-hoc-network-applications" title="Permanent link">&para;</a></h3>
+<p>MANETs support various scenarios where infrastructure is absent or slow to deploy.</p>
+<ul>
+<li><strong>Instant Infrastructure</strong>:</li>
+<li>Used for unplanned meetings where infrastructure isn’t ready.</li>
+<li>Faster than setting up fixed networks, which need planning.</li>
+<li>Example: A pop-up network for a spontaneous conference.</li>
+<li><strong>Disaster Relief</strong>:</li>
+<li>Infrastructure fails in disasters (e.g., hurricanes cut power lines, floods ruin base stations).</li>
+<li>MANETs allow quick setup for emergency teams.</li>
+<li>Example: Firefighters coordinating via MANETs during a wildfire.</li>
+<li><strong>Remote Areas</strong>:</li>
+<li>Too costly to build infrastructure in sparsely populated areas.</li>
+<li>MANETs or satellites are more practical based on usage.</li>
+<li>Example: Farmers in a remote valley sharing data via MANETs.</li>
+<li><strong>Effectiveness</strong>:</li>
+<li>Cheaper than cellular for small, infrequent data (e.g., status updates every few minutes).</li>
+<li>Example: Sensors in a forest sending rare alerts via MANETs.</li>
+<li><strong>Other Uses</strong>:</li>
+<li><strong>Personal</strong>: Connecting phone, laptop, earphone, smartwatch.</li>
+<li><strong>Military</strong>: Linking soldiers, tanks, planes.</li>
+<li><strong>Civilian</strong>: Taxi networks, meeting rooms, stadiums, boats, small aircraft.</li>
+<li><strong>Emergency</strong>: Search-and-rescue, policing, firefighting.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANETs are quick, cheap networks for emergencies, remote spots, or small data needs.</p>
+</div>
+<h3 id="manet-characteristics-and-dynamics">MANET Characteristics and Dynamics<a class="headerlink" href="#manet-characteristics-and-dynamics" title="Permanent link">&para;</a></h3>
+<p>MANETs have unique traits due to their mobile, infrastructure-free nature.</p>
+<ul>
+<li><strong>Highly Mobile Nodes</strong>: Devices move, constantly changing network connections.</li>
+<li><strong>Dynamic Connections</strong>: Links form and break as devices shift.</li>
+<li><strong>No Infrastructure</strong>: No need for cellular towers or base stations.</li>
+<li><strong>Multi-Hop</strong>: Data passes through multiple devices to reach its destination.</li>
+<li><strong>Dual Role</strong>: Each device is both a user (sending/receiving) and a router (forwarding).</li>
+<li><strong>Example</strong>: Drones relaying messages to each other as they fly, adjusting as they move.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANETs are like a chain of people passing notes, rearranging as they walk.</p>
+</div>
+<h3 id="multi-hop-wireless">Multi-Hop Wireless<a class="headerlink" href="#multi-hop-wireless" title="Permanent link">&para;</a></h3>
+<p>MANETs rely on multi-hop communication due to limited device range.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li>Data travels through several devices to reach the destination.</li>
+<li>Each device has a short transmission range, so others relay the signal.</li>
+<li>Paths change as devices move in or out of range.</li>
+<li>Routing protocols adapt to these changes to find and maintain paths.</li>
+<li><strong>Example</strong>: A message from one camper to another going through other campers’ radios.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Multi-hop is like passing a letter through friends to reach someone far away.</p>
+</div>
+<h3 id="why-ad-hoc-networks">Why Ad-Hoc Networks?<a class="headerlink" href="#why-ad-hoc-networks" title="Permanent link">&para;</a></h3>
+<p>Ad-hoc networks are ideal when fixed infrastructure isn’t feasible.</p>
+<ul>
+<li><strong>Reasons</strong>:</li>
+<li>No infrastructure in disaster zones or war areas.</li>
+<li>Impractical for short-range devices like Bluetooth (10m range).</li>
+<li>Quick to deploy without backbone support.</li>
+<li><strong>Example</strong>: Soldiers in a jungle setting up a MANET to communicate without towers.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Ad-hoc networks are like setting up a temporary phone line when there’s no service.</p>
+</div>
+<h3 id="manet-and-mobile-ip">MANET and Mobile IP<a class="headerlink" href="#manet-and-mobile-ip" title="Permanent link">&para;</a></h3>
+<p>MANETs differ from Mobile IP, which relies on infrastructure.</p>
+<ul>
+<li><strong>MANET Nodes</strong>: Combine routing and user functions, unlike Mobile IP’s dependence on home agents.</li>
+<li><strong>Example</strong>: In a MANET, a soldier’s radio both sends messages and forwards others’ messages.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANET devices are like team players handling both their tasks and passing messages.</p>
+</div>
+<h3 id="routing-in-ad-hoc-networks">Routing in Ad-Hoc Networks<a class="headerlink" href="#routing-in-ad-hoc-networks" title="Permanent link">&para;</a></h3>
+<p>Routing in MANETs is complex due to mobility and lack of infrastructure.</p>
+<ul>
+<li><strong>Challenges</strong>:</li>
+<li>Unlike cellular networks where base stations reach all devices, MANETs need each device to forward data.</li>
+<li>Links vary (e.g., strong one way, weak the other) due to antenna or power differences.</li>
+<li>Topology changes fast as devices move.</li>
+<li><strong>Example</strong>: A drone’s signal to another might weaken as it flies, requiring a new path.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Routing in MANETs is like finding a new path through a moving crowd.</p>
+</div>
+<h3 id="differences-in-routing-wired-vs-ad-hoc-networks">Differences in Routing: Wired vs. Ad-Hoc Networks<a class="headerlink" href="#differences-in-routing-wired-vs-ad-hoc-networks" title="Permanent link">&para;</a></h3>
+<p>MANET routing differs from wired networks due to unique challenges.</p>
+<ul>
+<li><strong>Asymmetric Links</strong>:</li>
+<li>A device may receive clearly but send weakly (or vice versa).</li>
+<li>Wired networks assume equal link quality both ways.</li>
+<li>Example: One radio hears another well, but its reply is faint.</li>
+<li><strong>Redundant Links</strong>:</li>
+<li>MANETs have many possible paths, increasing routing complexity.</li>
+<li>Wired networks have fewer, planned redundant links.</li>
+<li>Example: Multiple drones can relay a message, complicating path choice.</li>
+<li><strong>Interference</strong>:</li>
+<li>Wireless signals clash if devices are too close, unlike wired cables.</li>
+<li>Overhearing can help (learning topology) or hurt (interference).</li>
+<li>Example: Two nearby radios disrupt each other’s signals.</li>
+<li><strong>Dynamic Topology</strong>:</li>
+<li>MANETs change constantly as devices move or signals vary.</li>
+<li>Wired networks update slowly (e.g., every 30 seconds), unsuitable for MANETs.</li>
+<li>Example: A moving car network reshuffles connections every few seconds.</li>
+<li><strong>Impact on Protocols</strong>:</li>
+<li>Traditional routing assumes stable links and global knowledge.</li>
+<li>MANETs need frequent updates, considering battery and bandwidth limits.</li>
+<li>Example: A wired network’s routing table updates leisurely; a MANET’s must be instant.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANET routing is like navigating a maze where walls move and paths vary.</p>
+</div>
+<h3 id="problems-with-ad-hoc-networks">Problems with Ad-Hoc Networks<a class="headerlink" href="#problems-with-ad-hoc-networks" title="Permanent link">&para;</a></h3>
+<p>MANETs face issues that make routing tricky.</p>
+<ul>
+<li><strong>Dynamic Topology</strong>: Constant movement means paths change often.</li>
+<li><strong>Incomplete Knowledge</strong>: Devices don’t know the full network layout, traffic, link quality, or device power.</li>
+<li><strong>Resource Constraints</strong>: Periodic updates waste battery and bandwidth, which are scarce.</li>
+<li><strong>Traditional Protocol Failure</strong>:</li>
+<li>Wired protocols can’t handle dynamic topology, asymmetric links, or interference.</li>
+<li>Centralized routing is too slow; topology changes before updates finish.</li>
+<li>Flooding (sending data everywhere) works but is inefficient, needing hop limits.</li>
+<li><strong>Example</strong>: A robot swarm struggles to route data as robots move and signals fade.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>MANETs are hard to manage because everything keeps changing and resources are tight.</p>
+</div>
+<h3 id="distance-vector-and-link-state-routing">Distance-Vector and Link-State Routing<a class="headerlink" href="#distance-vector-and-link-state-routing" title="Permanent link">&para;</a></h3>
+<p>Traditional routing methods inform MANET protocols but need adaptation.</p>
+<ul>
+<li><strong>Distance-Vector</strong>:</li>
+<li>Each device knows the cost (hops) to reach others.</li>
+<li>Shares distance lists with neighbors, updating paths if shorter ones are found.</li>
+<li>Tracks which neighbor offers the best path for forwarding.</li>
+<li>Example: A device says, “I can reach X in 2 hops via Y,” and neighbors update.</li>
+<li><strong>Link-State</strong>:</li>
+<li>Devices know the entire network map and calculate shortest paths.</li>
+<li>Share link status with neighbors to build the map.</li>
+<li>Example: Devices share a full network diagram to plan routes.</li>
+<li><strong>Assumptions</strong>: Both assume devices know neighbors’ addresses and link costs (infinite if broken).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Distance-vector is like sharing travel times; link-state is like sharing a full map.</p>
+</div>
+<h3 id="routing-and-mobility">Routing and Mobility<a class="headerlink" href="#routing-and-mobility" title="Permanent link">&para;</a></h3>
+<p>Mobility in MANETs complicates routing.</p>
+<ul>
+<li><strong>Frequent Route Changes</strong>: Device movement creates unpredictable network layouts.</li>
+<li><strong>Power Limits</strong>: Battery constraints affect routing choices.</li>
+<li><strong>Goals</strong>:</li>
+<li>Reduce routing overhead.</li>
+<li>Find short, stable paths despite mobility.</li>
+<li><strong>Example</strong>: A moving vehicle network must keep finding new paths as cars shift.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Routing in MANETs is like planning a route in a city where roads keep changing.</p>
+</div>
+<h3 id="routing-protocols-in-manets">Routing Protocols in MANETs<a class="headerlink" href="#routing-protocols-in-manets" title="Permanent link">&para;</a></h3>
+<p>MANET routing protocols are designed for dynamic, infrastructure-less networks.</p>
+<ul>
+<li><strong>Proactive Protocols</strong>:</li>
+<li>Maintain routes to all devices at all times via periodic updates.</li>
+<li>Example: DSDV, GSR (Global State Routing).</li>
+<li><strong>Reactive Protocols</strong>:</li>
+<li>Find routes only when needed, reducing overhead.</li>
+<li>Example: DSR, AODV.</li>
+<li><strong>Hybrid Protocols</strong>:</li>
+<li>Combine proactive (local) and reactive (distant) routing.</li>
+<li>Example: ZRP.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Proactive keeps all routes ready; reactive finds them as needed; hybrid mixes both.</p>
+</div>
+<h3 id="proactive-routing-destination-sequenced-distance-vector-dsdv">Proactive Routing: Destination Sequenced Distance Vector (DSDV)<a class="headerlink" href="#proactive-routing-destination-sequenced-distance-vector-dsdv" title="Permanent link">&para;</a></h3>
+<p><strong>DSDV</strong> is a proactive protocol enhancing distance-vector routing for MANETs.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li>Each device maintains a table with paths to all destinations, including:<ul>
+<li>Destination, next hop, hop count, sequence number, install time, stability data.</li>
+</ul>
+</li>
+<li>Shares tables with neighbors periodically.</li>
+<li>Sequence numbers (set by destination) ensure fresh routes and prevent loops.</li>
+<li>Immediate updates for new routes, broken links, or metric changes.</li>
+<li>Full updates send all table data; incremental updates send only changes.</li>
+<li><strong>Count-to-Infinity Fix</strong>:</li>
+<li>In traditional distance-vector, a broken link causes endless updates (e.g., A thinks it can reach E via B, B via A).</li>
+<li>DSDV uses sequence numbers to mark newer routes, avoiding this.</li>
+<li><strong>Example</strong>: Hikers share maps with version numbers; a higher number means a fresher path.</li>
+<li><strong>Pros</strong>:</li>
+<li>Fast route access; loop-free with sequence numbers.</li>
+<li>Quick response to topology changes.</li>
+<li><strong>Cons</strong>:</li>
+<li>High overhead from constant updates.</li>
+<li>Maintains unused routes, draining battery.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>DSDV is like always updating a group GPS with versioned paths, even for unused routes.</p>
+</div>
+<h3 id="reactive-routing-dynamic-source-routing-dsr">Reactive Routing: Dynamic Source Routing (DSR)<a class="headerlink" href="#reactive-routing-dynamic-source-routing-dsr" title="Permanent link">&para;</a></h3>
+<p><strong>DSR</strong> is a reactive protocol finding routes only when needed.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li><strong>Route Discovery</strong>:<ul>
+<li>Device broadcasts a Route Request (RREQ) with a unique ID and destination address.</li>
+<li>Nodes add their address and forward, dropping duplicates.</li>
+<li>Destination receives RREQ, picks the best path, and sends a Route Reply (RREP) back via the reverse path.</li>
+</ul>
+</li>
+<li><strong>Route Maintenance</strong>:<ul>
+<li>Checks paths during use; finds new ones if broken.</li>
+</ul>
+</li>
+<li><strong>Source Routing</strong>: Data packets carry the full path in the header.</li>
+<li><strong>Caching</strong>: Nodes save learned paths to avoid rediscovery.</li>
+<li><strong>Optimizations</strong>:<ul>
+<li>Limits broadcasts with a counter (drops after max hops).</li>
+<li>Nodes cache routes from RREQs, RREPs, or overheard data.</li>
+</ul>
+</li>
+<li><strong>Example</strong>: Passing a note through friends to find a path, then using it to send messages.</li>
+<li><strong>Pros</strong>:</li>
+<li>Low overhead; only active routes maintained.</li>
+<li>Caching reduces discovery needs.</li>
+<li>Single discovery yields multiple routes.</li>
+<li><strong>Cons</strong>:</li>
+<li>Large packet headers for long paths.</li>
+<li>Flooding RREQs congests networks.</li>
+<li>Collisions from simultaneous broadcasts.</li>
+<li>Reply storms from cached replies.</li>
+<li>Stale caches cause route failures.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>DSR is like asking for a delivery route only when sending a package, saving the path for later.</p>
+</div>
+<h3 id="reactive-routing-ad-hoc-on-demand-distance-vector-aodv">Reactive Routing: Ad-Hoc On-Demand Distance Vector (AODV)<a class="headerlink" href="#reactive-routing-ad-hoc-on-demand-distance-vector-aodv" title="Permanent link">&para;</a></h3>
+<p><strong>AODV</strong> is a reactive protocol using distance vectors on demand.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li><strong>Route Discovery</strong>:<ul>
+<li>Source broadcasts RREQ with ID, source/destination addresses, sequence numbers, and Time-to-Live (TTL).</li>
+<li>Nodes set reverse route entries (source address, hop count, sequence number, lifetime).</li>
+<li>Destination or a node with a fresh route sends RREP via reverse path.</li>
+<li>TTL increases if no reply, expanding the search.</li>
+</ul>
+</li>
+<li><strong>Route Maintenance</strong>:<ul>
+<li>“Hello” messages check neighbor links.</li>
+<li>Route Error (RERR) packets notify broken links, propagated to affected nodes.</li>
+</ul>
+</li>
+<li><strong>Tables</strong>: Store next-hop info, destination address, sequence number, lifetime; entries expire if unused.</li>
+<li><strong>Sequence Numbers</strong>: Each node increases its number when topology changes, ensuring fresh routes.</li>
+<li><strong>Example</strong>: Shouting for a path, setting breadcrumbs back, and checking if neighbors are reachable.</li>
+<li><strong>Pros</strong>:</li>
+<li>Low overhead; only active routes kept.</li>
+<li>Smaller tables than DSR (next-hop only).</li>
+<li>Adapts to topology changes.</li>
+<li><strong>Cons</strong>:</li>
+<li>Delay for route discovery.</li>
+<li>Flooding RREQs can clog networks.</li>
+<li>Hello messages add some overhead.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>AODV is like calling out for a route when needed, remembering just the next step.</p>
+</div>
+<h3 id="hybrid-routing-zone-routing-protocol-zrp">Hybrid Routing: Zone Routing Protocol (ZRP)<a class="headerlink" href="#hybrid-routing-zone-routing-protocol-zrp" title="Permanent link">&para;</a></h3>
+<p><strong>ZRP</strong> combines proactive and reactive routing for efficiency.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li>Each device has a zone (nodes within a set hop limit, e.g., 2 hops).</li>
+<li><strong>Intra-Zone Routing (IARP)</strong>: Proactive, maintains paths within the zone using link-state methods.</li>
+<li><strong>Inter-Zone Routing (IERP)</strong>: Reactive, finds paths outside the zone like DSR.</li>
+<li>Zones are hop-based, not physical distance.</li>
+<li><strong>Example</strong>: Knowing all nearby streets proactively but asking for directions to a distant city reactively.</li>
+<li><strong>Pros</strong>:</li>
+<li>Fast routing within zones; efficient for distant nodes.</li>
+<li>Scales well for large networks.</li>
+<li>Reduces overhead compared to fully proactive protocols.</li>
+<li><strong>Cons</strong>:</li>
+<li>Complex to manage zone boundaries.</li>
+<li>Performance depends on zone size.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>ZRP is like keeping a local map updated but asking for help to reach far places.</p>
+</div>
+<h3 id="hierarchical-state-routing-protocol-hsr">Hierarchical State Routing Protocol (HSR)<a class="headerlink" href="#hierarchical-state-routing-protocol-hsr" title="Permanent link">&para;</a></h3>
+<p><strong>HSR</strong> organizes MANETs into clusters for scalable routing.</p>
+<ul>
+<li><strong>How It Works</strong>:</li>
+<li>Devices form clusters, each with a cluster head.</li>
+<li>Heads form higher-level clusters, creating a hierarchy.</li>
+<li>Proactive routing within clusters; reactive or hierarchical routing between clusters.</li>
+<li>Uses logical addresses (e.g., cluster IDs) to simplify routing.</li>
+<li><strong>Example</strong>: Schools divided into classes (clusters), with teachers (heads) linking classes.</li>
+<li><strong>Pros</strong>:</li>
+<li>Scales well for large networks.</li>
+<li>Reduces routing overhead with hierarchy.</li>
+<li>Efficient for structured networks.</li>
+<li><strong>Cons</strong>:</li>
+<li>Complex to set up clusters.</li>
+<li>Cluster head failures disrupt routing.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>HSR is like organizing a big group into teams, with leaders coordinating between them.</p>
+</div>
+<h3 id="power-aware-routing-metrics">Power-Aware Routing Metrics<a class="headerlink" href="#power-aware-routing-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>Power-aware routing</strong> optimizes paths to save energy in MANETs.</p>
+<ul>
+<li><strong>Metrics</strong>:</li>
+<li><strong>Energy Consumption</strong>: Chooses paths using less total energy.</li>
+<li><strong>Link Quality</strong>: Picks strong links needing less power to transmit.</li>
+<li><strong>Distance</strong>: Prefers shorter paths to reduce power needs.</li>
+<li><strong>Traffic Load</strong>: Avoids busy devices that drain more power.</li>
+<li><strong>Battery Life</strong>: Favors devices with more battery to extend network life.</li>
+<li><strong>Uses</strong>: Common in ZigBee, Bluetooth Low Energy, and Wireless Sensor Networks.</li>
+<li><strong>Example</strong>: Routing through a drone with a full battery over a short, clear path.</li>
+<li><strong>Pros</strong>:</li>
+<li>Saves energy, prolongs device and network life.</li>
+<li>Adapts to battery and link conditions.</li>
+<li><strong>Cons</strong>:</li>
+<li>May choose longer routes to save power, increasing delay.</li>
+<li>Adds complexity to routing decisions.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Simple Idea</p>
+<p>Power-aware routing is like picking an easy bike path to save energy.</p>
+</div>
+<h2 id="comparison-table">Comparison Table<a class="headerlink" href="#comparison-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Protocol</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Route Maintenance</strong></th>
+<th><strong>Speed</strong></th>
+<th><strong>Overhead</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DSDV</strong></td>
+<td>Proactive</td>
+<td>Always updated</td>
+<td>Fast</td>
+<td>High</td>
+<td>Small, stable networks</td>
+</tr>
+<tr>
+<td><strong>DSR</strong></td>
+<td>Reactive</td>
+<td>On-demand</td>
+<td>Slower</td>
+<td>Low</td>
+<td>Dynamic, sparse networks</td>
+</tr>
+<tr>
+<td><strong>AODV</strong></td>
+<td>Reactive</td>
+<td>On-demand</td>
+<td>Slower</td>
+<td>Low</td>
+<td>Dynamic, frequent routing</td>
+</tr>
+<tr>
+<td><strong>ZRP</strong></td>
+<td>Hybrid</td>
+<td>Local proactive, distant reactive</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Large networks</td>
+</tr>
+<tr>
+<td><strong>HSR</strong></td>
+<td>Hierarchical</td>
+<td>Cluster-based</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Large, scalable networks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="process-flow-aodv-route-discovery">Process Flow (AODV Route Discovery)<a class="headerlink" href="#process-flow-aodv-route-discovery" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TD
+    A[Source] --&gt;|Broadcast RREQ| B[Node B]
+    B --&gt;|Set Reverse Route, Forward| C[Node C]
+    C --&gt;|Set Reverse Route, Forward| D[Destination]
+    D --&gt;|Send RREP| C
+    C --&gt;|Forward RREP| B
+    B --&gt;|Forward RREP| A</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Display.InputDialog Title: $'''Holiday''' Message: $'''Enter holiday destination - 1''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> location1 ButtonPressed=> ButtonPressed
+Display.InputDialog Title: $'''Holiday''' Message: $'''Enter holiday destination - 2''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> location2 ButtonPressed=> ButtonPressed
+Display.InputDialog Title: $'''Holiday''' Message: $'''Enter holiday destination - 3''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> location3 ButtonPressed=> ButtonPressed
+Variables.CreateNewList List=> Destination
+Variables.AddItemToList Item: location1 List: Destination
+Variables.AddItemToList Item: location2 List: Destination
+Variables.AddItemToList Item: location3 List: Destination
+Variables.ShuffleList List: Destination
+Variables.RemoveItemFromList.RemoveItemFromListByIndex ItemIndex: 0 List: Destination
+Variables.RemoveItemFromList.RemoveItemFromListByIndex ItemIndex: 1 List: Destination
+Display.ShowMessageDialog.ShowMessage Title: $'''Final''' Message: $'''The Destination for family vacation is %Destination%''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+Variables.AddItemToList Item: location1 List: Destination

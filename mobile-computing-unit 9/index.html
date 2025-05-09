@@ -1,0 +1,938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit%209/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Mobile computing unit 9 - Notes by Rishikesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/navbar.css">
+    
+      <link rel="stylesheet" href="../css/divider.css">
+    
+      <link rel="stylesheet" href="../css/font.css">
+    
+      <link rel="stylesheet" href="../css/waves.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/widgets.css">
+    
+      <link rel="stylesheet" href="../css/countdown.css">
+    
+      <link rel="stylesheet" href="../css/nav.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#embedded-operating-systems-android-and-symbian" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes by Rishikesh" class="md-header__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes by Rishikesh
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile computing unit 9
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes by Rishikesh" class="md-nav__button md-logo" aria-label="Notes by Rishikesh" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.36 2.64c1.64 0 3 1.36 3 3 0 1.65-1.36 3-3 3-1.65 0-3-1.35-3-3 0-.3.05-.58.14-.84-1.07-.51-2.25-.8-3.5-.8a8 8 0 0 0-8 8l.04.84-1.99.21L2 12A10 10 0 0 1 12 2c1.69 0 3.28.42 4.67 1.16.49-.33 1.07-.52 1.69-.52m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1c.56 0 1-.45 1-1 0-.56-.44-1-1-1M5.64 15.36c1.65 0 3 1.35 3 3 0 .3-.05.58-.14.84 1.07.51 2.25.8 3.5.8a8 8 0 0 0 8-8l-.04-.84 1.99-.21L22 12a10 10 0 0 1-10 10c-1.69 0-3.28-.42-4.67-1.16-.49.33-1.07.52-1.69.52-1.64 0-3-1.36-3-3 0-1.65 1.36-3 3-3m0 2c-.56 0-1 .45-1 1 0 .56.44 1 1 1a1 1 0 0 0 1-1 1 1 0 0 0-1-1M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/></svg>
+
+    </a>
+    Notes by Rishikesh
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-computing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mobile Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpa-m2-formula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPA formulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-operating-systems-android-and-symbian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded Operating Systems: Android and Symbian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-embedded-operating-systems-e-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction to Embedded Operating Systems (E-OS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-android-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Android Operating System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Android Operating System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-birth-of-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Birth of Android
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-android-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Android Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-application-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Application Building Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-application-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Application Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Development Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-security-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Security Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-why-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.10 Why Android?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-android-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.11 Android Versions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-symbian-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Symbian Operating System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Symbian Operating System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-symbian-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Symbian History
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fundamental-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Fundamental Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-platform-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Platform Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-strengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Strengths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-weaknesses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8 Weaknesses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.9 Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#310-disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.10 Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-android-vs-symbian" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Android vs. Symbian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Mobile computing unit 9</h1>
+
+<div class="nav-wrapper">
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 1/" class="nav-item mobile-computing" data-title="Unit 1">Unit 1</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 2/" class="nav-item mobile-computing" data-title="Unit 2">Unit 2</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 3/" class="nav-item mobile-computing" data-title="Unit 3">Unit 3</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 4/" class="nav-item mobile-computing" data-title="Unit 4">Unit 4</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 5/" class="nav-item mobile-computing" data-title="Unit 5">Unit 5</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 6/" class="nav-item mobile-computing" data-title="Unit 6">Unit 6</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 7/" class="nav-item mobile-computing" data-title="Unit 7">Unit 7</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 8/" class="nav-item mobile-computing" data-title="Unit 8">Unit 8</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 9/" class="nav-item mobile-computing" data-title="Unit 8">Unit 9</a>
+</div>
+
+<h2 id="embedded-operating-systems-android-and-symbian">Embedded Operating Systems: Android and Symbian<a class="headerlink" href="#embedded-operating-systems-android-and-symbian" title="Permanent link">&para;</a></h2>
+<h2 id="1-introduction-to-embedded-operating-systems-e-os">1. Introduction to Embedded Operating Systems (E-OS)<a class="headerlink" href="#1-introduction-to-embedded-operating-systems-e-os" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definition</strong>: Software tailored for mobile devices, integrating OS, middleware, and applications to meet specific hardware constraints.</li>
+<li><strong>Purpose</strong>: Addresses needs of mobile users, operators, developers, and manufacturers for customization, functionality, and stability.</li>
+</ul>
+<p><strong>Examples</strong>:
+  - Android
+  - Symbian OS
+  - iOS
+  - Windows CE
+  - Palm OS
+  - Embedded Linux (e.g., Open Zaurus, Metano GNU/Linux)</p>
+<p><strong>Key Characteristics</strong>:
+  - Compact to fit limited memory.
+  - Designed for standalone, portable devices.
+  - Supports intermittent connectivity.
+  - Open platform for third-party development.</p>
+<h2 id="2-android-operating-system">2. Android Operating System<a class="headerlink" href="#2-android-operating-system" title="Permanent link">&para;</a></h2>
+<h3 id="21-introduction">2.1 Introduction<a class="headerlink" href="#21-introduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Overview</strong>: Software stack for mobile devices including OS, middleware, and key apps.</li>
+<li><strong>Base</strong>: Linux OS, developed by Google and Open Handset Alliance (OHA).</li>
+<li><strong>Development</strong>: Uses Java-like language with Google’s Java libraries; no native code support.</li>
+<li><strong>Launch</strong>: Announced November 5, 2007, with OHA; released 2008 under Apache license.</li>
+</ul>
+<h3 id="22-birth-of-android">2.2 Birth of Android<a class="headerlink" href="#22-birth-of-android" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Acquisition</strong>: Google acquired Android Inc. in July 2005 (key figures: Andy Rubin, Rich Miner, Nick Sears, Chris White).</li>
+<li>
+<p><strong>OHA Formation</strong>: November 2007, consortium of Google, HTC, Intel, Motorola, Qualcomm, etc., to promote open mobile standards.</p>
+</li>
+<li>
+<p><strong>Hardware Prototypes</strong>:</p>
+<ul>
+<li>Mobile World Congress (Feb 2008): Basic apps demoed.</li>
+<li>Google I/O (May 2008): 528 MHz Qualcomm processor, 128 MB RAM, 256 MB flash, UMTS, 3.6 Mbit/s HSDPA.</li>
+</ul>
+</li>
+</ul>
+<h3 id="23-android-architecture">2.3 Android Architecture<a class="headerlink" href="#23-android-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Layers</strong>:</li>
+<li>
+<p><strong>Kernel Layer</strong>: Linux 2.6 for memory, process, security, networking, and drivers; acts as Hardware Abstraction Layer (HAL).</p>
+</li>
+<li>
+<p><strong>Native Libraries Layer</strong>:
+        - SGL (2D graphics), OpenGL ES (3D graphics).
+        - SQLite (data storage), WebKit (web rendering).
+        - Dalvik Virtual Machine: Optimized for mobile, converts Java bytecode to .dex for efficiency.
+        - Core libraries: Java-based, System C library, Media Libraries, Surface Manager, FreeType.</p>
+</li>
+<li>
+<p><strong>Application Runtime</strong>: Dalvik VM runs apps in separate processes; handles security, threading, memory via Linux kernel.</p>
+</li>
+<li><strong>Application Framework Layer</strong>: Java-based APIs for telephony, data sharing, notifications; uniform for all apps.</li>
+<li>
+<p><strong>Applications Layer</strong>: Core (e.g., Phone, Contacts) and third-party apps in Java, run by Dalvik VM.</p>
+</li>
+<li>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>All apps equal (no distinction between core and third-party).</li>
+<li>Third-party apps can replace core functions (e.g., dialer).</li>
+</ul>
+</li>
+</ul>
+<h3 id="24-application-building-blocks">2.4 Application Building Blocks<a class="headerlink" href="#24-application-building-blocks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Activity</strong>: User interface screen; can be faceless, floating, or return values.</li>
+<li><strong>Intent Receiver</strong>: Responds to broadcast intents (e.g., notifications, alarms); apps can define custom intents.</li>
+<li><strong>Service</strong>: Background tasks (e.g., music playback, downloads).</li>
+<li><strong>Content Provider</strong>: Enables data sharing across apps (e.g., contacts, gallery) via URI and MIME types.</li>
+</ul>
+<h3 id="25-application-lifecycle">2.5 Application Lifecycle<a class="headerlink" href="#25-application-lifecycle" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Process Management</strong>:</p>
+<ul>
+<li>Each app runs in its own process for security and performance.</li>
+<li>Importance hierarchy for memory management:<ol>
+<li><strong>Visible Process</strong>: Activity visible but not foreground (e.g., dialog overlay).</li>
+<li><strong>Service Process</strong>: Running background services (e.g., music, downloads).</li>
+<li><strong>Background Process</strong>: Non-visible activities; killed based on LRU (Least Recently Used).</li>
+<li><strong>Empty Process</strong>: No active components; cached for faster restarts.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Impact</strong>: Incorrect use of components (Activity, Service, Broadcast Receiver) can lead to process termination during critical tasks.</p>
+</li>
+</ul>
+<h3 id="26-development-tools">2.6 Development Tools<a class="headerlink" href="#26-development-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java, Eclipse IDE, ADT Plug-in, Android SDK, Android Emulator, command-line tools, documentation.</li>
+</ul>
+<h3 id="27-security-issues">2.7 Security Issues<a class="headerlink" href="#27-security-issues" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Strengths</strong>: Linux-based secure coding, solutions like McAfee and SMobile Systems (anti-virus, firewall).</li>
+<li><strong>Weaknesses</strong>:</li>
+<li>Open-source code vulnerable to black-hat hackers.</li>
+<li>Risks: Trojans, viruses, unauthorized GPS tracking, malicious apps mimicking legitimate ones.</li>
+<li><strong>Mitigation</strong>: SMobile Security Shield for alerts and blocking; no device is fully secure online.</li>
+</ul>
+<h3 id="28-advantages">2.8 Advantages<a class="headerlink" href="#28-advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open API access to core functions.</li>
+<li>Equal treatment of all apps.</li>
+<li>Combines web and phone data for new experiences.</li>
+<li>Easy development with SDK and emulator.</li>
+</ul>
+<h3 id="29-disadvantages">2.9 Disadvantages<a class="headerlink" href="#29-disadvantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open-source invites hacker scrutiny.</li>
+<li>Unencrypted file system, vulnerable login.</li>
+<li>Dependence on hardware/carrier partners reduces Google’s control.</li>
+</ul>
+<h3 id="210-why-android">2.10 Why Android?<a class="headerlink" href="#210-why-android" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open-source, Flash support, diverse models, reasonable prices, Google Apps, utility apps (e.g., Astro, Taskiller).</li>
+</ul>
+<h3 id="211-android-versions">2.11 Android Versions<a class="headerlink" href="#211-android-versions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1.1, 1.5 (Cupcake), 1.6 (Donuts), 2.0 (Éclair), 2.2 (Froyo), 2.3 (Gingerbread), 3.0 (Honeycomb).</li>
+<li>API levels ensure forward compatibility, not always backward.</li>
+</ul>
+<h2 id="3-symbian-operating-system">3. Symbian Operating System<a class="headerlink" href="#3-symbian-operating-system" title="Permanent link">&para;</a></h2>
+<h3 id="31-introduction">3.1 Introduction<a class="headerlink" href="#31-introduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Overview</strong>: Designed for smartphones, supports multiple manufacturers, focuses on communication.</li>
+<li>
+<p><strong>Market Needs</strong>:</p>
+<ul>
+<li>Small, mobile devices.</li>
+<li>Mass-market appeal.</li>
+<li>Intermittent connectivity.</li>
+<li>Product differentiation.</li>
+<li>Open platform for third-party apps.</li>
+</ul>
+</li>
+<li>
+<p><strong>Goal</strong>: Compact yet feature-rich OS for 2.5G/3G networks, distinct from scaled-down PC OS.</p>
+</li>
+</ul>
+<h3 id="32-symbian-history">3.2 Symbian History<a class="headerlink" href="#32-symbian-history" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Origin</strong>: Evolved from Psion’s EPOC OS; renamed Symbian OS in 1998.</li>
+<li><strong>Ownership</strong>: Ericsson, Nokia, Panasonic, Psion, Siemens, Sony-Ericsson; open licensing.</li>
+<li><strong>Devices</strong>: Sony Ericsson P800, Nokia 9200 Communicator, NTT DoCoMo Fujitsu 2102V.</li>
+</ul>
+<h3 id="33-fundamental-requirements">3.3 Fundamental Requirements<a class="headerlink" href="#33-fundamental-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Standalone portable operation.</li>
+<li>Supports diverse devices.</li>
+<li>Future-proof, open licensing.</li>
+<li>Open for app development.</li>
+<li>Based on open standards (e.g., POSIX, J2ME, Bluetooth).</li>
+</ul>
+<h3 id="34-architecture">3.4 Architecture<a class="headerlink" href="#34-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Layers</strong>:</p>
+<ol>
+<li><strong>Core</strong>: Kernel, file server, memory management, device drivers.</li>
+<li><strong>System Layer</strong>: TCP/IP, IMAP4, SMS, database management.</li>
+<li><strong>Application Engines</strong>: Interfaces for data access.</li>
+<li><strong>User Interface Software</strong>: Customizable by manufacturers.</li>
+<li><strong>Applications</strong>: Added above UI.</li>
+</ol>
+</li>
+<li>
+<p><strong>Design</strong>: Hardware-independent, extendable, open for development.</p>
+</li>
+</ul>
+<h3 id="35-features">3.5 Features<a class="headerlink" href="#35-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Client-Server Architecture</strong>: Programs (clients) access resources via servers for timely responses.</li>
+<li><strong>Event Management</strong>: Event-based time sharing in a single thread; supports interactive designs.</li>
+<li><strong>Object-Oriented Design</strong>: Configurable for hardware, component-based, flexible UI.</li>
+<li><strong>Power Management</strong>: Kernel-level efficiency; disables unused peripherals.</li>
+<li><strong>Robustness</strong>: Protected address spaces prevent data loss or crashes.</li>
+<li><strong>Memory Management</strong>: Minimizes usage; supports RAM and flash memory.</li>
+<li><strong>Full Multitasking</strong>: Runs multiple apps concurrently (e.g., calendar during a call).</li>
+</ul>
+<h3 id="36-platform-security">3.6 Platform Security<a class="headerlink" href="#36-platform-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Trust</strong>: Controls access to private data.</li>
+<li><strong>Security</strong>: Manages costs, protects phone functions.</li>
+<li><strong>Protection</strong>: Software ownership, DRM.</li>
+<li><strong>Mechanisms</strong>: Trusted software installation, secure IPC, TCE (protects sensitive APIs).</li>
+</ul>
+<h3 id="37-strengths">3.7 Strengths<a class="headerlink" href="#37-strengths" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Memory Management</strong>: Paging, address translation; no demand-paged virtual memory.</li>
+<li><strong>Execution in-Place</strong>: Runs programs from flash memory, reducing RAM usage and load time.</li>
+</ul>
+<h3 id="38-weaknesses">3.8 Weaknesses<a class="headerlink" href="#38-weaknesses" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No virtual memory; relies on RAM and flash.</li>
+<li>Limited memory impacts scalability.</li>
+</ul>
+<h3 id="39-advantages">3.9 Advantages<a class="headerlink" href="#39-advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wide app range, high-quality games, better WAP browser, fast connectivity, media players.</li>
+<li>Supports software installation, large file downloads via 3G.</li>
+</ul>
+<h3 id="310-disadvantages">3.10 Disadvantages<a class="headerlink" href="#310-disadvantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Not available for PCs.</li>
+<li>Susceptible to viruses.</li>
+</ul>
+<h2 id="4-android-vs-symbian">4. Android vs. Symbian<a class="headerlink" href="#4-android-vs-symbian" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Firmware Updates</strong>:<ul>
+<li><strong>Symbian</strong>: Requires new phone for major updates (e.g., s60v3 to s60v5).</li>
+<li><strong>Android</strong>: Software upgrades via phone/PC (e.g., 1.6 to 2.1).</li>
+</ul>
+</li>
+<li><strong>Flashing</strong>:<ul>
+<li><strong>Symbian</strong>: Risky; themes or new firmware via PC; failure can brick phone.</li>
+<li><strong>Android</strong>: Safer; themes, launchers, or custom firmware via recovery menu; recoverable.</li>
+</ul>
+</li>
+<li><strong>Feature Customization</strong>:<ul>
+<li><strong>Symbian</strong>: Apps for UI changes consume memory, not default; custom firmware risky.</li>
+<li><strong>Android</strong>: Replace default apps (e.g., file browser) without risks or extra memory.</li>
+</ul>
+</li>
+<li><strong>Processor Control</strong>:<ul>
+<li><strong>Symbian</strong>: No visibility/control over processor speed.</li>
+<li><strong>Android</strong>: Apps monitor/control speed for battery or performance.</li>
+</ul>
+</li>
+<li><strong>Modifications</strong>:<ul>
+<li><strong>Symbian</strong>: Limited user modifications.</li>
+<li><strong>Android</strong>: Encourages extensive customization.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-conclusion">5. Conclusion<a class="headerlink" href="#5-conclusion" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Android</strong>: Advanced, user-focused, supports extensive customization and updates.</li>
+<li><strong>Symbian</strong>: Needs feature updates to compete; strong in traditional phone functions.</li>
+<li><strong>Trend</strong>: Android’s flexibility and open-source model give it an edge in modern mobile markets.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>

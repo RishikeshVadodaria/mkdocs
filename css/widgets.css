@@ -1,0 +1,74 @@
+/* Page Container */
+.page-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Page Card Style */
+.page {
+  position: relative;
+  height: 300px;
+  background-color: #0d0d0d;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover base effect */
+.page:hover {
+  transform: translateY(-5px);
+}
+
+/* Neon Glows per card */
+.page-container .page:nth-child(1):hover {
+  border-color: #ff8c3d;
+  box-shadow: 0 0 16px 4px #ff8c3d;
+}
+
+.page-container .page:nth-child(2):hover {
+  border-color: #c74fff;
+  box-shadow: 0 0 16px 4px #c74fff;
+}
+
+.page-container .page:nth-child(3):hover {
+  border-color: #40e0d0;
+  box-shadow: 0 0 16px 4px #40e0d0;
+}
+
+.page-container .page:nth-child(4):hover {
+  border-color: #ffd52e;
+  box-shadow: 0 0 16px 4px #ffd52e;
+}
+
+/* Title */
+.page::before {
+  content: attr(data-title);
+  font-size: 1.4em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Subtitle */
+.page::after {
+  content: attr(data-subtitle);
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 0.9em;
+  color: #aaa;
+  opacity: 0.8;
+}

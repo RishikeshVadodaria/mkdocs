@@ -1,0 +1,20 @@
+Screens:
+  global-variable:
+    Properties:
+      Fill: =RGBA(0, 0, 0, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Label2:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =133
+            Size: =45
+            Text: ="Welcome, " & FName &" "& LName
+            Width: =1122
+            X: =122
+            Y: =318
