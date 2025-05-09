@@ -7,6 +7,7 @@
     <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 6/" class="nav-item mobile-computing" data-title="Unit 6">Unit 6</a>
     <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 7/" class="nav-item mobile-computing" data-title="Unit 7">Unit 7</a>
     <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 8/" class="nav-item mobile-computing" data-title="Unit 8">Unit 8</a>
+    <a href="https://rishikeshvadodaria.github.io/mkdocs/mobile-computing-unit 9/" class="nav-item mobile-computing" data-title="Unit 8">Unit 9</a>
 </div>
 
 
@@ -464,49 +465,201 @@ Time Division Multiple Access (TDMA) divides a channel into time slots, allowing
 - **Impact of Improvement**: Carrier sensing can reduce collisions, improving throughput compared to Simple Aloha or Slotted Aloha, though it may not fully address hidden/exposed terminal problems without additional mechanisms like RTS/CTS.
 
 
+### 1-Persistent CSMA
 
+**1-Persistent CSMA** is a method where a device constantly checks the network channel to send data when free.
 
+- **How It Works**: Listens to the channel. If busy, waits. If free, sends data instantly (100% chance, hence “1-persistent”).
+- **Example**: Waiting at a phone booth, jumping in to call as soon as it’s free.
+- **Pros**: Fast sending when channel is free.
+- **Cons**: High collision risk if multiple devices send at once, causing delays.
 
+!!! note "Easy Idea"
+    1-Persistent CSMA is like grabbing the mic the moment the stage clears, risking others talking over you.
 
+!!! danger "Issue"
+    Collisions from multiple senders slow things down.
 
+### Non-Persistent CSMA
 
+**Non-Persistent CSMA** checks the channel only when ready to send, waiting randomly if busy.
 
+- **How It Works**: Checks channel. If free, sends. If busy, waits a random time, then checks again.
+- **Example**: Checking a phone booth. If busy, you leave, wait a bit, then check again.
+- **Pros**: Fewer collisions due to random waits.
+- **Cons**: Slower as random waiting reduces efficiency.
 
+!!! note "Easy Idea"
+    Non-Persistent CSMA is like stepping back if the stage is busy, checking later.
 
+!!! danger "Issue"
+    Random waits can delay sending too much.
 
+### P-Persistent CSMA
 
+**P-Persistent CSMA** uses time slots, sending with a chance when the channel is free.
 
+- **How It Works**: In slotted channels, checks if slot is free. Sends with probability P (e.g., 50%) or waits for next slot. Repeats until sending or another device sends.
+- **Example**: At a slotted karaoke, flip a coin to sing if the mic’s free, else wait for the next slot.
+- **Pros**: Balances speed and collision risk.
+- **Cons**: Some collisions if multiple devices send; delays if waiting too often.
 
+!!! note "Easy Idea"
+    P-Persistent CSMA is like coin-flipping to grab a free slot, avoiding chaos.
 
+!!! danger "Issue"
+    Wrong probability can cause collisions or delays.
 
+![alt text](image-38.png)
 
+### Improving Aloha: CSMA Basics
 
+**CSMA** improves Aloha (where devices send anytime, causing collisions) by checking the channel first.
 
+- **How It Works**: Checks if channel is free. If free, sends. If busy, waits (persistent or random). Non-Persistent waits randomly; P-Persistent uses probability.
+- **Example**: Unlike Aloha’s shouting into a radio, CSMA listens first, then talks if quiet.
+- **Pros**: Fewer collisions than Aloha.
+- **Cons**: Collisions still happen; waiting can slow things.
 
+!!! note "Easy Idea"
+    CSMA is like listening before talking on a radio, unlike Aloha’s free-for-all.
 
+!!! danger "Issue"
+    Timing of checks and sends needs tuning to avoid collisions.
 
+### Demand Assigned Multiple Access (DAMA)
 
+![alt text](image-39.png)
 
+**DAMA** reserves specific time slots for data, avoiding collisions during sending.
 
+- **How It Works**: Devices compete in a reservation phase (Aloha-style). Successful ones get a slot, managed by a central system (e.g., satellite). Devices send in their slots without collisions.
+- **Example**: Booking a conference talk slot to speak without interruptions.
+- **Pros**: No collisions during data sending; reliable.
+- **Cons**: Reservation phase collisions; wastes time with few devices.
 
+!!! note "Easy Idea"
+    DAMA is like reserving a meeting room to talk without overlaps.
 
+!!! danger "Issue"
+    Reservation competition can slow things if many devices try.
 
+### Packet Reservation Multiple Access (PRMA)
 
+**PRMA** lets devices reserve slots, keeping them for ongoing data needs.
 
+- **How It Works**: Time splits into frames with slots. Devices compete for empty slots (Aloha-style). Winning a slot reserves it for future frames until no more data. Empty slots reopen for competition.
+- **Example**: Booking a weekly gym slot, yours until you stop going.
+- **Pros**: Great for steady data like voice calls; fewer collisions after reservation.
+- **Cons**: Initial competition causes collisions; unused slots waste time.
 
+!!! note "Easy Idea"
+    PRMA is like reserving a regular class spot, yours until you’re done.
 
+!!! danger "Issue"
+    Initial slot fights can be messy.
 
+### Distributed Packet Reservation Multiple Access (D-PRMA)
 
+**D-PRMA** is PRMA without a central controller, using broadcasts to manage slots.
 
+- **How It Works**: Like PRMA, devices compete for slots in frames. Winning slots are reserved until data ends. A base station broadcasts slot status (free or taken).
+- **Example**: Signing up for a recurring event; everyone hears your spot is taken.
+- **Pros**: Works for cellular voice/data; reduces collisions post-reservation.
+- **Cons**: Initial competition is chaotic; needs broadcast system.
 
+!!! note "Easy Idea"
+    D-PRMA is like claiming a community event slot, announced to all.
 
+!!! danger "Issue"
+    Early slot competition can delay things.
 
+### Reservation Time Division Multiple Access (Reservation-TDMA)
 
+**Reservation-TDMA** uses mini-slots for reservations and data slots for sending.
 
+- **How It Works**: Each frame has mini-slots (one per device) and data slots. Devices reserve data slots via their mini-slot. Unused slots are shared in a round-robin way.
+- **Example**: Each person gets a small slot to book a bigger meeting room slot.
+- **Pros**: Organized; no collisions in data slots.
+- **Cons**: Mini-slots can limit flexibility; setup is complex.
 
+!!! note "Easy Idea"
+    Reservation-TDMA is like everyone having a tiny slot to book a big one.
 
+!!! danger "Issue"
+    Complex setup can be overkill for simple networks.
 
+### Multiple Access with Collision Avoidance (MACA)
 
+**MACA** uses a handshake to avoid collisions before sending data.
+
+- **How It Works**: Device sends a Request to Send (RTS). Receiver replies with Clear to Send (CTS) if ready. Sender then sends data. If a packet fails, it waits a random time before retrying.
+- **Example**: Asking “Can I talk?” and waiting for “Yes” before speaking.
+- **Pros**: Reduces collisions with RTS/CTS handshake.
+- **Cons**: Extra steps slow things; retries needed for failures.
+
+!!! note "Easy Idea"
+    MACA is like asking permission to talk, avoiding interruptions.
+
+!!! danger "Issue"
+    Handshake adds delay, especially if packets fail.
+
+![alt text](image-40.png)
+
+### Polling
+
+**Polling** is a centralized method where a main station asks others to send data.
+
+- **How It Works**: A master station (e.g., base station) polls slave stations one by one (round-robin or random) to send data.
+- **Example**: A teacher calling on students one at a time to speak.
+- **Pros**: No collisions; fully controlled.
+- **Cons**: Slow if many stations; master is a single point of failure.
+
+!!! note "Easy Idea"
+    Polling is like a boss calling each worker to report, one at a time.
+
+!!! danger "Issue"
+    Relies on the master; slow for big networks.
+
+### Inhibit Sense Multiple Access
+
+**Inhibit Sense Multiple Access** uses a busy signal to control sending.
+
+- **How It Works**: Base station sends a busy tone when the channel is in use. When the tone stops, devices try to send without further coordination. Successful sends get a confirmation; collisions mean retrying.
+- **Example**: A traffic light says “stop” when busy; when green, cars go without extra checks.
+- **Pros**: Simple; base station controls busy state.
+- **Cons**: Collisions likely after tone stops; no priority system.
+
+!!! note "Easy Idea"
+    Inhibit Sense is like waiting for a “go” signal, then rushing in.
+
+!!! danger "Issue"
+    Rushing after the tone can cause collisions.
+
+## Comparison Table
+
+| **Method** | **Key Feature** | **Collision Risk** | **Speed** | **Complexity** |
+| --- | --- | --- | --- | --- |
+| **1-Persistent CSMA** | Sends instantly if free | High | Fast | Low |
+| **Non-Persistent CSMA** | Waits randomly if busy | Low | Slower | Low |
+| **P-Persistent CSMA** | Sends with chance in slots | Medium | Medium | Medium |
+| **CSMA (Aloha Fix)** | Checks before sending | Medium | Medium | Low |
+| **DAMA** | Reserves slots | None (data) | Medium | High |
+| **PRMA** | Keeps slots for data | Low (after) | Fast | Medium |
+| **D-PRMA** | PRMA with broadcasts | Low (after) | Fast | Medium |
+| **Reservation-TDMA** | Mini-slots for booking | None (data) | Medium | High |
+| **MACA** | RTS/CTS handshake | Low | Slower | Medium |
+| **Polling** | Central polling | None | Slow | High |
+| **Inhibit Sense** | Busy tone control | High | Medium | Low |
+
+## Process Flow (DAMA Example)
+
+```mermaid
+graph TD
+    A[Device] -->|Request Slot| B[Central System]
+    B -->|Assign Slot| A
+    A -->|Send Data in Slot| C[Network]
+```
 
 ### Comparison of Multiplexing Techniques
 
